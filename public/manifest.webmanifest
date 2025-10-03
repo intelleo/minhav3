@@ -1,0 +1,16 @@
+{
+  "name": "Minha",
+  "short_name": "Minha",
+  "description": "Minha - Chatbot dan Mading Online",
+  "lang": "id-ID",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#247de3",
+  "icons": [
+    { "src": "/img/icon-chat.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-chat.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "/img/icon-chat.webp", "sizes": "512x512", "type": "image/webp" }
+  ]
+}

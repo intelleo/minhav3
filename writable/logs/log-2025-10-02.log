@@ -1,0 +1,1774 @@
+DEBUG - 2025-10-02 10:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 10:47:21 --> CSRF token verified.
+DEBUG - 2025-10-02 10:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 10:47:25 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard_content.php"
+[Method: GET, Route: Admin/Dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard_content.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard_content', [], true)
+ 3 APPPATH\Controllers\Admin\Dashboard.php(23): view('admin/dashboard_content', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 10:48:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard_content.php"
+[Method: GET, Route: Admin/Dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard_content.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard_content', [], true)
+ 3 APPPATH\Controllers\Admin\Dashboard.php(23): view('admin/dashboard_content', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:50:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:50:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:55:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(147): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(147): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(147): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:55:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:55:39 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:39 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:39 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:55:50 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(147): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:50 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(147): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:50 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(147): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:55:51 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:51 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:55:51 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(126): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:55:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:57:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:57:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:57:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:57:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:57:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:57:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:57:59 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:59 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:57:59 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:58:09 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:09 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:09 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:58:11 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:11 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:11 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:58:11 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:11 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:11 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:58:15 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:15 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:15 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:58:18 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:18 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:18 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 10:58:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 10:58:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 10:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 10:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 11:19:46 --> CSRF token verified.
+DEBUG - 2025-10-02 11:19:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:19:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:19:55 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:19:55 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:19:55 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:19:55 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:19:55 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:19:55 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:20:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:20:12 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:12 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:12 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:20:13 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:13 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:13 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:20:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:20:23 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:23 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:20:23 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:30:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:30:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:30:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:30:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:30:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:30:53 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:31:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:31:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:31:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:31:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 11:31:55 --> CSRF token verified.
+DEBUG - 2025-10-02 11:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:31:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 11:32:09 --> CSRF token verified.
+DEBUG - 2025-10-02 11:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:46:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:50:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 11:51:00 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:51:00 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 11:51:00 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 11:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 11:58:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:11:08 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:11:08 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:11:08 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:30:27 --> Mading Stats: {"mading_edukasi":2,"mading_pengumuman":1,"mading_event":1,"mading_berita":1}
+INFO - 2025-10-02 12:30:27 --> Dashboard View Stats: {"total_users":4,"active_users":3,"pending_users":1,"inactive_users":0,"total_mading":5,"total_comments":17,"chatbot_qa":0,"mading_edukasi":2,"mading_pengumuman":1,"mading_event":1,"mading_berita":1}
+DEBUG - 2025-10-02 12:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:33:00 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:33:50 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:33:56 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:34:09 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:34:28 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:34:39 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:35:41 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:35:47 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:35:58 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:36:08 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:36:21 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:36:29 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:36:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:36:37 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:36:37 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:36:37 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:36:43 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:38:17 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:39:03 --> CSRF token verified.
+DEBUG - 2025-10-02 12:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:39:36 --> CSRF token verified.
+DEBUG - 2025-10-02 12:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:40:09 --> CSRF token verified.
+DEBUG - 2025-10-02 12:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:40:10 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:40:12 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:40:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:40:19 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:40:40 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:40:40 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:40:40 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:13 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:13 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:13 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:14 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:14 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:14 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:45:16 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:19 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:19 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:19 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(158): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:32 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:41 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:41 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:41 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:44 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:44 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:44 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:45 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:45 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:45 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:46 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:47 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:47 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:45:50 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:50 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:45:50 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\partials\users_tbody.php on line 70.
+ 1 APPPATH\Views\admin\partials\users_tbody.php(70): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\partials\\users_tbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/partials/users_tbody', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(137): view('admin/partials/users_tbody', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:46:37 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:46:37 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:46:37 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:50:13 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 12:51:01 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:51:01 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-02 12:51:01 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH\Views\admin\master_data_users.php on line 181.
+ 1 APPPATH\Views\admin\master_data_users.php(181): strtotime(null)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\admin\\master_data_users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/master_data_users', [], true)
+ 5 APPPATH\Controllers\Admin\MasterData.php(155): view('admin/master_data_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\MasterData->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\MasterData))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-02 12:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:51:03 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:51:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 12:54:45 --> Mading Stats: {"mading_aktif":1,"mading_pending":0,"mading_nonaktif":4}
+DEBUG - 2025-10-02 12:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 12:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-02 23:33:36 --> CSRF token verified.
+DEBUG - 2025-10-02 23:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:34:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:37:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-02 23:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

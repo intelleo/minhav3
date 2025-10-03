@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>403 Forbidden</title>
+  </head>
+  <body>
+    <p>Directory access is forbidden.</p>
+  </body>
+</html>
+
+<!-- local storage -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sidebarBtn = document.querySelector(".logo-user-template button");
+    const sidebar = document.querySelector("aside");
+    const mainContent = document.querySelector("main");
+    const imgDekstop = document.querySelector(".logo");
+    const btnDesktop = document.querySelector(".logo-user-template");
+
+    // Mengecek status sidebar dari localStorage saat halaman dimuat
+    const isSidebarCollapsed =
+      localStorage.getItem("sidebarCollapsed") === "true";
+
+    // Menerapkan status sidebar sesuai localStorage
+    if (isSidebarCollapsed) {
+      sidebar.classList.add("sidebar-collapsed", "aside-collapsed");
+      mainContent.classList.add("main-width");
+      imgDekstop.classList.add("hidden");
+      btnDesktop.classList.add("center");
+    }
+
+    sidebarBtn.addEventListener("click", function () {
+      // Toggle classes seperti sebelumnya
+      sidebar.classList.toggle("sidebar-collapsed");
+      sidebar.classList.toggle("aside-collapsed");
+      mainContent.classList.toggle("main-width");
+      imgDekstop.classList.toggle("hidden");
+      btnDesktop.classList.toggle("center");
+
+      // Menyimpan status sidebar ke localStorage
+      const isCollapsed = sidebar.classList.contains("sidebar-collapsed");
+      localStorage.setItem("sidebarCollapsed", isCollapsed);
+    });
+  });
+</script>

@@ -1,0 +1,11 @@
+CRITICAL - 2025-08-14 10:10:12 --> TypeError: CodeIgniter\Filters\Filters::getCleanName(): Argument #1 ($filter) must be of type string, int given, called in C:\laragon\www\minha-ai\system\Filters\Filters.php on line 839
+[Method: GET, Route: api/layanan]
+in SYSTEMPATH\Filters\Filters.php on line 609.
+ 1 SYSTEMPATH\Filters\Filters.php(839): CodeIgniter\Filters\Filters->getCleanName(0)
+ 2 SYSTEMPATH\Filters\Filters.php(488): CodeIgniter\Filters\Filters->processAliasesToClass('after')
+ 3 SYSTEMPATH\Filters\Filters.php(218): CodeIgniter\Filters\Filters->initialize('api/layanan')
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/layanan', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

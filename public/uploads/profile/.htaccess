@@ -1,0 +1,37 @@
+# Security untuk folder profile
+
+# Hanya mengizinkan file gambar untuk foto profil
+
+# Prevent execution of PHP files
+
+<Files "\*.php">
+Order Deny,Allow
+Deny from all
+</Files>
+
+# Prevent access to sensitive files
+
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql|txt)$">
+Order Deny,Allow
+Deny from all
+</FilesMatch>
+
+# Allow only image files for profile pictures
+
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+Order Allow,Deny
+Allow from all
+</FilesMatch>
+
+# Set proper headers for profile images
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+        Header set Cache-Control "public, max-age=86400"
+        Header set Expires "Thu, 31 Dec 2025 23:59:59 GMT"
+    </FilesMatch>
+</IfModule>
+
+# Prevent directory browsing
+
+Options -Indexes

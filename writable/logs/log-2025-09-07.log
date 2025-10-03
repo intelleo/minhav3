@@ -1,0 +1,709 @@
+DEBUG - 2025-09-07 09:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:09:57 --> CSRF token verified.
+DEBUG - 2025-09-07 09:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:10:49 --> CSRF token verified.
+DEBUG - 2025-09-07 09:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:11:02 --> CSRF token verified.
+DEBUG - 2025-09-07 09:11:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:11:11 --> CSRF token verified.
+DEBUG - 2025-09-07 09:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:16:14 --> CSRF token verified.
+DEBUG - 2025-09-07 09:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:16:42 --> CSRF token verified.
+DEBUG - 2025-09-07 09:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:16:52 --> CSRF token verified.
+DEBUG - 2025-09-07 09:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:17:06 --> CSRF token verified.
+DEBUG - 2025-09-07 09:17:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:17:32 --> CSRF token verified.
+DEBUG - 2025-09-07 09:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:24:56 --> CSRF token verified.
+DEBUG - 2025-09-07 09:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:25:04 --> CSRF token verified.
+DEBUG - 2025-09-07 09:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:25:44 --> CSRF token verified.
+DEBUG - 2025-09-07 09:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:28:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:28:32 --> CSRF token verified.
+DEBUG - 2025-09-07 09:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:29:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:40:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:41:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:41:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:43:53 --> CSRF token verified.
+DEBUG - 2025-09-07 09:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:52:12 --> CSRF token verified.
+DEBUG - 2025-09-07 09:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 09:52:16 --> CSRF token verified.
+DEBUG - 2025-09-07 09:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 09:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-07 10:30:32 --> mysqli_sql_exception: Incorrect table definition; there can be only one auto column and it must be defined as a key in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `M...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `M...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `M...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `M...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-09-07-102853_MadingLikes.php(38): CodeIgniter\Database\Forge->createTable('Minha_mading_li...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\MadingLikes->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 10:48:26 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`db_minha`.`minha_mading_comments`, CONSTRAINT `Minha_mading_comments_mading_id_foreign`) in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('TRUNCATE `Minha...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `Minha...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `Minha...')
+#3 C:\laragon\www\minha-ai\system\Database\BaseBuilder.php(2773): CodeIgniter\Database\BaseConnection->query('TRUNCATE `Minha...', NULL, false)
+#4 C:\laragon\www\minha-ai\app\Database\Seeds\MadingSeeder.php(14): CodeIgniter\Database\BaseBuilder->truncate()
+#5 C:\laragon\www\minha-ai\system\Database\Seeder.php(149): App\Database\Seeds\MadingSeeder->run()
+#6 C:\laragon\www\minha-ai\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-09-07 10:53:22 --> mysqli_sql_exception: Unknown column 'user_id' in 'field list' in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `Mi...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Mi...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Mi...')
+#3 C:\laragon\www\minha-ai\system\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Mi...', NULL, false)
+#4 C:\laragon\www\minha-ai\system\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\laragon\www\minha-ai\app\Database\Seeds\MadingSeeder.php(94): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\laragon\www\minha-ai\system\Database\Seeder.php(149): App\Database\Seeds\MadingSeeder->run()
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-09-07 11:22:40 --> mysqli_sql_exception: Can't DROP 'mading_online_admin_id_foreign'; check that column/key exists in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('ALTER TABLE `Mi...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `Mi...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `Mi...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(539): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `Mi...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-08-24-053804_MadingOnline.php(73): CodeIgniter\Database\Forge->dropForeignKey('mading_online', 'mading_online_a...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\MadingOnline->down()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(289): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(86): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 11:22:40 --> mysqli_sql_exception: Duplicate key name 'username' in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `M...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `M...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `M...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `M...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-09-07-110835_AuthAdmin.php(43): CodeIgniter\Database\Forge->createTable('Minha_auth_admi...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\AuthAdmin->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 11:24:40 --> mysqli_sql_exception: Failed to open the referenced table 'minha_auth_admin' in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('ALTER TABLE `Mi...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `Mi...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `Mi...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(1149): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `Mi...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-08-24-053804_MadingOnline.php(67): CodeIgniter\Database\Forge->processIndexes('mading_online')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\MadingOnline->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 11:26:12 --> mysqli_sql_exception: Duplicate key name 'username' in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `M...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `M...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `M...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `M...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-08-20-110835_AuthAdmin.php(43): CodeIgniter\Database\Forge->createTable('Minha_auth_admi...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\AuthAdmin->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 11:27:36 --> mysqli_sql_exception: Duplicate key name 'username' in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `M...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `M...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `M...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `M...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-08-20-110835_AuthAdmin.php(43): CodeIgniter\Database\Forge->createTable('Minha_auth_admi...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\AuthAdmin->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 11:28:30 --> mysqli_sql_exception: Table 'minha_mading_online' already exists in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `M...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `M...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `M...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `M...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-08-24-053804_MadingOnline.php(65): CodeIgniter\Database\Forge->createTable('Minha_mading_on...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\MadingOnline->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 11:28:40 --> mysqli_sql_exception: Table 'minha_mading_online' already exists in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `M...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `M...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `M...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `M...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-08-24-053804_MadingOnline.php(65): CodeIgniter\Database\Forge->createTable('Minha_mading_on...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\MadingOnline->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-09-07 11:30:27 --> mysqli_sql_exception: Table 'minha_mading_online' already exists in C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\minha-ai\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `M...', 0)
+#1 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `M...')
+#2 C:\laragon\www\minha-ai\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `M...')
+#3 C:\laragon\www\minha-ai\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `M...')
+#4 C:\laragon\www\minha-ai\app\Database\Migrations\2025-08-24-053804_MadingOnline.php(65): CodeIgniter\Database\Forge->createTable('Minha_mading_on...')
+#5 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(876): App\Database\Migrations\MadingOnline->up()
+#6 C:\laragon\www\minha-ai\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\laragon\www\minha-ai\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\laragon\www\minha-ai\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\laragon\www\minha-ai\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\laragon\www\minha-ai\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\laragon\www\minha-ai\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\laragon\www\minha-ai\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\laragon\www\minha-ai\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\laragon\www\minha-ai\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+DEBUG - 2025-09-07 11:38:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:48:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 11:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 12:02:14 --> Error: Call to undefined function mading_category_color()
+[Method: GET, Route: Dashboard]
+in APPPATH\Views\user\user_dashboard.php on line 97.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 4 APPPATH\Controllers\UserController\UCDashboard.php(16): view('user/user_dashboard', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCDashboard->indexHome()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCDashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 12:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 12:23:35 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\MadingModel::getAllWithAdmin
+[Method: GET, Route: Mading]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\UserController\UCMading.php(19): CodeIgniter\Model->__call('getAllWithAdmin', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->indexMading()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 12:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 12:25:49 --> ErrorException: Undefined variable $today
+[Method: GET, Route: Mading]
+in APPPATH\Models\MadingModel.php on line 35.
+ 1 APPPATH\Models\MadingModel.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $today', 'C:\\laragon\\www\\minha-ai\\app\\Models\\MadingModel.php', 35)
+ 2 APPPATH\Controllers\UserController\UCMading.php(19): App\Models\MadingModel->getAllWithAdmin()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->indexMading()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 12:26:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 12:28:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 15:17:19 --> CSRF token verified.
+DEBUG - 2025-09-07 15:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 15:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:08:33 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\MadingModel::getWithAdmin
+[Method: GET, Route: Mading/detail/1]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\UserController\UCMading.php(29): CodeIgniter\Model->__call('getWithAdmin', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:23:14 --> CSRF token verified.
+DEBUG - 2025-09-07 16:23:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:23:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:23:14 --> ErrorException: Undefined variable $commentModel
+[Method: GET, Route: Mading/detail/1]
+in APPPATH\Views\user\user_mading_detail.php on line 122.
+ 1 APPPATH\Views\user\user_mading_detail.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commentModel', 'C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php', 122)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_mading_detail', [], true)
+ 5 APPPATH\Controllers\UserController\UCMading.php(46): view('user/user_mading_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:26:47 --> ErrorException: Undefined variable $commentModel
+[Method: GET, Route: Mading/detail/1]
+in APPPATH\Views\user\user_mading_detail.php on line 123.
+ 1 APPPATH\Views\user\user_mading_detail.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commentModel', 'C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php', 123)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_mading_detail', [], true)
+ 5 APPPATH\Controllers\UserController\UCMading.php(46): view('user/user_mading_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:26:49 --> ErrorException: Undefined variable $commentModel
+[Method: GET, Route: Mading/detail/1]
+in APPPATH\Views\user\user_mading_detail.php on line 123.
+ 1 APPPATH\Views\user\user_mading_detail.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commentModel', 'C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php', 123)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_mading_detail', [], true)
+ 5 APPPATH\Controllers\UserController\UCMading.php(46): view('user/user_mading_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:26:52 --> ErrorException: Undefined variable $commentModel
+[Method: GET, Route: Mading/detail/1]
+in APPPATH\Views\user\user_mading_detail.php on line 123.
+ 1 APPPATH\Views\user\user_mading_detail.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commentModel', 'C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php', 123)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_mading_detail', [], true)
+ 5 APPPATH\Controllers\UserController\UCMading.php(46): view('user/user_mading_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:27:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:27:41 --> ErrorException: Undefined variable $commentModel
+[Method: GET, Route: Mading/detail/1]
+in APPPATH\Views\user\user_mading_detail.php on line 122.
+ 1 APPPATH\Views\user\user_mading_detail.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commentModel', 'C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php', 122)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_mading_detail', [], true)
+ 5 APPPATH\Controllers\UserController\UCMading.php(46): view('user/user_mading_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:28:01 --> CSRF token verified.
+DEBUG - 2025-09-07 16:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:28:01 --> ErrorException: Undefined variable $commentModel
+[Method: GET, Route: Mading/detail/2]
+in APPPATH\Views\user\user_mading_detail.php on line 122.
+ 1 APPPATH\Views\user\user_mading_detail.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commentModel', 'C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php', 122)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\minha-ai\\app\\Views\\user\\user_mading_detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_mading_detail', [], true)
+ 5 APPPATH\Controllers\UserController\UCMading.php(46): view('user/user_mading_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:30:24 --> CSRF token verified.
+DEBUG - 2025-09-07 16:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:30:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:30:41 --> CSRF token verified.
+DEBUG - 2025-09-07 16:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:41:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-07 16:41:55 --> Error: Call to undefined function highlight_mentions()
+[Method: GET, Route: Mading/detail/1]
+in APPPATH\Views\user\user_mading_detail.php on line 137.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/user_mading_detail', [], true)
+ 4 APPPATH\Controllers\UserController\UCMading.php(47): view('user/user_mading_detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController\UCMading->detail('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController\UCMading))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-07 16:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:43:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:44:11 --> CSRF token verified.
+DEBUG - 2025-09-07 16:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:44:35 --> CSRF token verified.
+DEBUG - 2025-09-07 16:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:45:24 --> CSRF token verified.
+DEBUG - 2025-09-07 16:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:45:58 --> CSRF token verified.
+DEBUG - 2025-09-07 16:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:48:25 --> CSRF token verified.
+DEBUG - 2025-09-07 16:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:48:48 --> CSRF token verified.
+DEBUG - 2025-09-07 16:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:48:49 --> CSRF token verified.
+DEBUG - 2025-09-07 16:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:49:01 --> CSRF token verified.
+DEBUG - 2025-09-07 16:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:49:15 --> CSRF token verified.
+DEBUG - 2025-09-07 16:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:49:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:50:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:50:57 --> CSRF token verified.
+DEBUG - 2025-09-07 16:50:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:50:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:51:26 --> CSRF token verified.
+DEBUG - 2025-09-07 16:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 16:52:09 --> CSRF token verified.
+DEBUG - 2025-09-07 16:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 16:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 17:03:09 --> CSRF token verified.
+DEBUG - 2025-09-07 17:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 17:03:20 --> CSRF token verified.
+DEBUG - 2025-09-07 17:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:05:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 17:06:12 --> CSRF token verified.
+DEBUG - 2025-09-07 17:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 17:06:52 --> CSRF token verified.
+DEBUG - 2025-09-07 17:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-07 17:07:30 --> CSRF token verified.
+DEBUG - 2025-09-07 17:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-07 17:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

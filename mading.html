@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Minha - Smart Assistant</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #3B81F6;
+            --secondary-color: #4F46E5;
+            --accent-color: #10B981;
+            --purple-color: #8B5CF6;
+            --orange-color: #F97316;
+            --light-color: #F9FAFB;
+            --dark-color: #1F2937;
+            --text-color: #374151;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--purple-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo i {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle:hover {
+            color: var(--purple-color);
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: var(--shadow);
+        }
+        
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Hero Section with Parallax */
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--purple-color), #7C3AED);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Guide Section */
+        .guide-section {
+            flex: 1;
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title p {
+            color: #6B7280;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Guide Container with Sidebar */
+        .guide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .guide-sidebar {
+            flex: 1;
+            min-width: 250px;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .sidebar-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .sidebar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .sidebar-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sidebar-title i {
+            color: var(--purple-color);
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--purple-color);
+        }
+        
+        .guide-content {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        .guide-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            transition: var(--transition);
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .guide-card h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .guide-card h3 i {
+            color: var(--purple-color);
+            font-size: 1.5rem;
+        }
+        
+        .guide-card p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #4B5563;
+            font-size: 1.05rem;
+        }
+        
+        .guide-card ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .guide-card li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+        
+        .guide-card img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .guide-card code {
+            background: #F3F4F6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+        
+        .guide-card .highlight-box {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid var(--purple-color);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        .guide-card .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        /* Steps Container */
+        .steps-container {
+            counter-reset: step;
+            margin: 2rem 0;
+        }
+        
+        .step-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            counter-increment: step;
+            min-width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--purple-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .step-number::before {
+            content: counter(step);
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.75rem;
+        }
+        
+        .step-content p {
+            color: #4B5563;
+            line-height: 1.7;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        
+        .feature-item {
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid #E5E7EB;
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .feature-item:hover {
+            border-color: var(--purple-color);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--purple-color);
+            font-size: 1.5rem;
+        }
+        
+        .feature-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-item p {
+            color: #6B7280;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--purple-color), #7C3AED);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--purple-color);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin: 4rem 0;
+        }
+        
+        .faq-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-title h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: #F9FAFB;
+        }
+        
+        .faq-question i {
+            color: var(--purple-color);
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            color: #4B5563;
+            line-height: 1.7;
+        }
+        
+        /* Library Section */
+        .library-section {
+            margin: 4rem 0;
+        }
+        
+        .library-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .library-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .search-box {
+            position: relative;
+            width: 300px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            border-color: var(--purple-color);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6B7280;
+        }
+        
+        .category-filter {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 0.5rem 1.25rem;
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--purple-color);
+            color: white;
+            border-color: var(--purple-color);
+        }
+        
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .library-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .library-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .library-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .library-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--purple-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .library-content {
+            padding: 1.5rem;
+        }
+        
+        .library-title-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .library-description {
+            color: #6B7280;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .library-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: #9CA3AF;
+        }
+        
+        .library-date {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .library-link {
+            color: var(--purple-color);
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: var(--transition);
+        }
+        
+        .library-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid #E5E7EB;
+            position: relative;
+        }
+        
+        .modal-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #6B7280;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--dark-color);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-description {
+            line-height: 1.7;
+            color: #4B5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .modal-category {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .modal-category span {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--purple-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .modal-date {
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .modal-btn {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .modal-btn-primary {
+            background: var(--purple-color);
+            color: white;
+        }
+        
+        .modal-btn-primary:hover {
+            background: #7C3AED;
+        }
+        
+        .modal-btn-secondary {
+            background: #F3F4F6;
+            color: var(--dark-color);
+        }
+        
+        .modal-btn-secondary:hover {
+            background: #E5E7EB;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--purple-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #7C3AED;
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #D1D5DB;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #374151;
+            font-size: 0.875rem;
+            color: #9CA3AF;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .guide-container {
+                flex-direction: column;
+            }
+            
+            .guide-sidebar {
+                position: static;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .library-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>Smart Assistant</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="profile.html">Profil</a></li>
+                    </ul>
+                </nav>
+                <div class="user-menu">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="user-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Panduan Minha Verse</h2>
+                <p>Dunia virtual pribadi Anda di Smart Assistant. Pelajari cara mengakses, menyesuaikan, dan memanfaatkan semua fitur Minha Verse untuk pengalaman yang lebih personal.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="guide-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Itu Minha Verse?</h2>
+                <p>Minha Verse adalah dunia virtual pribadi di dalam Smart Assistant yang dirancang khusus untuk Anda</p>
+            </div>
+            
+            <div class="guide-container">
+                <div class="guide-sidebar">
+                    <div class="sidebar-card" data-aos="fade-right">
+                        <h3 class="sidebar-title">
+                            <i class="fas fa-list"></i>
+                            Daftar Isi
+                        </h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#intro" class="active">Pengantar</a></li>
+                            <li><a href="#access">Cara Mengakses</a></li>
+                            <li><a href="#features">Fitur Utama</a></li>
+                            <li><a href="#customize">Menyesuaikan</a></li>
+                            <li><a href="#advanced">Fitur Lanjutan</a></li>
+                            <li><a href="#library">Daftar Pustaka</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card" data-aos="fade-right" data-aos-delay="100">
+                        <h3 class="sidebar-title">
+                            <i class="fas fa-info-circle"></i>
+                            Info Cepat
+                        </h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#">Status: <span style="color: var(--accent-color);">Aktif</span></a></li>
+                            <li><a href="#">Versi: 2.1.0</a></li>
+                            <li><a href="#">Update Terakhir: 15 Nov 2023</a></li>
+                            <li><a href="#">Kompatibilitas: Semua Perangkat</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="guide-content">
+                    <div class="guide-card" id="intro" data-aos="fade-up">
+                        <h3><i class="fas fa-book-open"></i> Pengantar Minha Verse</h3>
+                        <p>Minha Verse adalah fitur unggulan dari Smart Assistant yang memungkinkan Anda untuk memiliki dunia virtual pribadi. Di dalam Minha Verse, Anda dapat:</p>
+                        
+                        <ul>
+                            <li>Membuat dan mengelola avatar digital pribadi</li>
+                            <li>Menyesuaikan lingkungan virtual sesuai preferensi</li>
+                            <li>Menyimpan dan mengatur data pribadi dengan aman</li>
+                            <li>Berinteraksi dengan asisten AI dalam konteks yang lebih personal</li>
+                            <li>Mengakses fitur-fitur eksklusif yang tidak tersedia di luar Minha Verse</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <p>Minha Verse dirancang untuk memberikan pengalaman yang lebih personal dan aman bagi pengguna Smart Assistant. Semua data dan preferensi Anda dienkripsi dan disimpan dengan aman.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="guide-card" id="access" data-aos="fade-up" data-aos-delay="100">
+                        <h3><i class="fas fa-sign-in-alt"></i> Cara Mengakses Minha Verse</h3>
+                        <p>Untuk mengakses Minha Verse, ikuti langkah-langkah berikut:</p>
+                        
+                        <div class="steps-container">
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Login ke Smart Assistant</h4>
+                                    <p>Pastikan Anda sudah login ke akun Smart Assistant Anda. Jika belum, kunjungi halaman login dan masukkan kredensial Anda.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Buka Dashboard</h4>
+                                    <p>Dari halaman utama, navigasikan ke Dashboard dengan mengklik menu <code>Dashboard</code> di bagian atas halaman.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Klik Card Minha Verse</h4>
+                                    <p>Di bagian Akses Cepat, temukan card dengan judul <strong>Minha Verse</strong> dan klik tombol <strong>Masuk</strong> atau card tersebut.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="500">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Tunggu Proses Loading</h4>
+                                    <p>Sistem akan memproses permintaan Anda dan membuka Minha Verse. Proses ini biasanya memakan waktu 3-5 detik tergantung kecepatan internet Anda.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Minha Verse Interface" data-aos="fade-up" data-aos-delay="600">
+                    </div>
+                    
+                    <div class="guide-card" id="features" data-aos="fade-up" data-aos-delay="200">
+                        <h3><i class="fas fa-star"></i> Fitur Utama Minha Verse</h3>
+                        <p>Minha Verse dilengkapi dengan berbagai fitur canggih untuk meningkatkan pengalaman Anda:</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <h4>Avatar Pribadi</h4>
+                                <p>Buat dan kustomisasi avatar digital yang mewakili Anda di dunia virtual.</p>
+                            </div>
+                            
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="feature-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h4>Tema Kustom</h4>
+                                <p>Pilih dari berbagai tema atau buat tema sendiri untuk lingkungan Minha Verse Anda.</p>
+                            </div>
+                            
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="feature-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <h4>Keamanan Tingkat Tinggi</h4>
+                                <p>Data Anda dienkripsi dengan standar keamanan tertinggi untuk melindungi privasi.</p>
+                            </div>
+                            
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="600">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <h4>Penyimpanan Cloud</h4>
+                                <p>Simpan file, dokumen, dan data penting Anda dengan aman di cloud.</p>
+                            </div>
+                            
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="700">
+                                <div class="feature-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4>Asisten AI Pribadi</h4>
+                                <p>Asisten AI yang telah dipersonalisasi sesuai dengan preferensi Anda.</p>
+                            </div>
+                            
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="800">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h4>Integrasi API</h4>
+                                <p>Integrasikan Minha Verse dengan aplikasi dan layanan lain yang Anda gunakan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="guide-card" id="customize" data-aos="fade-up" data-aos-delay="300">
+                        <h3><i class="fas fa-sliders-h"></i> Menyesuaikan Minha Verse</h3>
+                        <p>Salah satu keunggulan Minha Verse adalah kemampuan untuk menyesuaikan pengalaman sesuai keinginan Anda. Berikut cara melakukannya:</p>
+                        
+                        <div class="steps-container">
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Akses Pengaturan</h4>
+                                    <p>Di dalam Minha Verse, klik ikon <i class="fas fa-cog"></i> di pojok kanan atas untuk membuka menu pengaturan.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="500">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Pilih Kategori</h4>
+                                    <p>Pilih kategori yang ingin Anda sesuaikan: Profil, Tampilan, Privasi, atau Notifikasi.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="600">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Lakukan Perubahan</h4>
+                                    <p>Lakukan perubahan sesuai keinginan Anda. Anda dapat mengubah avatar, warna tema, layout, dan banyak lagi.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item" data-aos="fade-up" data-aos-delay="700">
+                                <div class="step-number"></div>
+                                <div class="step-content">
+                                    <h4>Simpan Perubahan</h4>
+                                    <p>Jangan lupa untuk menyimpan perubahan Anda dengan mengklik tombol <strong>Simpan</strong> di bagian bawah halaman.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box" data-aos="fade-up" data-aos-delay="800">
+                            <p><strong>Tip:</strong> Anda dapat membuat beberapa profil dengan konfigurasi berbeda dan beralih di antara mereka sesuai kebutuhan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="guide-card" id="advanced" data-aos="fade-up" data-aos-delay="400">
+                        <h3><i class="fas fa-rocket"></i> Fitur Lanjutan</h3>
+                        <p>Untuk pengguna yang lebih berpengalaman, Minha Verse menawarkan fitur-fitur lanjutan:</p>
+                        
+                        <ul>
+                            <li><strong>API Integration:</strong> Integrasi Minha Verse dengan aplikasi eksternal melalui API</li>
+                            <li><strong>Automation:</strong> Buat otomatisasi untuk tugas-tugas rutin di dalam Minha Verse</li>
+                            <li><strong>Multi-User Collaboration:</strong> Ajak tim atau kolega Anda untuk berkolaborasi di ruang Minha Verse bersama</li>
+                            <li><strong>Advanced Analytics:</strong> Dapatkan insight mendalam tentang aktivitas dan pola penggunaan Anda</li>
+                            <li><strong>Custom Scripts:</strong> Jalankan skrip kustom untuk memperluas fungsionalitas Minha Verse</li>
+                        </ul>
+                        
+                        <p>Untuk mengakses fitur-fitur ini, Anda perlu mengaktifkan mode <strong>Advanced</strong> di pengaturan Minha Verse.</p>
+                    </div>
+                    
+                    <div class="library-section" id="library" data-aos="fade-up" data-aos-delay="500">
+                        <div class="library-header">
+                            <h3 class="library-title">Daftar Pustaka</h3>
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Cari pustaka..." id="searchInput">
+                            </div>
+                        </div>
+                        
+                        <div class="category-filter">
+                            <button class="category-btn active" data-category="all">Semua</button>
+                            <button class="category-btn" data-category="tutorial">Tutorial</button>
+                            <button class="category-btn" data-category="documentation">Dokumentasi</button>
+                            <button class="category-btn" data-category="video">Video</button>
+                            <button class="category-btn" data-category="article">Artikel</button>
+                        </div>
+                        
+                        <div class="library-grid" id="libraryGrid">
+                            <!-- Library items will be dynamically added here -->
+                        </div>
+                    </div>
+                    
+                    <div class="faq-section" id="faq" data-aos="fade-up" data-aos-delay="600">
+                        <div class="faq-title">
+                            <h3>Pertanyaan Umum (FAQ)</h3>
+                        </div>
+                        
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                            <div class="faq-question">
+                                <span>Apakah Minha Verse gratis digunakan?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Ya, Minha Verse tersedia secara gratis untuk semua pengguna Smart Assistant. Namun, ada fitur-fitur premium yang dapat diakses dengan berlangganan.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="800">
+                            <div class="faq-question">
+                                <span>Bagaimana cara memulihkan akses jika lupa password?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Klik link <strong>Lupa Password</strong> di halaman login. Anda akan menerima email dengan instruksi untuk mereset password Minha Verse Anda.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="900">
+                            <div class="faq-question">
+                                <span>Apakah data saya aman di Minha Verse?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Tentu saja. Semua data di Minha Verse dienkripsi dengan standar keamanan tertinggi dan disimpan di server yang aman. Kami tidak membagikan data pribadi Anda kepada pihak ketiga tanpa izin.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="1000">
+                            <div class="faq-question">
+                                <span>Bisakah saya mengakses Minha Verse dari perangkat mobile?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Ya, Minha Verse dapat diakses dari berbagai perangkat termasuk smartphone, tablet, dan desktop. Pastikan Anda memiliki koneksi internet yang stabil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section" data-aos="fade-up" data-aos-delay="1100">
+                        <div class="cta-content">
+                            <h3>Siap Memulai Petualangan di Minha Verse?</h3>
+                            <p>Bergabunglah dengan ribuan pengguna yang telah merasakan pengalaman personal dan aman di Minha Verse.</p>
+                            <a href="#" class="btn">Masuk ke Minha Verse Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Tentang Kami</h4>
+                    <p>Kami menyediakan solusi AI berbasis chatbot untuk membantu bisnis dan individu meningkatkan produktivitas.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Link Cepat</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="profile.html">Profil</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Chatbot Bisnis</a></li>
+                        <li><a href="#">Asisten Pribadi</a></li>
+                        <li><a href="#">Integrasi API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Hubungi Kami</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                        <li><i class="fas fa-phone"></i> +62 21 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@smartassistant.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Smart Assistant. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal -->
+    <div class="modal" id="libraryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Judul Pustaka</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image" id="modalImage"></div>
+                <p class="modal-description" id="modalDescription">Deskripsi pustaka akan muncul di sini.</p>
+                <div class="modal-meta">
+                    <div class="modal-category">
+                        <span id="modalCategory">Kategori</span>
+                    </div>
+                    <div class="modal-date" id="modalDate">Tanggal</div>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn modal-btn-primary" id="modalView">Lihat Selengkapnya</button>
+                    <button class="modal-btn modal-btn-secondary" id="modalDownload">Unduh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Library Data
+        const libraryData = [
+            {
+                id: 1,
+                title: "Panduan Lengkap Minha Verse",
+                description: "Panduan komprehensif untuk memahami dan menggunakan semua fitur Minha Verse.",
+                category: "tutorial",
+                date: "15 Nov 2023",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                link: "#"
+            },
+            {
+                id: 2,
+                title: "Dokumentasi API Minha Verse",
+                description: "Dokumentasi teknis lengkap untuk integrasi API Minha Verse dengan aplikasi lain.",
+                category: "documentation",
+                date: "10 Nov 2023",
+                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                link: "#"
+            },
+            {
+                id: 3,
+                title: "Tutorial Video: Membuat Avatar Pribadi",
+                description: "Video tutorial langkah demi langkah untuk membuat dan menyesuaikan avatar di Minha Verse.",
+                category: "video",
+                date: "5 Nov 2023",
+                image: "https://images.unsplash.com/photo-1574717024453-354056aafa98?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                link: "#"
+            },
+            {
+                id: 4,
+                title: "Artikel: Keamanan Data di Minha Verse",
+                description: "Artikel mendalam tentang bagaimana Minha Verse melindungi data pribadi pengguna.",
+                category: "article",
+                date: "1 Nov 2023",
+                image: "https://images.unsplash.com/photo-1550745165-9bc0b2527269?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                link: "#"
+            },
+            {
+                id: 5,
+                title: "Tutorial: Integrasi Minha Verse dengan Slack",
+                description: "Panduan untuk mengintegrasikan Minha Verse dengan Slack untuk kolaborasi tim.",
+                category: "tutorial",
+                date: "28 Okt 2023",
+                image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                link: "#"
+            },
+            {
+                id: 6,
+                title: "Dokumentasi: Automation di Minha Verse",
+                description: "Panduan untuk membuat otomatisasi tugas di dalam Minha Verse.",
+                category: "documentation",
+                date: "25 Okt 2023",
+                image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                link: "#"
+            }
+        ];
+        
+        // DOM Elements
+        const loadingScreen = document.getElementById('loadingScreen');
+        const searchInput = document.getElementById('searchInput');
+        const libraryGrid = document.getElementById('libraryGrid');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const modal = document.getElementById('libraryModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalCategory = document.getElementById('modalCategory');
+        const modalDate = document.getElementById('modalDate');
+        const modalView = document.getElementById('modalView');
+        const modalDownload = document.getElementById('modalDownload');
+        const backToTop = document.getElementById('backToTop');
+        const themeToggle = document.getElementById('themeToggle');
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+        
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Hide loading screen when page is loaded
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 500);
+        });
+        
+        // Render library items
+        function renderLibraryItems(items) {
+            libraryGrid.innerHTML = '';
+            
+            items.forEach(item => {
+                const libraryCard = document.createElement('div');
+                libraryCard.className = 'library-card';
+                libraryCard.setAttribute('data-id', item.id);
+                
+                libraryCard.innerHTML = `
+                    <div class="library-image" style="background-image: url('${item.image}')">
+                        <div class="library-category">${getCategoryName(item.category)}</div>
+                    </div>
+                    <div class="library-content">
+                        <h4 class="library-title-text">${item.title}</h4>
+                        <p class="library-description">${item.description}</p>
+                        <div class="library-meta">
+                            <div class="library-date">
+                                <i class="far fa-calendar"></i>
+                                <span>${item.date}</span>
+                            </div>
+                            <a href="${item.link}" class="library-link">
+                                Lihat Detail <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                libraryCard.addEventListener('click', () => openModal(item));
+                libraryGrid.appendChild(libraryCard);
+            });
+        }
+        
+        // Get category name
+        function getCategoryName(category) {
+            const categoryNames = {
+                'tutorial': 'Tutorial',
+                'documentation': 'Dokumentasi',
+                'video': 'Video',
+                'article': 'Artikel'
+            };
+            
+            return categoryNames[category] || category;
+        }
+        
+        // Filter library items by category
+        function filterByCategory(category) {
+            if (category === 'all') {
+                renderLibraryItems(libraryData);
+            } else {
+                const filteredItems = libraryData.filter(item => item.category === category);
+                renderLibraryItems(filteredItems);
+            }
+        }
+        
+        // Search library items
+        function searchLibraryItems(query) {
+            const filteredItems = libraryData.filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase()) || 
+                item.description.toLowerCase().includes(query.toLowerCase())
+            );
+            renderLibraryItems(filteredItems);
+        }
+        
+        // Open modal with library item details
+        function openModal(item) {
+            modalTitle.textContent = item.title;
+            modalImage.style.backgroundImage = `url('${item.image}')`;
+            modalDescription.textContent = item.description;
+            modalCategory.textContent = getCategoryName(item.category);
+            modalDate.textContent = item.date;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close modal
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Show/hide back to top button
+        function toggleBackToTop() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        }
+        
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+        
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render initial library items
+            renderLibraryItems(libraryData);
+            
+            // Category filter
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Filter items
+                    filterByCategory(btn.getAttribute('data-category'));
+                });
+            });
+            
+            // Search input
+            searchInput.addEventListener('input', (e) => {
+                searchLibraryItems(e.target.value);
+            });
+            
+            // Modal events
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            modalView.addEventListener('click', () => {
+                showNotification('Membuka pustaka...');
+            });
+            
+            modalDownload.addEventListener('click', () => {
+                showNotification('Mengunduh pustaka...');
+            });
+            
+            // Back to top
+            window.addEventListener('scroll', toggleBackToTop);
+            backToTop.addEventListener('click', scrollToTop);
+            
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleDarkMode);
+            
+            // FAQ Accordion
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    // Toggle active class
+                    answer.classList.toggle('active');
+                    
+                    // Rotate icon
+                    if (answer.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+            
+            // Sidebar Menu Active State
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Remove active class from all links
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    link.classList.add('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add click event listener to user avatar
+            document.querySelector('.user-avatar').addEventListener('click', function() {
+                window.location.href = 'profile.html';
+            });
+        });
+        
+        // Show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#3B81F6';
+            notification.style.color = 'white';
+            notification.style.padding = '12px 20px';
+            notification.style.borderRadius = '8px';
+            notification.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            notification.style.zIndex = '1001';
+            notification.textContent = message;
+            
+            // Add to body
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 3000);
+        }
+    </script>
+    
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+---
+description: Rules untuk pengembangan aplikasi Minha-AI menggunakan CodeIgniter 4
+globs: ["**/*.php", "**/*.js", "**/*.css", "**/*.html", "**/*.md"]
+alwaysApply: true
+---
+
+# Rules untuk Aplikasi Minha-AI
+
+## Bahasa dan Komunikasi
+
+- Selalu gunakan bahasa Indonesia dalam semua komunikasi dan dokumentasi
+- Berikan penjelasan yang jelas dan mudah dipahami
+- Gunakan terminologi teknis yang tepat dalam bahasa Indonesia
+
+## Standar Kode PHP (CodeIgniter 4)
+
+- Ikuti PSR-12 coding standards untuk PHP
+- Gunakan namespace yang sesuai dengan struktur CodeIgniter 4
+- Implementasikan proper error handling dengan try-catch blocks
+- Gunakan type hints untuk parameter dan return values
+- Terapkan dependency injection pattern
+
+## Struktur Model dan Database
+
+- Gunakan Eloquent-style relationships untuk model relationships
+- Implementasikan proper validation rules di model
+- Gunakan database transactions untuk operasi yang kompleks
+- Terapkan soft deletes untuk data yang perlu dipertahankan
+- Gunakan database indexing untuk optimasi query
+
+## Controller dan Routing
+
+- Implementasikan proper HTTP status codes
+- Gunakan middleware/filters untuk authentication dan authorization
+- Terapkan rate limiting untuk API endpoints
+- Implementasikan proper input validation dan sanitization
+- Gunakan response formatting yang konsisten
+
+## Security Best Practices
+
+- Implementasikan CSRF protection
+- Gunakan proper password hashing (bcrypt/argon2)
+- Terapkan input validation dan sanitization
+- Implementasikan proper session management
+- Gunakan HTTPS untuk production environment
+
+## Performance Optimization
+
+- Implementasikan caching strategy (Redis/Memcached)
+- Optimasi database queries dengan proper indexing
+- Gunakan lazy loading untuk relationships
+- Implementasikan pagination untuk large datasets
+- Terapkan asset minification dan compression
+
+## Testing dan Quality Assurance
+
+- Tulis unit tests untuk semua business logic
+- Implementasikan integration tests untuk API endpoints
+- Gunakan code coverage tools untuk memastikan test coverage
+- Terapkan static analysis tools (PHPStan/Psalm)
+- Implementasikan automated testing dalam CI/CD pipeline
+
+## Documentation dan Comments
+
+- Tulis dokumentasi API yang lengkap
+- Berikan inline comments untuk logic yang kompleks
+- Buat README yang informatif dengan setup instructions
+- Dokumentasikan semua custom functions dan methods
+- Gunakan PHPDoc untuk semua public methods
+
+## Frontend Development
+
+- Gunakan semantic HTML5 elements
+- Implementasikan responsive design dengan mobile-first approach
+- Terapkan accessibility standards (WCAG 2.1)
+- Gunakan modern CSS practices (Flexbox/Grid)
+- Implementasikan progressive enhancement
+
+## Error Handling dan Logging
+
+- Implementasikan comprehensive error logging
+- Gunakan structured logging format
+- Terapkan proper exception handling
+- Implementasikan user-friendly error messages
+- Gunakan monitoring tools untuk production errors
+
+## Database Management
+
+- Gunakan migrations untuk schema changes
+- Implementasikan database seeding untuk test data
+- Terapkan proper foreign key constraints
+- Gunakan database backup strategies
+- Implementasikan database optimization queries
+
+## API Development
+
+- Implementasikan RESTful API design principles
+- Gunakan proper HTTP methods (GET, POST, PUT, DELETE)
+- Terapkan API versioning strategy
+- Implementasikan proper API documentation (OpenAPI/Swagger)
+- Gunakan API rate limiting dan throttling
+
+## Code Organization
+
+- Gunakan proper folder structure sesuai CodeIgniter 4 conventions
+- Implementasikan service layer pattern untuk business logic
+- Terapkan repository pattern untuk data access
+- Gunakan dependency injection container
+- Implementasikan proper autoloading
+
+## Deployment dan DevOps
+
+- Implementasikan environment-specific configurations
+- Gunakan proper environment variables management
+- Terapkan automated deployment strategies
+- Implementasikan proper backup and recovery procedures
+- Gunakan monitoring dan alerting systems
+
+## Database Indexing Strategy
+
+- Gunakan composite index untuk query dengan multiple WHERE conditions
+- Implementasikan single column index untuk sorting dan filtering
+- Terapkan full-text index untuk pencarian teks yang kompleks
+- Gunakan foreign key index untuk relationship optimization
+- Monitor dan optimize index usage secara berkala
+
+## Mading System Specific Rules
+
+- Implementasikan proper status management (pending, aktif, nonaktif)
+- Gunakan category-based filtering dengan index optimization
+- Terapkan proper comment threading dengan parent_id relationships
+- Implementasikan like system dengan proper indexing
+- Gunakan view tracking dengan performance optimization
+
+## Layanan Informasi Rules
+
+- Implementasikan kategori-based organization
+- Gunakan proper search functionality dengan full-text indexing
+- Terapkan proper file upload handling
+- Implementasikan proper content management
+- Gunakan proper date range filtering

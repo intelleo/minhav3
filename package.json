@@ -1,0 +1,21 @@
+{
+  "name": "minha-ai",
+  "version": "1.0.0",
+  "description": "CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.\r More information can be found at the [official site](https://codeigniter.com).",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build-css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./public/css/output.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "axios": "^1.11.0",
+    "tailwindcss": "^4.1.12"
+  }
+}
