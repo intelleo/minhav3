@@ -63,6 +63,23 @@ class MasterData extends BaseController
     $status = $this->request->getGet('status');
     $jurusan = $this->request->getGet('jurusan');
     $page = $this->request->getGet('page') ?? 1;
+    $sortBy = $this->request->getGet('sortBy') ?: 'created_at';
+    $sortDir = strtolower($this->request->getGet('sortDir') ?: 'DESC');
+    $allowedSort = ['id', 'npm', 'jurusan', 'status', 'created_at'];
+    // Map kolom ke tabel yang benar untuk menghindari ambiguitas
+    $columnMap = [
+      'id' => 'user_auth.id',
+      'npm' => 'user_auth.npm',
+      'jurusan' => 'user_auth.jurusan',
+      'status' => 'user_auth.status',
+      'created_at' => 'user_auth.created_at',
+    ];
+    if (!in_array($sortBy, $allowedSort, true)) {
+      $sortBy = 'created_at';
+    }
+    if (!in_array($sortDir, ['asc', 'desc'], true)) {
+      $sortDir = 'DESC';
+    }
     $perPage = 10;
 
     log_message('debug', 'Pagination params - Page: ' . $page . ', Search: ' . $search . ', Status: ' . $status . ', Jurusan: ' . $jurusan);
@@ -109,7 +126,8 @@ class MasterData extends BaseController
     }
 
     // Get users with pagination
-    $users = $dataBuilder->orderBy('created_at', 'DESC')
+    $orderCol = $columnMap[$sortBy] ?? 'user_auth.created_at';
+    $users = $dataBuilder->orderBy($orderCol, $sortDir)
       ->limit($perPage, ($page - 1) * $perPage)
       ->get()
       ->getResultArray();
@@ -158,6 +176,9 @@ class MasterData extends BaseController
     // Check if AJAX request for table updates (always return JSON for AJAX pagination)
     if ($this->request->isAJAX()) {
       log_message('debug', 'Returning AJAX JSON response for pagination');
+      // Prevent caching of dynamic JSON responses
+      $this->response->setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+      $this->response->setHeader('Pragma', 'no-cache');
 
       // Return only tbody content for AJAX table updates
       $tbodyHtml = view('admin/partials/users_tbody', [
@@ -295,51 +316,121 @@ class MasterData extends BaseController
   public function updateUserStatus()
   {
     if (!$this->request->isAJAX()) {
-      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request']);
-    }
-
-    // CSRF validation
-    if (!$this->request->getPost('csrf_test_name') || !hash_equals(csrf_hash(), $this->request->getPost('csrf_test_name'))) {
-      return $this->response->setJSON(['success' => false, 'message' => 'CSRF token mismatch']);
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request', 'csrf' => csrf_hash()]);
     }
 
     $userId = $this->request->getPost('user_id');
     $status = $this->request->getPost('status');
 
     if (!$userId || !in_array($status, ['aktif', 'nonaktif', 'pending'])) {
-      return $this->response->setJSON(['success' => false, 'message' => 'Invalid parameters']);
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid parameters', 'csrf' => csrf_hash()]);
     }
 
     try {
       $this->userModel->update($userId, ['status' => $status]);
-      return $this->response->setJSON(['success' => true, 'message' => 'Status updated successfully']);
+      return $this->response->setJSON(['success' => true, 'message' => 'Status updated successfully', 'csrf' => csrf_hash()]);
     } catch (\Exception $e) {
-      return $this->response->setJSON(['success' => false, 'message' => 'Failed to update status']);
+      return $this->response->setJSON(['success' => false, 'message' => 'Failed to update status', 'csrf' => csrf_hash()]);
+    }
+  }
+
+  public function updateUser()
+  {
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request', 'csrf' => csrf_hash()]);
+    }
+
+    $userId = $this->request->getPost('user_id');
+    $namaLengkap = $this->request->getPost('nama_lengkap');
+    $npm = $this->request->getPost('npm');
+    $jurusan = $this->request->getPost('jurusan');
+    $status = $this->request->getPost('status');
+    $password = $this->request->getPost('password');
+
+    if (!$userId) {
+      return $this->response->setJSON(['success' => false, 'message' => 'User ID required', 'csrf' => csrf_hash()]);
+    }
+
+    $data = [];
+    if ($namaLengkap !== null) $data['namalengkap'] = $namaLengkap;
+    if ($npm !== null) $data['npm'] = $npm;
+    if ($jurusan !== null) $data['jurusan'] = $jurusan;
+    if ($status !== null) $data['status'] = $status;
+    if ($password !== null && $password !== '') {
+      // Biarkan Model callbacks (beforeUpdate) yang melakukan hash
+      $data['password'] = $password;
+    }
+    $data['updated_at'] = date('Y-m-d H:i:s');
+
+    $validation = \Config\Services::validation();
+    $validation->setRules([
+      'namalengkap' => 'permit_empty|min_length[3]|max_length[100]',
+      'npm' => 'permit_empty|min_length[8]|max_length[20]',
+      'jurusan' => 'permit_empty|in_list[teknik informatika,sistem informasi,sistem komputer,manajemen informatika]',
+      'status' => 'permit_empty|in_list[pending,aktif,nonaktif]',
+      'password' => 'permit_empty|min_length[6]'
+    ]);
+
+    if (!$validation->run([
+      'namalengkap' => $namaLengkap,
+      'npm' => $npm,
+      'jurusan' => $jurusan,
+      'status' => $status,
+      'password' => $password,
+    ])) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Validation failed: ' . implode(', ', $validation->getErrors()),
+        'csrf' => csrf_hash()
+      ]);
+    }
+
+    try {
+      if ($npm !== null && $npm !== '') {
+        $exists = $this->userModel->where('npm', $npm)->where('id !=', $userId)->first();
+        if ($exists) {
+          return $this->response->setJSON([
+            'success' => false,
+            'message' => 'NPM sudah digunakan user lain',
+            'csrf' => csrf_hash()
+          ]);
+        }
+      }
+
+      // Gunakan validasi manual di atas; lewati validation bawaan Model yang mewajibkan password
+      $this->userModel->skipValidation(true);
+      $result = $this->userModel->update($userId, $data);
+      if ($result === false) {
+        return $this->response->setJSON([
+          'success' => false,
+          'message' => 'Gagal memperbarui user: ' . implode(', ', (array) $this->userModel->errors()),
+          'csrf' => csrf_hash()
+        ]);
+      }
+
+      return $this->response->setJSON(['success' => true, 'message' => 'User berhasil diperbarui', 'csrf' => csrf_hash()]);
+    } catch (\Exception $e) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Gagal memperbarui user', 'csrf' => csrf_hash()]);
     }
   }
 
   public function deleteUser()
   {
     if (!$this->request->isAJAX()) {
-      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request']);
-    }
-
-    // CSRF validation
-    if (!$this->request->getPost('csrf_test_name') || !hash_equals(csrf_hash(), $this->request->getPost('csrf_test_name'))) {
-      return $this->response->setJSON(['success' => false, 'message' => 'CSRF token mismatch']);
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request', 'csrf' => csrf_hash()]);
     }
 
     $userId = $this->request->getPost('user_id');
 
     if (!$userId) {
-      return $this->response->setJSON(['success' => false, 'message' => 'User ID required']);
+      return $this->response->setJSON(['success' => false, 'message' => 'User ID required', 'csrf' => csrf_hash()]);
     }
 
     try {
       $this->userModel->delete($userId);
-      return $this->response->setJSON(['success' => true, 'message' => 'User deleted successfully']);
+      return $this->response->setJSON(['success' => true, 'message' => 'User deleted successfully', 'csrf' => csrf_hash()]);
     } catch (\Exception $e) {
-      return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete user']);
+      return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete user', 'csrf' => csrf_hash()]);
     }
   }
 

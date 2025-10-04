@@ -30,6 +30,7 @@ $routes->group('Admin', ['filter' => 'adminauth'], function ($routes) {
   // Master Data AJAX routes
   $routes->post('MasterData/updateUserStatus', 'Admin\MasterData::updateUserStatus');
   $routes->post('MasterData/deleteUser', 'Admin\MasterData::deleteUser');
+  $routes->post('MasterData/updateUser', 'Admin\MasterData::updateUser');
   $routes->post('MasterData/addUser', 'Admin\MasterData::addUser');
   $routes->post('MasterData/addLayanan', 'Admin\MasterData::addLayanan');
   $routes->post('MasterData/updateLayanan', 'Admin\MasterData::updateLayanan');
@@ -41,6 +42,12 @@ $routes->group('Admin', ['filter' => 'adminauth'], function ($routes) {
 
   // E-mading routes
   $routes->get('Mading', 'Admin\Mading::index');
+  $routes->get('Mading/list-html', 'Admin\Mading::listHtml');
+  $routes->get('Mading/detail/(:num)', 'Admin\Mading::detail/$1');
+  $routes->post('Mading/create', 'Admin\Mading::create');
+  $routes->post('Mading/komentar', 'Admin\Mading::addComment');
+  $routes->post('Mading/like', 'Admin\Mading::toggleLike');
+  $routes->get('Mading/comments/(:num)', 'Admin\Mading::loadComments/$1');
 
   // Reports routes
   $routes->get('Reports', 'Admin\Reports::index');

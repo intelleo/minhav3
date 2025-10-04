@@ -17,16 +17,53 @@ class UCNotifications extends BaseController
     // Notifikasi: balasan terhadap komentar user
     $dismissedTable = $db->prefixTable('notif_dismissed');
     $seenTable = $db->prefixTable('notif_seen');
-    $builder = $db->table('mading_comments child')
-      ->select('child.*, parent.user_id as parent_user_id, mo.id as mading_id, mo.judul, ua.namalengkap as replier_name, ua.foto_profil as replier_photo')
+    // Query untuk notifikasi dengan handle admin dan user
+    $items = [];
+
+    // Ambil semua komentar yang membalas user ini
+    $comments = $db->table('mading_comments child')
+      ->select('child.*, parent.user_id as parent_user_id, mo.id as mading_id, mo.judul')
       ->join('mading_comments parent', 'parent.id = child.parent_id')
-      ->join('user_auth ua', 'ua.id = child.user_id')
       ->join('mading_online mo', 'mo.id = child.mading_id')
       ->where('parent.user_id', $userId)
       ->where("NOT EXISTS (SELECT 1 FROM {$dismissedTable} nd WHERE nd.user_id = {$userId} AND nd.comment_id = child.id)", null, false)
-      ->orderBy('child.created_at', 'DESC');
+      ->orderBy('child.created_at', 'DESC')
+      ->get()
+      ->getResultArray();
 
-    $items = $builder->get()->getResultArray();
+    // Untuk setiap komentar, cari nama pengirim (admin atau user)
+    foreach ($comments as $comment) {
+      $replierId = $comment['user_id'];
+
+      // Cek apakah ini admin
+      $adminData = $db->table('auth_admin')
+        ->select('username as namalengkap, NULL as foto_profil')
+        ->where('id', $replierId)
+        ->get()
+        ->getRowArray();
+
+      if ($adminData) {
+        $comment['replier_name'] = '[ADMIN] ' . $adminData['namalengkap'];
+        $comment['replier_photo'] = null;
+      } else {
+        // Cek apakah ini user
+        $userData = $db->table('user_auth')
+          ->select('namalengkap, foto_profil')
+          ->where('id', $replierId)
+          ->get()
+          ->getRowArray();
+
+        if ($userData) {
+          $comment['replier_name'] = $userData['namalengkap'];
+          $comment['replier_photo'] = $userData['foto_profil'];
+        } else {
+          $comment['replier_name'] = 'Unknown User';
+          $comment['replier_photo'] = null;
+        }
+      }
+
+      $items[] = $comment;
+    }
 
     // Ambil daftar yang sudah dilihat dari database
     $seenBuilder = $db->table('notif_seen')

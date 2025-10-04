@@ -3,11 +3,36 @@
     <table class="w-full">
       <thead class="bg-gray-50">
         <tr>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">NPM</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jurusan</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <button type="button" class="sort-btn flex items-center gap-1" data-sort-by="id">
+              <span>User</span>
+              <span class="sort-indicator" data-for="id"></span>
+            </button>
+          </th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <button type="button" class="sort-btn flex items-center gap-1" data-sort-by="npm">
+              <span>NPM</span>
+              <span class="sort-indicator" data-for="npm"></span>
+            </button>
+          </th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <button type="button" class="sort-btn flex items-center gap-1" data-sort-by="jurusan">
+              <span>Jurusan</span>
+              <span class="sort-indicator" data-for="jurusan"></span>
+            </button>
+          </th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <button type="button" class="sort-btn flex items-center gap-1" data-sort-by="status">
+              <span>Status</span>
+              <span class="sort-indicator" data-for="status"></span>
+            </button>
+          </th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <button type="button" class="sort-btn flex items-center gap-1" data-sort-by="created_at">
+              <span>Created</span>
+              <span class="sort-indicator" data-for="created_at"></span>
+            </button>
+          </th>
           <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
         </tr>
       </thead>

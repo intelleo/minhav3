@@ -74,8 +74,14 @@
             title="<?= $user['status'] == 'aktif' ? 'Deactivate' : 'Activate' ?>">
             <i class="ri-<?= $user['status'] == 'aktif' ? 'user-forbid' : 'user-check' ?>-line"></i>
           </button>
-          <button class="text-green-600 hover:text-green-900" title="View Details">
-            <i class="ri-eye-line"></i>
+          <button class="text-green-600 hover:text-green-900" title="Edit"
+            data-action="edit-user"
+            data-user-id="<?= $user['id'] ?>"
+            data-namalengkap="<?= esc($user['namalengkap']) ?>"
+            data-npm="<?= esc($user['npm']) ?>"
+            data-jurusan="<?= esc($user['jurusan']) ?>"
+            data-status="<?= esc($user['status']) ?>">
+            <i class="ri-edit-2-line"></i>
           </button>
           <button onclick="deleteUser(<?= $user['id'] ?>)" class="text-red-600 hover:text-red-900" title="Delete">
             <i class="ri-delete-bin-line"></i>

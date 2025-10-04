@@ -49,22 +49,22 @@
       </div>
     </div>
 
-    <!-- Categories Card -->
+    <!-- Mading Management Card (replace Categories) -->
     <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
       <div class="flex items-center mb-4">
         <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-          <i class="ri-folder-fill text-2xl text-purple-600"></i>
+          <i class="ri-news-fill text-2xl text-purple-600"></i>
         </div>
         <div>
-          <h3 class="text-lg font-semibold text-gray-800">Categories</h3>
-          <p class="text-sm text-gray-600">Kelola kategori</p>
+          <h3 class="text-lg font-semibold text-gray-800">Mading Management</h3>
+          <p class="text-sm text-gray-600">Kelola postingan E-mading</p>
         </div>
       </div>
-      <p class="text-gray-600 mb-4">Kelola kategori mading dan chatbot untuk organisasi konten.</p>
+      <p class="text-gray-600 mb-4">Buat, lihat, dan atur postingan mading untuk pengguna.</p>
       <div class="flex items-center justify-between">
-        <span class="text-sm text-gray-500">Total Categories: 0</span>
-        <a href="#" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200">
-          <i class="ri-arrow-right-line mr-1"></i>
+
+        <a href="<?= site_url('Admin/Mading') ?>" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200">
+          <i class="ri-arrow-right-line mr-1 text-white"></i>
           Kelola
         </a>
       </div>

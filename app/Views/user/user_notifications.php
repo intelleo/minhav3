@@ -107,7 +107,9 @@
     <?php foreach ($notifications as $n): ?>
       <?php
       $name = trim((string)($n['replier_name'] ?? 'Pengguna'));
-      $initial = mb_strtoupper(mb_substr($name, 0, 1));
+      $isAdmin = strpos($name, '[ADMIN]') === 0;
+      $cleanName = $isAdmin ? str_replace('[ADMIN]', '', $name) : $name;
+      $initial = mb_strtoupper(mb_substr(trim($cleanName), 0, 1));
       $photo = trim((string)($n['replier_photo'] ?? ''));
       $photoUrl = '';
       if ($photo !== '') {
@@ -131,18 +133,22 @@
         <div style="position:relative;width:40px;height:40px;flex:0 0 40px;">
           <?php if (!empty($photoUrl)): ?>
             <?= img_tag($photoUrl, 'avatar', ['class' => 'rounded-full h-full w-full object-cover', 'width' => 40, 'height' => 40]) ?>
-            <div class="notif-avatar hidden" style="position:absolute;left:0;top:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">
+            <div class="notif-avatar hidden" style="position:absolute;left:0;top:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:<?= $isAdmin ? '#dbeafe' : '#e5f0ff'; ?>;color:<?= $isAdmin ? '#2563eb' : '#1e40af'; ?>">
               <?= esc($initial) ?>
             </div>
           <?php else: ?>
-            <div class="notif-avatar" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">
+            <div class="notif-avatar" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:<?= $isAdmin ? '#dbeafe' : '#e5f0ff'; ?>;color:<?= $isAdmin ? '#2563eb' : '#1e40af'; ?>">
               <?= esc($initial) ?>
             </div>
           <?php endif; ?>
         </div>
         <div>
           <div class="text-sm text-gray-800">
-            <strong><?= esc($n['replier_name']) ?></strong> membalas komentar kamu di
+            <strong><?= esc($cleanName) ?></strong>
+            <?php if ($isAdmin): ?>
+              <span class="inline-flex items-center px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full ml-1">ADMIN</span>
+            <?php endif; ?>
+            membalas komentar kamu di
             <a class="notif-link" href="<?= site_url('Mading/detail/' . (int)$n['mading_id']) ?>">"<?= esc($n['judul']) ?>"</a>
           </div>
           <div class="notif-meta">

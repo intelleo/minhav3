@@ -25,88 +25,201 @@
 
 <script>
   function updateUserStatus(userId, newStatus) {
-    if (confirm('Are you sure you want to change this user status?')) {
-      fetch('<?= site_url('Admin/MasterData/updateUserStatus') ?>', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-          },
-          body: `user_id=${userId}&status=${newStatus}&csrf_test_name=${document.querySelector('meta[name="csrf-token"]').getAttribute('content')}`
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            // Use SPA-compatible refresh instead of location.reload()
-            if (typeof window.adminSearchFilter !== 'undefined' && window.adminSearchFilter.performSearch) {
-              window.adminSearchFilter.performSearch();
-            } else {
-              // Fallback to SPA navigation refresh
-              if (window.location && window.location.pathname && window.location.pathname.indexOf('/Admin/MasterData/users') === 0) {
-                window.location.href = window.location.href;
-              } else if (window.__adminSpaNavigate) {
-                window.__adminSpaNavigate(window.location.href, false);
-              } else {
-                location.reload();
-              }
-            }
+    var title = 'Ubah Status User';
+    var message = 'Anda yakin ingin mengubah status user ini?';
+    if (typeof window.showConfirm === 'function') {
+      window.showConfirm(title, message, function() {
+        var csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        var params = new URLSearchParams();
+        params.append('user_id', userId);
+        params.append('status', newStatus);
+        params.append('csrf_test_name', csrf);
 
-            // Show success notification
-            if (typeof AdminSearchUtils !== 'undefined' && AdminSearchUtils.showNotification) {
-              AdminSearchUtils.showNotification('Status berhasil diperbarui!', 'success');
-            }
-          } else {
-            alert('Error: ' + data.message);
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred');
-        });
+        if (window.api && window.api.post) {
+          window.api.post('<?= site_url('Admin/MasterData/updateUserStatus') ?>', params)
+            .then(function(response) {
+              var data = response && response.data ? response.data : {};
+              if (data.csrf) {
+                var meta = document.querySelector('meta[name="csrf-token"]');
+                if (meta) meta.setAttribute('content', data.csrf);
+              }
+              if (data.success) {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('success', 'Status berhasil diperbarui!', 2500);
+                }
+                if (typeof window.adminSearchFilter !== 'undefined' && window.adminSearchFilter.performSearch) {
+                  window.adminSearchFilter.performSearch();
+                } else if (window.location && window.location.pathname && window.location.pathname.indexOf('/Admin/MasterData/users') === 0) {
+                  window.location.href = window.location.href;
+                } else if (window.__adminSpaNavigate) {
+                  window.__adminSpaNavigate(window.location.href, false);
+                } else {
+                  location.reload();
+                }
+              } else {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('error', data.message || 'Gagal memperbarui status', 3500);
+                } else {
+                  alert('Error: ' + (data.message || 'Gagal memperbarui status'));
+                }
+              }
+            })
+            .catch(function(error) {
+              console.error('Error:', error);
+              if (typeof window.showAlert === 'function') {
+                window.showAlert('error', 'Terjadi kesalahan jaringan', 3500);
+              } else {
+                alert('Terjadi kesalahan jaringan');
+              }
+            });
+        } else {
+          fetch('<?= site_url('Admin/MasterData/updateUserStatus') ?>', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': csrf
+              },
+              body: params.toString()
+            })
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(data) {
+              if (data.success) {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('success', 'Status berhasil diperbarui!', 2500);
+                }
+                if (typeof window.adminSearchFilter !== 'undefined' && window.adminSearchFilter.performSearch) {
+                  window.adminSearchFilter.performSearch();
+                } else if (window.location && window.location.pathname && window.location.pathname.indexOf('/Admin/MasterData/users') === 0) {
+                  window.location.href = window.location.href;
+                } else if (window.__adminSpaNavigate) {
+                  window.__adminSpaNavigate(window.location.href, false);
+                } else {
+                  location.reload();
+                }
+              } else {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('error', data.message || 'Gagal memperbarui status', 3500);
+                } else {
+                  alert('Error: ' + (data.message || 'Gagal memperbarui status'));
+                }
+              }
+            })
+            .catch(function(error) {
+              console.error('Error:', error);
+              if (typeof window.showAlert === 'function') {
+                window.showAlert('error', 'Terjadi kesalahan jaringan', 3500);
+              } else {
+                alert('Terjadi kesalahan jaringan');
+              }
+            });
+        }
+      }, function() {});
+    } else {
+      if (confirm('Are you sure you want to change this user status?')) {
+        updateUserStatus(userId, newStatus);
+      }
     }
   }
 
   function deleteUser(userId) {
-    if (confirm('Are you sure you want to delete this user? This action cannot be undone.')) {
-      fetch('<?= site_url('Admin/MasterData/deleteUser') ?>', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-          },
-          body: `user_id=${userId}&csrf_test_name=${document.querySelector('meta[name="csrf-token"]').getAttribute('content')}`
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            // Use SPA-compatible refresh instead of location.reload()
-            if (typeof window.adminSearchFilter !== 'undefined' && window.adminSearchFilter.performSearch) {
-              window.adminSearchFilter.performSearch();
-            } else {
-              // Fallback to SPA navigation refresh
-              if (window.location && window.location.pathname && window.location.pathname.indexOf('/Admin/MasterData/users') === 0) {
-                window.location.href = window.location.href;
-              } else if (window.__adminSpaNavigate) {
-                window.__adminSpaNavigate(window.location.href, false);
-              } else {
-                location.reload();
-              }
-            }
+    var title = 'Hapus User';
+    var message = 'Anda yakin ingin menghapus user ini? Tindakan ini tidak dapat dibatalkan.';
+    if (typeof window.showConfirm === 'function') {
+      window.showConfirm(title, message, function() {
+        var csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        var params = new URLSearchParams();
+        params.append('user_id', userId);
+        params.append('csrf_test_name', csrf);
 
-            // Show success notification
-            if (typeof AdminSearchUtils !== 'undefined' && AdminSearchUtils.showNotification) {
-              AdminSearchUtils.showNotification('User berhasil dihapus!', 'success');
-            }
-          } else {
-            alert('Error: ' + data.message);
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred');
-        });
+        if (window.api && window.api.post) {
+          window.api.post('<?= site_url('Admin/MasterData/deleteUser') ?>', params)
+            .then(function(response) {
+              var data = response && response.data ? response.data : {};
+              if (data.csrf) {
+                var meta = document.querySelector('meta[name="csrf-token"]');
+                if (meta) meta.setAttribute('content', data.csrf);
+              }
+              if (data.success) {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('success', 'User berhasil dihapus!', 2500);
+                }
+                if (typeof window.adminSearchFilter !== 'undefined' && window.adminSearchFilter.performSearch) {
+                  window.adminSearchFilter.performSearch();
+                } else if (window.location && window.location.pathname && window.location.pathname.indexOf('/Admin/MasterData/users') === 0) {
+                  window.location.href = window.location.href;
+                } else if (window.__adminSpaNavigate) {
+                  window.__adminSpaNavigate(window.location.href, false);
+                } else {
+                  location.reload();
+                }
+              } else {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('error', data.message || 'Gagal menghapus user', 3500);
+                } else {
+                  alert('Error: ' + (data.message || 'Gagal menghapus user'));
+                }
+              }
+            })
+            .catch(function(error) {
+              console.error('Error:', error);
+              if (typeof window.showAlert === 'function') {
+                window.showAlert('error', 'Terjadi kesalahan jaringan', 3500);
+              } else {
+                alert('Terjadi kesalahan jaringan');
+              }
+            });
+        } else {
+          fetch('<?= site_url('Admin/MasterData/deleteUser') ?>', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': csrf
+              },
+              body: params.toString()
+            })
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(data) {
+              if (data.success) {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('success', 'User berhasil dihapus!', 2500);
+                }
+                if (typeof window.adminSearchFilter !== 'undefined' && window.adminSearchFilter.performSearch) {
+                  window.adminSearchFilter.performSearch();
+                } else if (window.location && window.location.pathname && window.location.pathname.indexOf('/Admin/MasterData/users') === 0) {
+                  window.location.href = window.location.href;
+                } else if (window.__adminSpaNavigate) {
+                  window.__adminSpaNavigate(window.location.href, false);
+                } else {
+                  location.reload();
+                }
+              } else {
+                if (typeof window.showAlert === 'function') {
+                  window.showAlert('error', data.message || 'Gagal menghapus user', 3500);
+                } else {
+                  alert('Error: ' + (data.message || 'Gagal menghapus user'));
+                }
+              }
+            })
+            .catch(function(error) {
+              console.error('Error:', error);
+              if (typeof window.showAlert === 'function') {
+                window.showAlert('error', 'Terjadi kesalahan jaringan', 3500);
+              } else {
+                alert('Terjadi kesalahan jaringan');
+              }
+            });
+        }
+      }, function() {});
+    } else {
+      if (confirm('Are you sure you want to delete this user? This action cannot be undone.')) {
+        deleteUser(userId);
+      }
     }
   }
 </script>
@@ -272,6 +385,68 @@
           </button>
           <button type="button" id="submitAddUser" class="px-6 py-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <span class="submit-text text-white">Tambah User</span>
+            <span class="loading-text hidden">
+              <i class="ri-loader-4-line animate-spin mr-2"></i>
+              Menyimpan...
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Edit User Modal -->
+<div id="editUserModal" class="fixed overflow-x-auto inset-0 bg-[#00000049] bg-opacity-10 hidden z-50">
+  <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-[35rem]">
+      <div class="flex items-center justify-between p-6 border-b border-blue-50">
+        <h3 class="text-lg font-semibold text-blue-600">Edit User</h3>
+        <button type="button" id="closeEditUserModal" class="text-gray-400 hover:text-gray-600">
+          <i class="ri-close-line text-xl"></i>
+        </button>
+      </div>
+      <form id="editUserForm" class="p-6" method="post" action="#" onsubmit="return false;">
+        <input type="hidden" id="edit_user_id" name="user_id" />
+        <div class="space-y-4">
+          <div>
+            <label for="edit_nama_lengkap" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+            <input type="text" id="edit_nama_lengkap" name="nama_lengkap" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          </div>
+          <div>
+            <label for="edit_npm" class="block text-sm font-medium text-gray-700 mb-1">NPM</label>
+            <input type="text" id="edit_npm" name="npm" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          </div>
+          <div>
+            <label for="edit_jurusan" class="block text-sm font-medium text-gray-700 mb-1">Jurusan</label>
+            <select id="edit_jurusan" name="jurusan" required class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <option value="">Pilih Jurusan</option>
+              <?php if (isset($jurusanOptions)): ?>
+                <?php foreach ($jurusanOptions as $value => $label): ?>
+                  <option value="<?= $value ?>"><?= $label ?></option>
+                <?php endforeach; ?>
+              <?php endif; ?>
+            </select>
+          </div>
+          <div>
+            <label for="edit_status" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+            <select id="edit_status" name="status" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <option value="pending">Pending</option>
+              <option value="aktif">Aktif</option>
+              <option value="nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div>
+            <label for="edit_password" class="block text-sm font-medium text-gray-700 mb-1">Password (opsional)</label>
+            <input type="password" id="edit_password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Biarkan kosong jika tidak diubah">
+          </div>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button type="button" id="cancelEditUser" class="px-6 py-3 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500">
+            <span class="text-gray-700">Batal</span>
+          </button>
+          <button type="button" id="submitEditUser" class="px-6 py-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <span class="submit-text text-white">Simpan Perubahan</span>
             <span class="loading-text hidden">
               <i class="ri-loader-4-line animate-spin mr-2"></i>
               Menyimpan...
@@ -730,6 +905,32 @@
 
     // Add event delegation for pagination links
     document.addEventListener('click', window.paginationClickHandler);
+
+    // Sorting click handler
+    if (window.sortClickHandler) {
+      document.removeEventListener('click', window.sortClickHandler);
+    }
+    window.sortClickHandler = function(e) {
+      var btn = e.target.closest('.sort-btn');
+      if (!btn) return;
+      e.preventDefault();
+      if (window.adminSearchFilter && typeof window.adminSearchFilter.setSort === 'function') {
+        window.adminSearchFilter.setSort(btn.getAttribute('data-sort-by'));
+        // Update indikator panah pada header
+        try {
+          var active = btn.getAttribute('data-sort-by');
+          var dir = window.adminSearchFilter.currentFilters.sortDir || '';
+          document.querySelectorAll('.sort-indicator').forEach(function(i) {
+            i.textContent = '';
+          });
+          var target = document.querySelector('.sort-indicator[data-for="' + active + '"]');
+          if (target) {
+            target.textContent = dir === 'desc' ? '▼' : '▲';
+          }
+        } catch (_) {}
+      }
+    };
+    document.addEventListener('click', window.sortClickHandler);
   };
 
   function loadPage(page) {
@@ -745,8 +946,22 @@
     if (search) params.append('search', search);
     if (status) params.append('status', status);
     if (jurusan) params.append('jurusan', jurusan);
+    // Sertakan sort jika tersedia
+    try {
+      if (window.adminSearchFilter && window.adminSearchFilter.currentFilters) {
+        var cf = window.adminSearchFilter.currentFilters;
+        if (cf.sortBy) params.append('sortBy', cf.sortBy);
+        if (cf.sortDir) params.append('sortDir', cf.sortDir);
+      } else {
+        var qsSort = new URLSearchParams(window.location.search || '');
+        if (qsSort.get('sortBy')) params.append('sortBy', qsSort.get('sortBy'));
+        if (qsSort.get('sortDir')) params.append('sortDir', qsSort.get('sortDir'));
+      }
+    } catch (_) {}
     params.append('page', page); // Always include page parameter
 
+    // Tambahkan cache-busting param untuk memastikan data terbaru
+    params.append('_ts', Date.now());
     const url = '<?= site_url('Admin/MasterData/users') ?>' + (params.toString() ? '?' + params.toString() : '');
 
     console.log('Loading URL:', url);
@@ -811,6 +1026,120 @@
       });
   }
 
+  // Edit User Modal init
+  window.initializeEditUserModal = function() {
+    try {
+      var modal = document.getElementById('editUserModal');
+      var form = document.getElementById('editUserForm');
+      var closeBtn = document.getElementById('closeEditUserModal');
+      var cancelBtn = document.getElementById('cancelEditUser');
+      var submitBtn = document.getElementById('submitEditUser');
+
+      if (!modal || !form || !submitBtn) return;
+
+      function openEditModal(data) {
+        document.getElementById('edit_user_id').value = data.id;
+        document.getElementById('edit_nama_lengkap').value = data.namalengkap || '';
+        document.getElementById('edit_npm').value = data.npm || '';
+        document.getElementById('edit_jurusan').value = data.jurusan || '';
+        document.getElementById('edit_status').value = data.status || 'pending';
+        document.getElementById('edit_password').value = '';
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeEditModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        form.reset();
+      }
+
+      // Delegasi click untuk tombol edit
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('[data-action="edit-user"]');
+        if (!btn) return;
+        e.preventDefault();
+        var data = {
+          id: btn.getAttribute('data-user-id'),
+          namalengkap: btn.getAttribute('data-namalengkap'),
+          npm: btn.getAttribute('data-npm'),
+          jurusan: btn.getAttribute('data-jurusan'),
+          status: btn.getAttribute('data-status')
+        };
+        openEditModal(data);
+      });
+
+      closeBtn.addEventListener('click', closeEditModal);
+      cancelBtn.addEventListener('click', closeEditModal);
+
+      submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        var st = submitBtn.querySelector('.submit-text');
+        var lt = submitBtn.querySelector('.loading-text');
+        if (st) st.classList.add('hidden');
+        if (lt) lt.classList.remove('hidden');
+
+        var fd = new FormData(form);
+        var params = new URLSearchParams();
+        fd.forEach(function(v, k) {
+          params.append(k, v);
+        });
+        var csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        params.append('csrf_test_name', csrf);
+
+        (window.api && window.api.post ? window.api.post('<?= site_url('Admin/MasterData/updateUser') ?>', params) :
+          fetch('<?= site_url('Admin/MasterData/updateUser') ?>', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'X-Requested-With': 'XMLHttpRequest',
+              'X-CSRF-TOKEN': csrf
+            },
+            body: params.toString()
+          }).then(function(r) {
+            return r.json();
+          }))
+        .then(function(res) {
+            var data = res && res.data ? res.data : res;
+            if (data && data.csrf) {
+              var m = document.querySelector('meta[name="csrf-token"]');
+              if (m) m.setAttribute('content', data.csrf);
+            }
+            return data;
+          })
+          .then(function(data) {
+            if (data.success) {
+              if (typeof window.showAlert === 'function') window.showAlert('success', 'User berhasil diperbarui', 2500);
+              closeEditModal();
+              if (typeof window.adminSearchFilter !== 'undefined' && window.adminSearchFilter.performSearch) {
+                window.adminSearchFilter.performSearch();
+              } else if (window.location && window.location.pathname && window.location.pathname.indexOf('/Admin/MasterData/users') === 0) {
+                window.location.href = window.location.href;
+              } else if (window.__adminSpaNavigate) {
+                window.__adminSpaNavigate(window.location.href, false);
+              } else {
+                location.reload();
+              }
+            } else {
+              if (typeof window.showAlert === 'function') window.showAlert('error', data.message || 'Gagal memperbarui user', 3500);
+            }
+          })
+          .catch(function(err) {
+            console.error(err);
+            if (typeof window.showAlert === 'function') window.showAlert('error', 'Terjadi kesalahan jaringan', 3500);
+          })
+          .finally(function() {
+            submitBtn.disabled = false;
+            if (st) st.classList.remove('hidden');
+            if (lt) lt.classList.add('hidden');
+          });
+      });
+    } catch (e) {
+      console.error('init edit modal error', e);
+    }
+  };
+
   function updateStatistics(stats) {
     // Update statistics cards if they exist
     const totalElement = document.querySelector('.bg-white.rounded-lg.shadow-md.p-4 .text-2xl.font-bold.text-gray-900');
@@ -825,8 +1154,10 @@
   // Initialize pagination on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', window.initializePagination);
+    document.addEventListener('DOMContentLoaded', window.initializeEditUserModal);
   } else {
     window.initializePagination();
+    window.initializeEditUserModal();
   }
 </script>
 

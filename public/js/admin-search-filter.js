@@ -29,6 +29,8 @@ if (typeof AdminSearchFilter !== "undefined") {
         status: "",
         jurusan: "",
         page: 1,
+        sortBy: "",
+        sortDir: "",
       };
 
       this.debounceTimer = null;
@@ -134,7 +136,14 @@ if (typeof AdminSearchFilter !== "undefined") {
           baseUrl = rc.getAttribute("data-base-url");
         }
 
-        const response = await axios.get(`${baseUrl}?${params.toString()}`);
+        const url = `${baseUrl}?${params.toString()}`;
+        console.log(
+          "[AdminSearchFilter] performSearch url:",
+          url,
+          "filters:",
+          this.currentFilters
+        );
+        const response = await axios.get(url);
 
         if (response.data.success !== false) {
           this.updateResults(response.data);
@@ -243,6 +252,25 @@ if (typeof AdminSearchFilter !== "undefined") {
     // Public methods untuk external use
     setFilter(key, value) {
       this.currentFilters[key] = value;
+      this.currentFilters.page = 1;
+      this.performSearch();
+    }
+
+    // Sorting handler
+    setSort(sortBy) {
+      if (!sortBy) return;
+      if (this.currentFilters.sortBy === sortBy) {
+        this.currentFilters.sortDir =
+          this.currentFilters.sortDir === "asc" ? "desc" : "asc";
+      } else {
+        this.currentFilters.sortBy = sortBy;
+        this.currentFilters.sortDir = "asc";
+      }
+      console.log(
+        "[AdminSearchFilter] setSort:",
+        this.currentFilters.sortBy,
+        this.currentFilters.sortDir
+      );
       this.currentFilters.page = 1;
       this.performSearch();
     }

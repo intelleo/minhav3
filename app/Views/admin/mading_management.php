@@ -2,30 +2,110 @@
 
 <?= $this->section('content') ?>
 
-<div class="admin-mading-management">
-  <!-- Header Section -->
-  <div class="mb-6">
-    <div class="flex items-center justify-between">
-      <div>
-        <h2 class="text-2xl font-bold text-gray-800 mb-2">E-mading Management</h2>
-        <p class="text-gray-600">Kelola konten mading</p>
-      </div>
-      <div class="flex gap-2">
-        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
-          <i class="ri-add-line mr-1"></i>
-          Add Mading
-        </button>
-      </div>
-    </div>
+<div class="admin-mading-management mt-[-5rem] relative">
+
+
+  <!-- List Mading -->
+  <div class="mb-4">
+    <h2 class="text-lg font-semibold text-gray-800">Daftar Mading</h2>
+    <p class="text-sm text-gray-600">Klik pada mading untuk melihat detail dan berkomentar</p>
   </div>
 
-  <!-- Coming Soon -->
-  <div class="bg-white rounded-lg shadow-md p-12 text-center">
-    <i class="ri-news-line text-6xl text-gray-400 mb-4"></i>
-    <h3 class="text-xl font-semibold text-gray-800 mb-2">E-mading Management</h3>
-    <p class="text-gray-600 mb-4">Fitur ini akan segera hadir</p>
-    <p class="text-sm text-gray-500">Kami sedang mengembangkan fitur manajemen mading yang lengkap</p>
+  <div id="admin-mading-list" class="flex flex-col gap-4" data-loaded-page="0">
+    <?= $this->include('user/partials/skeleton_mading', ['count' => 4]) ?>
+    <div id="admin-mading-sentinel"></div>
   </div>
+</div>
+
+<script>
+  (function() {
+    function http() {
+      return (window.api || window.axios || null);
+    }
+
+    function setSkeleton(visible) {
+      const list = document.getElementById('admin-mading-list');
+      if (!list) return;
+      const skel = list.querySelector('.space-y-4');
+      if (skel) skel.style.display = visible ? '' : 'none';
+    }
+
+    window.__adminMadingLoading = window.__adminMadingLoading || false;
+
+    async function loadMoreAdminMading() {
+      if (window.__adminMadingLoading) return;
+      const cli = http();
+      if (!cli) {
+        setTimeout(loadMoreAdminMading, 120);
+        return;
+      }
+      const list = document.getElementById('admin-mading-list');
+      const current = parseInt(list.dataset.loadedPage || '0', 10);
+      const next = current + 1;
+      window.__adminMadingLoading = true;
+      if (next === 1) setSkeleton(true);
+      try {
+        const {
+          data
+        } = await cli.get('<?= site_url('Admin/Mading/list-html') ?>', {
+          params: {
+            page: next,
+            perPage: 6
+          }
+        });
+        if (!data || !data.success) {
+          if (next === 1) setSkeleton(false);
+          return;
+        }
+        const sentinel = document.getElementById('admin-mading-sentinel');
+        const html = (data.html || '').trim();
+        if (html) {
+          sentinel.insertAdjacentHTML('beforebegin', html);
+          list.dataset.loadedPage = String(next);
+        } else {
+          // Tidak ada data untuk halaman ini
+          if (next === 1) {
+            if (!document.getElementById('admin-mading-empty')) {
+              sentinel.insertAdjacentHTML('beforebegin', '<div id="admin-mading-empty" class="text-center py-10 text-gray-500">Tidak ada postingan mading.</div>');
+            }
+          }
+          // Hentikan pengamatan agar tidak memicu muat lagi tanpa data
+          try {
+            if (window.__adminMadingIO) window.__adminMadingIO.unobserve(sentinel);
+          } catch (_) {}
+        }
+        if (next === 1) setSkeleton(false);
+      } catch (e) {
+        console.error('Gagal memuat daftar mading (admin):', e);
+        if (window.showAlert) showAlert('error', 'Gagal memuat mading');
+      } finally {
+        window.__adminMadingLoading = false;
+      }
+    }
+
+    if (window.__adminMadingIO) {
+      try {
+        window.__adminMadingIO.disconnect();
+      } catch (_) {}
+    }
+    window.__adminMadingIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) loadMoreAdminMading();
+      });
+    }, {
+      rootMargin: '0px 0px 200px 0px'
+    });
+
+    // Jalankan segera agar berfungsi baik di SSR/SPA
+    (function initNow() {
+      const sentinel = document.getElementById('admin-mading-sentinel');
+      if (sentinel) window.__adminMadingIO.observe(sentinel);
+      const list = document.getElementById('admin-mading-list');
+      if (list && list.dataset.loadedPage === '0') loadMoreAdminMading();
+    })();
+
+  })();
+</script>
 
 </div>
 
