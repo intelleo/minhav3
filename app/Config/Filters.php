@@ -78,7 +78,7 @@ class Filters extends BaseFilters
     public array $globals = [
         'before' => [
             // 'honeypot',
-            'csrf' => ['except' => ['api/*', 'api/**', 'Admin/MasterData/addLayananTest', 'Admin/MasterData/addUserTest']] // ✅ Exclude API dan test routes
+            'csrf' => ['except' => ['api/*', 'api/**', 'Admin/MasterData/addLayananTest', 'Admin/MasterData/updateLayananTest', 'Admin/MasterData/deleteLayananTest', 'Admin/MasterData/addUserTest', 'Admin/Mading/komentar', 'Admin/Mading/like', 'Mading/like']] // ✅ Exclude API, test routes, komentar admin, dan like
             // 'invalidchars',
         ],
         'after' => [

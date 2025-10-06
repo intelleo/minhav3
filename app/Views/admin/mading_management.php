@@ -5,12 +5,6 @@
 <div class="admin-mading-management mt-[-5rem] relative">
 
 
-  <!-- List Mading -->
-  <div class="mb-4">
-    <h2 class="text-lg font-semibold text-gray-800">Daftar Mading</h2>
-    <p class="text-sm text-gray-600">Klik pada mading untuk melihat detail dan berkomentar</p>
-  </div>
-
   <div id="admin-mading-list" class="flex flex-col gap-4" data-loaded-page="0">
     <?= $this->include('user/partials/skeleton_mading', ['count' => 4]) ?>
     <div id="admin-mading-sentinel"></div>

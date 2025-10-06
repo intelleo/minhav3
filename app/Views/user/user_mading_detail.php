@@ -37,6 +37,17 @@
         <p><?= nl2br(esc($mading['deskripsi'])) ?></p>
       </div>
 
+      <!-- Gambar jika ada -->
+      <?php if (!empty($mading['file']) && preg_match('/\.(jpg|jpeg|png|gif|webp)$/i', $mading['file'])): ?>
+        <div class="mt-4">
+          <img src="<?= base_url($mading['file']) ?>"
+            alt="<?= esc($mading['judul']) ?>"
+            class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+      <?php endif; ?>
+
       <!-- File -->
       <?php if ($mading['file']): ?>
         <div class="mt-4">

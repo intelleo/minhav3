@@ -26,6 +26,7 @@ $routes->group('Admin', ['filter' => 'adminauth'], function ($routes) {
   $routes->get('MasterData', 'Admin\MasterData::index');
   $routes->get('MasterData/users', 'Admin\MasterData::users');
   $routes->get('MasterData/chatbot', 'Admin\MasterData::chatbot');
+  $routes->get('MasterData/mading', 'Admin\MasterData::mading');
 
   // Master Data AJAX routes
   $routes->post('MasterData/updateUserStatus', 'Admin\MasterData::updateUserStatus');
@@ -36,6 +37,11 @@ $routes->group('Admin', ['filter' => 'adminauth'], function ($routes) {
   $routes->post('MasterData/updateLayanan', 'Admin\MasterData::updateLayanan');
   $routes->post('MasterData/deleteLayanan', 'Admin\MasterData::deleteLayanan');
   $routes->get('MasterData/getLayanan', 'Admin\MasterData::getLayanan');
+  // Mading management AJAX
+  $routes->post('MasterData/addMading', 'Admin\MasterData::addMading');
+  $routes->post('MasterData/updateMading', 'Admin\MasterData::updateMading');
+  $routes->post('MasterData/deleteMading', 'Admin\MasterData::deleteMading');
+  $routes->get('MasterData/getMading', 'Admin\MasterData::getMading');
 
   // Test route without CSRF filter
   $routes->post('MasterData/addUserTest', 'Admin\MasterData::addUserTest', ['filter' => 'adminauth']);
@@ -93,6 +99,8 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
 
 // Test route outside Admin group to bypass CSRF filter
 $routes->post('Admin/MasterData/addLayananTest', 'Admin\MasterData::addLayananTest', ['filter' => 'adminauth']);
+$routes->post('Admin/MasterData/updateLayananTest', 'Admin\MasterData::updateLayananTest', ['filter' => 'adminauth']);
+$routes->post('Admin/MasterData/deleteLayananTest', 'Admin\MasterData::deleteLayananTest', ['filter' => 'adminauth']);
 
 // api database informasi layanan informasi untuk flowise ai
 $routes->group('api', function ($routes) {

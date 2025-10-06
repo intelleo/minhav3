@@ -166,6 +166,7 @@ class Mading extends BaseController
       return redirect()->to('Admin/Mading')->with('error', 'Mading tidak ditemukan.');
     }
 
+
     // Tambah view
     $madingModel->set('views', 'views + 1', false)
       ->where('id', $id)
@@ -257,6 +258,7 @@ class Mading extends BaseController
       return $this->response->setJSON(['success' => false, 'message' => 'Invalid request']);
     }
 
+
     $rules = [
       'mading_id'     => 'required|numeric',
       'isi_komentar'  => 'required|min_length[1]|max_length[200]',
@@ -342,6 +344,7 @@ class Mading extends BaseController
       return $this->response->setJSON(['success' => false, 'message' => 'Invalid request']);
     }
 
+
     $madingId = $this->request->getPost('mading_id');
     $adminId = session('admin_id');
 
@@ -376,8 +379,12 @@ class Mading extends BaseController
       $liked = true;
     }
 
-    // Hitung total like
-    $totalLikes = $likeModel->where('mading_id', $madingId)->countAllResults();
+    // Hitung total like dengan reset query builder
+    $totalLikes = $likeModel->resetQuery()->where('mading_id', $madingId)->countAllResults();
+
+    // Invalidate cache untuk memastikan data ter-update
+    $madingModel = new \App\Models\MadingModel();
+    $madingModel->invalidateCache($madingId);
 
     return $this->response->setJSON([
       'success'     => true,

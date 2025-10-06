@@ -34,6 +34,17 @@
         <p><?= nl2br(esc($mading['deskripsi'])) ?></p>
       </div>
 
+      <!-- Gambar jika ada -->
+      <?php if (!empty($mading['file']) && preg_match('/\.(jpg|jpeg|png|gif|webp)$/i', $mading['file'])): ?>
+        <div class="mt-4">
+          <img src="<?= base_url($mading['file']) ?>"
+            alt="<?= esc($mading['judul']) ?>"
+            class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+      <?php endif; ?>
+
       <!-- File -->
       <?php if ($mading['file']): ?>
         <div class="mt-4">
@@ -167,13 +178,20 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
+    // Pastikan CSRF token terbaru dari meta tag
     const csrfMetaTag = document.querySelector('meta[name="csrf-token"]');
     const csrfInput = form.querySelector('input[name^="csrf_"]');
     if (csrfMetaTag && csrfInput) {
       csrfInput.value = csrfMetaTag.getAttribute('content') || '';
     }
 
-    const formData = new URLSearchParams(new FormData(form));
+    // Buat FormData dengan CSRF token yang benar
+    const formData = new FormData(form);
+
+    // Pastikan CSRF token ada di form data
+    if (csrfMetaTag) {
+      formData.set('csrf_test_name', csrfMetaTag.getAttribute('content'));
+    }
 
     try {
       const res = await window.api.post(url, formData);

@@ -163,6 +163,7 @@ class UCMading extends BaseController
         if (!$mading) {
             return redirect()->to('Mading')->with('error', 'Mading tidak ditemukan.');
         }
+
         // Tambah view
         $madingModel->set('views', 'views + 1', false) // false = jangan escape
             ->where('id', $id)
@@ -373,6 +374,7 @@ class UCMading extends BaseController
         $data = [
             'mading_id'     => $madingId,
             'user_id'       => session('user_id'),
+            'user_type'     => 'user', // Tandai sebagai komentar user
             'parent_id'     => $parentId,
             'isi_komentar'  => $isi_komentar, // ✅ Sekarang variabel sudah ada
         ];
@@ -413,6 +415,7 @@ class UCMading extends BaseController
                 'message' => 'Sesi login hilang. Silakan login ulang.'
             ])->setStatusCode(403);
         }
+
         $madingId = $this->request->getPost('mading_id');
         $userId = session('user_id'); // Aman, karena sudah login
 
@@ -448,8 +451,12 @@ class UCMading extends BaseController
             $liked = true;
         }
 
-        // Hitung total like
-        $totalLikes = $likeModel->where('mading_id', $madingId)->countAllResults();
+        // Hitung total like dengan reset query builder
+        $totalLikes = $likeModel->resetQuery()->where('mading_id', $madingId)->countAllResults();
+
+        // Invalidate cache untuk memastikan data ter-update
+        $madingModel = new \App\Models\MadingModel();
+        $madingModel->invalidateCache($madingId);
 
         // Kirim kembali CSRF hash baru agar front-end bisa memperbarui token untuk request berikutnya
         $newCsrf = csrf_hash();

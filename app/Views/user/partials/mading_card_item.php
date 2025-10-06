@@ -17,6 +17,17 @@
 
       </div>
       <p class="text-gray-600 text-sm mt-2"><?= mading_excerpt($mading['deskripsi'], 120) ?></p>
+
+      <!-- Gambar jika ada -->
+      <?php if (!empty($mading['file']) && preg_match('/\.(jpg|jpeg|png|gif|webp)$/i', $mading['file'])): ?>
+        <div class="mt-3">
+          <img src="<?= base_url($mading['file']) ?>"
+            alt="<?= esc($mading['judul']) ?>"
+            class="w-full h-48 object-cover rounded-lg"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+      <?php endif; ?>
     </div>
     <div class="p-5 bg-gray-50 flex justify-between items-center">
       <div class="flex space-x-4 text-gray-500 text-sm">

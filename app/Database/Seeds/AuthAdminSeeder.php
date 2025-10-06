@@ -18,6 +18,7 @@ class AuthAdminSeeder extends Seeder
         $password = password_hash('minha27', PASSWORD_DEFAULT);
 
         $data = [
+            'id'         => 001,
             'username'   => 'minhaai',
             'password'   => $password,
             'created_at' => Time::now(),

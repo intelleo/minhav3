@@ -86,7 +86,7 @@ aside.sidebar-collapsed nav .site {
 
 /* Semua balasan memiliki border biru yang sama */
 .comment-reply {
-  /* border:  !important; */
+  border-left: 2px solid #3b82f6;
 }
 
 /* Komentar utama juga perlu pemisah yang jelas */
@@ -95,4 +95,44 @@ aside.sidebar-collapsed nav .site {
   position: relative;
   clear: both;
   display: block;
+}
+
+/* Modal Layanan - Overflow dan Responsive */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Modal responsive untuk mobile */
+@media (max-width: 768px) {
+  .modal-mobile {
+    max-width: 95vw !important;
+    margin: 1rem !important;
+  }
+
+  .modal-content-mobile {
+    max-height: 85vh !important;
+  }
+}
+
+/* Scrollbar styling untuk modal */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }

@@ -72,7 +72,8 @@ class AuthController extends BaseController
 
     public function logout()
     {
-        session()->destroy();
+        // Hapus hanya session user, jangan hapus session admin
+        session()->remove(['logged_in', 'user_id', 'npm', 'namalengkap', 'jurusan', 'bio', 'status', 'foto_profil']);
         return redirect()->to('/login')->with('success', 'Logout berhasil.');
     }
 

@@ -20,12 +20,13 @@ class UCNotifications extends BaseController
     // Query untuk notifikasi dengan handle admin dan user
     $items = [];
 
-    // Ambil semua komentar yang membalas user ini
+    // Ambil semua komentar yang membalas user ini (hanya komentar user, bukan admin)
     $comments = $db->table('mading_comments child')
-      ->select('child.*, parent.user_id as parent_user_id, mo.id as mading_id, mo.judul')
+      ->select('child.*, parent.user_id as parent_user_id, parent.user_type as parent_user_type, mo.id as mading_id, mo.judul')
       ->join('mading_comments parent', 'parent.id = child.parent_id')
       ->join('mading_online mo', 'mo.id = child.mading_id')
       ->where('parent.user_id', $userId)
+      ->where('(parent.user_type IS NULL OR parent.user_type != "admin")', null, false) // Hanya komentar user, bukan admin
       ->where("NOT EXISTS (SELECT 1 FROM {$dismissedTable} nd WHERE nd.user_id = {$userId} AND nd.comment_id = child.id)", null, false)
       ->orderBy('child.created_at', 'DESC')
       ->get()
@@ -34,19 +35,26 @@ class UCNotifications extends BaseController
     // Untuk setiap komentar, cari nama pengirim (admin atau user)
     foreach ($comments as $comment) {
       $replierId = $comment['user_id'];
+      $userType = $comment['user_type'] ?? 'user'; // Default untuk data lama
 
-      // Cek apakah ini admin
-      $adminData = $db->table('auth_admin')
-        ->select('username as namalengkap, NULL as foto_profil')
-        ->where('id', $replierId)
-        ->get()
-        ->getRowArray();
+      // Gunakan user_type untuk menentukan jenis pengirim
+      if ($userType === 'admin') {
+        // Ambil data admin
+        $adminData = $db->table('auth_admin')
+          ->select('username as namalengkap, NULL as foto_profil')
+          ->where('id', $replierId)
+          ->get()
+          ->getRowArray();
 
-      if ($adminData) {
-        $comment['replier_name'] = '[ADMIN] ' . $adminData['namalengkap'];
-        $comment['replier_photo'] = null;
+        if ($adminData) {
+          $comment['replier_name'] = '[ADMIN] ' . $adminData['namalengkap'];
+          $comment['replier_photo'] = null;
+        } else {
+          $comment['replier_name'] = '[ADMIN] Unknown';
+          $comment['replier_photo'] = null;
+        }
       } else {
-        // Cek apakah ini user
+        // Ambil data user
         $userData = $db->table('user_auth')
           ->select('namalengkap, foto_profil')
           ->where('id', $replierId)
@@ -96,6 +104,7 @@ class UCNotifications extends BaseController
     $builder = $db->table('mading_comments child')
       ->join('mading_comments parent', 'parent.id = child.parent_id')
       ->where('parent.user_id', $userId)
+      ->where('(parent.user_type IS NULL OR parent.user_type != "admin")', null, false) // Hanya komentar user, bukan admin
       ->where("NOT EXISTS (SELECT 1 FROM {$dismissedTable} nd WHERE nd.user_id = {$userId} AND nd.comment_id = child.id)", null, false)
       ->where("NOT EXISTS (SELECT 1 FROM {$seenTable} ns WHERE ns.user_id = {$userId} AND ns.comment_id = child.id)", null, false);
     $cnt = $builder->countAllResults();

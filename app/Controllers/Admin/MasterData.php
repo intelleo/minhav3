@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\UserAuthModel;
+use App\Models\MadingModel;
 
 class MasterData extends BaseController
 {
   protected $userModel;
+  protected $madingModel;
 
   public function __construct()
   {
     $this->userModel = new UserAuthModel();
+    $this->madingModel = new MadingModel();
   }
 
   public function index()
@@ -210,13 +213,31 @@ class MasterData extends BaseController
     $search = $this->request->getGet('search');
     $kategori = $this->request->getGet('kategori');
     $page = $this->request->getGet('page') ?? 1;
+    $sortBy = $this->request->getGet('sortBy') ?: 'created_at';
+    $sortDir = strtolower($this->request->getGet('sortDir') ?: 'DESC');
+    $allowedSort = ['id', 'judul', 'deskripsi', 'kategori', 'created_at'];
+    // Map kolom ke tabel yang benar untuk menghindari ambiguitas
+    $columnMap = [
+      'id' => 'layanan_informasi.id',
+      'judul' => 'layanan_informasi.judul',
+      'deskripsi' => 'layanan_informasi.deskripsi',
+      'kategori' => 'layanan_informasi.kategori',
+      'created_at' => 'layanan_informasi.created_at',
+    ];
+    if (!in_array($sortBy, $allowedSort, true)) {
+      $sortBy = 'created_at';
+    }
+    if (!in_array($sortDir, ['asc', 'desc'], true)) {
+      $sortDir = 'DESC';
+    }
     $perPage = 10;
 
     // Initialize LayananModel
     $layananModel = new \App\Models\LayananModel();
 
-    // Build query for counting
-    $countBuilder = $layananModel->builder();
+    // Build query for counting (exclude empty kategori)
+    $countBuilder = $layananModel->builder()
+      ->where('kategori IS NOT NULL AND kategori != ""', null, false);
 
     if (!empty($search)) {
       $countBuilder->groupStart()
@@ -232,8 +253,9 @@ class MasterData extends BaseController
     // Get total count for pagination
     $totalLayanan = $countBuilder->countAllResults(false);
 
-    // Build query for data (separate from count query)
-    $dataBuilder = $layananModel->builder();
+    // Build query for data (separate from count query, exclude empty kategori)
+    $dataBuilder = $layananModel->builder()
+      ->where('kategori IS NOT NULL AND kategori != ""', null, false);
 
     if (!empty($search)) {
       $dataBuilder->groupStart()
@@ -247,23 +269,26 @@ class MasterData extends BaseController
     }
 
     // Get layanan with pagination
-    $layanan = $dataBuilder->orderBy('created_at', 'DESC')
+    $orderCol = $columnMap[$sortBy] ?? 'layanan_informasi.created_at';
+    $layanan = $dataBuilder->orderBy($orderCol, $sortDir)
       ->limit($perPage, ($page - 1) * $perPage)
       ->get()
       ->getResultArray();
 
-    // Get statistics
+    // Get statistics (exclude empty kategori)
     $stats = [
-      'total' => $layananModel->countAllResults(),
+      'total' => $layananModel->where('kategori IS NOT NULL AND kategori != ""', null, false)->countAllResults(),
       'akademik' => $layananModel->where('kategori', 'Akademik')->countAllResults(),
       'administrasi' => $layananModel->where('kategori', 'Administrasi')->countAllResults(),
       'umum' => $layananModel->where('kategori', 'Umum')->countAllResults(),
     ];
 
-    // Get unique kategori for filter
+    // Get unique kategori for filter (exclude empty/null)
     $kategoriList = $layananModel->builder()
       ->select('kategori')
+      ->where('kategori IS NOT NULL AND kategori != ""', null, false)
       ->groupBy('kategori')
+      ->orderBy('kategori', 'ASC')
       ->get()
       ->getResultArray();
 
@@ -284,7 +309,9 @@ class MasterData extends BaseController
       ],
       'filters' => [
         'search' => $search,
-        'kategori' => $kategori
+        'kategori' => $kategori,
+        'sortBy' => $sortBy,
+        'sortDir' => $sortDir
       ]
     ];
 
@@ -310,6 +337,277 @@ class MasterData extends BaseController
     }
 
     return view('admin/master_data_chatbot', $data);
+  }
+
+  public function mading()
+  {
+    // Parameter filter & sort
+    $search = $this->request->getGet('search');
+    $status = $this->request->getGet('status'); // pending|aktif|nonaktif
+    $category = $this->request->getGet('category'); // edukasi|pengumuman|event|berita
+    if (!$category) {
+      // Alias untuuk kompatibilitas jika client mengirim 'jurusan'
+      $category = $this->request->getGet('jurusan');
+    }
+    $page = max(1, (int) ($this->request->getGet('page') ?? 1));
+    $perPage = 10;
+    $sortBy = $this->request->getGet('sortBy') ?: 'created_at';
+    $sortDir = strtolower($this->request->getGet('sortDir') ?: 'DESC');
+
+    $allowedSort = ['id', 'judul', 'category', 'status', 'tgl_mulai', 'tgl_akhir', 'created_at'];
+    $columnMap = [
+      'id' => 'mading_online.id',
+      'judul' => 'mading_online.judul',
+      'category' => 'mading_online.category',
+      'status' => 'mading_online.status',
+      'tgl_mulai' => 'mading_online.tgl_mulai',
+      'tgl_akhir' => 'mading_online.tgl_akhir',
+      'created_at' => 'mading_online.created_at',
+    ];
+    if (!in_array($sortBy, $allowedSort, true)) {
+      $sortBy = 'created_at';
+    }
+    if (!in_array($sortDir, ['asc', 'desc'], true)) {
+      $sortDir = 'DESC';
+    }
+
+    // Builder untuk count
+    $countBuilder = $this->madingModel->builder();
+    if (!empty($search)) {
+      $countBuilder->groupStart()
+        ->like('judul', $search)
+        ->orLike('deskripsi', $search)
+        ->groupEnd();
+    }
+    if (!empty($status)) {
+      $countBuilder->where('status', $status);
+    }
+    if (!empty($category)) {
+      $countBuilder->where('category', $category);
+    }
+    $total = $countBuilder->countAllResults(false);
+
+    // Data builder terpisah
+    $dataBuilder = $this->madingModel->builder();
+    if (!empty($search)) {
+      $dataBuilder->groupStart()
+        ->like('judul', $search)
+        ->orLike('deskripsi', $search)
+        ->groupEnd();
+    }
+    if (!empty($status)) {
+      $dataBuilder->where('status', $status);
+    }
+    if (!empty($category)) {
+      $dataBuilder->where('category', $category);
+    }
+
+    $orderCol = $columnMap[$sortBy] ?? 'mading_online.created_at';
+    $rows = $dataBuilder->orderBy($orderCol, $sortDir)
+      ->limit($perPage, ($page - 1) * $perPage)
+      ->get()
+      ->getResultArray();
+
+    // Stats ringkas
+    $stats = [
+      'total' => $this->madingModel->countAllResults(),
+      'aktif' => $this->madingModel->where('status', 'aktif')->countAllResults(),
+      'pending' => $this->madingModel->where('status', 'pending')->countAllResults(),
+      'nonaktif' => $this->madingModel->where('status', 'nonaktif')->countAllResults(),
+    ];
+
+    $data = [
+      'title' => 'Mading Management',
+      'admin' => [
+        'id' => session('admin_id'),
+        'username' => session('admin_username'),
+      ],
+      'mading' => $rows,
+      'stats' => $stats,
+      'pagination' => [
+        'current_page' => $page,
+        'per_page' => $perPage,
+        'total' => $total,
+        'total_pages' => (int) ceil($total / $perPage)
+      ],
+      'filters' => [
+        'search' => $search,
+        'status' => $status,
+        'category' => $category,
+        'sortBy' => $sortBy,
+        'sortDir' => $sortDir,
+      ],
+      'categories' => ['edukasi', 'pengumuman', 'event', 'berita'],
+    ];
+
+    // AJAX response: return tbody + pagination for SPA update
+    if ($this->request->isAJAX()) {
+      $tbodyHtml = view('admin/partials/mading_tbody', [
+        'mading' => $rows
+      ]);
+      $paginationHtml = view('admin/partials/mading_pagination', [
+        'pagination' => $data['pagination'],
+        'filters' => $data['filters']
+      ]);
+
+      $this->response->setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+      $this->response->setHeader('Pragma', 'no-cache');
+
+      return $this->response->setJSON([
+        'success' => true,
+        'html' => $tbodyHtml,
+        'pagination' => $paginationHtml,
+        'stats' => $stats,
+      ]);
+    }
+
+    return view('admin/master_data_mading', $data);
+  }
+
+  public function addMading()
+  {
+    // Validasi dasar
+    $rules = [
+      'judul' => 'required|min_length[3]|max_length[150]',
+      'category' => 'required|in_list[edukasi,pengumuman,event,berita]',
+      'deskripsi' => 'permit_empty|string',
+      'tgl_mulai' => 'permit_empty|valid_date',
+      'tgl_akhir' => 'permit_empty|valid_date',
+      'status' => 'required|in_list[pending,aktif,nonaktif]',
+    ];
+
+    $validation = \Config\Services::validation();
+    $validation->setRules($rules);
+
+    if (!$validation->withRequest($this->request)->run()) {
+      return redirect()->back()->withInput()->with('error', 'Validasi gagal: ' . implode(', ', $validation->getErrors()));
+    }
+
+    // File opsional
+    $file = $this->request->getFile('file');
+    $relativePath = null;
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+      $uploadDir = FCPATH . 'uploads/mading';
+      if (!is_dir($uploadDir)) {
+        @mkdir($uploadDir, 0755, true);
+        if (!file_exists($uploadDir . '/index.html')) {
+          @file_put_contents($uploadDir . '/index.html', "");
+        }
+      }
+      $newName = $file->getRandomName();
+      $file->move($uploadDir, $newName, true);
+      $relativePath = 'uploads/mading/' . $newName;
+    }
+
+    $data = [
+      'judul' => $this->request->getPost('judul'),
+      'category' => $this->request->getPost('category'),
+      'deskripsi' => $this->request->getPost('deskripsi') ?: null,
+      'file' => $relativePath,
+      'tgl_mulai' => $this->request->getPost('tgl_mulai') ?: null,
+      'tgl_akhir' => $this->request->getPost('tgl_akhir') ?: null,
+      'status' => $this->request->getPost('status'),
+      'admin_id' => (int) (session('admin_id') ?? 0),
+      'views' => 0,
+    ];
+
+    try {
+      $this->madingModel->insert($data);
+      $this->madingModel->invalidateCache();
+      return redirect()->to(site_url('Admin/MasterData/mading'))->with('success', 'Mading berhasil ditambahkan');
+    } catch (\Throwable $e) {
+      return redirect()->back()->withInput()->with('error', 'Gagal menambahkan mading: ' . $e->getMessage());
+    }
+  }
+
+  public function updateMading()
+  {
+    $id = (int) $this->request->getPost('id');
+    if (!$id) {
+      return redirect()->back()->with('error', 'ID mading tidak valid');
+    }
+
+    $rules = [
+      'judul' => 'required|min_length[3]|max_length[150]',
+      'category' => 'required|in_list[edukasi,pengumuman,event,berita]',
+      'deskripsi' => 'permit_empty|string',
+      'tgl_mulai' => 'permit_empty|valid_date',
+      'tgl_akhir' => 'permit_empty|valid_date',
+      'status' => 'required|in_list[pending,aktif,nonaktif]',
+    ];
+    $validation = \Config\Services::validation();
+    $validation->setRules($rules);
+    if (!$validation->withRequest($this->request)->run()) {
+      return redirect()->back()->withInput()->with('error', 'Validasi gagal: ' . implode(', ', $validation->getErrors()));
+    }
+
+    $existing = $this->madingModel->find($id);
+    if (!$existing) {
+      return redirect()->to(site_url('Admin/MasterData/mading'))->with('error', 'Mading tidak ditemukan');
+    }
+
+    $data = [
+      'judul' => $this->request->getPost('judul'),
+      'category' => $this->request->getPost('category'),
+      'deskripsi' => $this->request->getPost('deskripsi') ?: null,
+      'tgl_mulai' => $this->request->getPost('tgl_mulai') ?: null,
+      'tgl_akhir' => $this->request->getPost('tgl_akhir') ?: null,
+      'status' => $this->request->getPost('status'),
+    ];
+
+    // File baru opsional
+    $file = $this->request->getFile('file');
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+      $uploadDir = FCPATH . 'uploads/mading';
+      if (!is_dir($uploadDir)) {
+        @mkdir($uploadDir, 0755, true);
+        if (!file_exists($uploadDir . '/index.html')) {
+          @file_put_contents($uploadDir . '/index.html', "");
+        }
+      }
+      $newName = $file->getRandomName();
+      $file->move($uploadDir, $newName, true);
+      $data['file'] = 'uploads/mading/' . $newName;
+    }
+
+    try {
+      $this->madingModel->update($id, $data);
+      $this->madingModel->invalidateCache($id);
+      return redirect()->to(site_url('Admin/MasterData/mading'))->with('success', 'Mading berhasil diperbarui');
+    } catch (\Throwable $e) {
+      return redirect()->back()->withInput()->with('error', 'Gagal memperbarui mading: ' . $e->getMessage());
+    }
+  }
+
+  public function deleteMading()
+  {
+    $id = (int) $this->request->getPost('id');
+    if (!$id) {
+      return redirect()->back()->with('error', 'ID mading tidak valid');
+    }
+    try {
+      $this->madingModel->delete($id);
+      $this->madingModel->invalidateCache($id);
+      return redirect()->to(site_url('Admin/MasterData/mading'))->with('success', 'Mading berhasil dihapus');
+    } catch (\Throwable $e) {
+      return redirect()->back()->with('error', 'Gagal menghapus mading: ' . $e->getMessage());
+    }
+  }
+
+  public function getMading()
+  {
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request']);
+    }
+    $id = (int) $this->request->getGet('id');
+    if (!$id) {
+      return $this->response->setJSON(['success' => false, 'message' => 'ID tidak valid']);
+    }
+    $row = $this->madingModel->find($id);
+    if (!$row) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Data tidak ditemukan']);
+    }
+    return $this->response->setJSON(['success' => true, 'data' => $row, 'csrf' => csrf_hash()]);
   }
 
   // AJAX Methods for Users Management
@@ -904,6 +1202,146 @@ class MasterData extends BaseController
     }
   }
 
+
+  /**
+   * Test method to bypass CSRF validation for delete layanan
+   */
+  public function deleteLayananTest()
+  {
+    // Check if request is AJAX
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Invalid request method'
+      ]);
+    }
+
+    // Debug all data without CSRF validation
+    $allPostData = $this->request->getPost();
+    log_message('debug', 'TEST DELETE LAYANAN - All POST data: ' . json_encode($allPostData));
+
+    $layananId = $this->request->getPost('layanan_id');
+
+    if (!$layananId) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Layanan ID required'
+      ]);
+    }
+
+    try {
+      // Initialize LayananModel
+      $layananModel = new \App\Models\LayananModel();
+
+      // Delete layanan data
+      $result = $layananModel->delete($layananId);
+
+      if ($result) {
+        // Invalidate cache
+        $layananModel->invalidateCache();
+
+        return $this->response->setJSON([
+          'success' => true,
+          'message' => 'Layanan berhasil dihapus!',
+          'csrf' => csrf_hash()
+        ]);
+      } else {
+        return $this->response->setJSON([
+          'success' => false,
+          'message' => 'Gagal menghapus layanan',
+          'csrf' => csrf_hash()
+        ]);
+      }
+    } catch (\Exception $e) {
+      log_message('error', 'Delete layanan test error: ' . $e->getMessage());
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Terjadi kesalahan saat menghapus layanan: ' . $e->getMessage(),
+        'csrf' => csrf_hash()
+      ]);
+    }
+  }
+
+  /**
+   * Test method to bypass CSRF validation for update layanan
+   */
+  public function updateLayananTest()
+  {
+    // Check if request is AJAX
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Invalid request method'
+      ]);
+    }
+
+    // Debug all data without CSRF validation
+    $allPostData = $this->request->getPost();
+    log_message('debug', 'TEST UPDATE LAYANAN - All POST data: ' . json_encode($allPostData));
+
+    $layananId = $this->request->getPost('layanan_id');
+
+    if (!$layananId) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Layanan ID required'
+      ]);
+    }
+
+    // Get form data
+    $data = [
+      'judul' => $this->request->getPost('judul'),
+      'deskripsi' => $this->request->getPost('deskripsi'),
+      'kategori' => $this->request->getPost('kategori')
+    ];
+
+    // Validate required fields
+    $validation = \Config\Services::validation();
+    $validation->setRules([
+      'judul' => 'required|min_length[3]|max_length[255]',
+      'deskripsi' => 'required|min_length[10]',
+      'kategori' => 'required|in_list[Akademik,Administrasi,Umum]'
+    ]);
+
+    if (!$validation->run($data)) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Validation failed: ' . implode(', ', $validation->getErrors())
+      ]);
+    }
+
+    try {
+      // Initialize LayananModel
+      $layananModel = new \App\Models\LayananModel();
+
+      // Update layanan data
+      $result = $layananModel->update($layananId, $data);
+
+      if ($result) {
+        // Invalidate cache
+        $layananModel->invalidateCache();
+
+        return $this->response->setJSON([
+          'success' => true,
+          'message' => 'Layanan berhasil diperbarui!',
+          'csrf' => csrf_hash()
+        ]);
+      } else {
+        return $this->response->setJSON([
+          'success' => false,
+          'message' => 'Gagal memperbarui layanan',
+          'csrf' => csrf_hash()
+        ]);
+      }
+    } catch (\Exception $e) {
+      log_message('error', 'Update layanan test error: ' . $e->getMessage());
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Terjadi kesalahan saat memperbarui layanan: ' . $e->getMessage(),
+        'csrf' => csrf_hash()
+      ]);
+    }
+  }
 
   /**
    * Test method to bypass CSRF validation for layanan (same as addUserTest)

@@ -16,6 +16,7 @@
     // Exclude certain admin paths from SPA handling (force full reload)
     const EXCLUDE_PATH_PREFIXES = [
       "/Admin/MasterData/users", // Master Data Users harus full reload
+      "/Admin/MasterData/chatbot", // Master Data Chatbot harus full reload
     ];
 
     const isExcluded = EXCLUDE_PATH_PREFIXES.some((p) =>

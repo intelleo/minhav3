@@ -2,9 +2,9 @@
   <tr>
     <td colspan="7" class="px-6 py-12 text-center">
       <div class="text-gray-500">
-        <i class="ri-robot-line text-4xl mb-4"></i>
+        <img src="<?= base_url('img/icon-chat.webp') ?>" alt="" width="40" class="block mx-auto">
         <p>Tidak ada layanan ditemukan</p>
-        <p class="text-sm">Mulai dengan menambahkan layanan pertama</p>
+
       </div>
     </td>
   </tr>
@@ -17,7 +17,9 @@
         <div class="text-sm text-gray-500">ID: <?= $item['id'] ?></div>
       </td>
       <td class="px-6 py-4">
-        <div class="text-sm text-gray-900 max-w-xs truncate"><?= esc(substr($item['deskripsi'], 0, 100)) ?>...</div>
+        <div class="text-sm text-gray-900 max-w-xs">
+          <div class="line-clamp-3 break-words"><?= esc($item['deskripsi']) ?></div>
+        </div>
       </td>
       <td class="px-6 py-4 whitespace-nowrap">
         <?php

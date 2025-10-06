@@ -15,6 +15,7 @@ if (typeof AdminSearchFilter !== "undefined") {
         searchInput: ".search-input",
         statusSelect: ".status-select",
         jurusanSelect: ".jurusan-select",
+        categorySelect: ".category-select",
         resultsContainer: ".results-container",
         paginationContainer: ".pagination-container",
         loadingClass: "loading",
@@ -28,6 +29,7 @@ if (typeof AdminSearchFilter !== "undefined") {
         search: "",
         status: "",
         jurusan: "",
+        category: "",
         page: 1,
         sortBy: "",
         sortDir: "",
@@ -92,6 +94,30 @@ if (typeof AdminSearchFilter !== "undefined") {
       };
       document.addEventListener("change", window.__adminJurusanChangeHandler);
 
+      // Delegated category select
+      if (window.__adminCategoryChangeHandler) {
+        document.removeEventListener(
+          "change",
+          window.__adminCategoryChangeHandler
+        );
+      }
+      window.__adminCategoryChangeHandler = (e) => {
+        if (e.target && e.target.matches(this.options.categorySelect)) {
+          this.currentFilters.category = e.target.value;
+          this.currentFilters.page = 1;
+          this.performSearch();
+        }
+      };
+      document.addEventListener("change", window.__adminCategoryChangeHandler);
+
+      // Immediate trigger for select default values on load (ensure initial state)
+      try {
+        const cat = document.querySelector(this.options.categorySelect);
+        if (cat && cat.value) {
+          this.currentFilters.category = cat.value;
+        }
+      } catch (_) {}
+
       // Delegated pagination clicks
       if (window.__adminPaginationClickHandler) {
         document.removeEventListener(
@@ -143,7 +169,13 @@ if (typeof AdminSearchFilter !== "undefined") {
           "filters:",
           this.currentFilters
         );
-        const response = await axios.get(url);
+        const client =
+          typeof window !== "undefined" && window.api ? window.api : axios;
+        const response = await client.get(url, {
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+          },
+        });
 
         if (response.data.success !== false) {
           this.updateResults(response.data);

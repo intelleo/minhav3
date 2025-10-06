@@ -63,7 +63,7 @@
       <p class="text-gray-600 mb-4">Buat, lihat, dan atur postingan mading untuk pengguna.</p>
       <div class="flex items-center justify-between">
 
-        <a href="<?= site_url('Admin/Mading') ?>" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200">
+        <a href="<?= site_url('Admin/MasterData/mading')  ?>" data-no-spa="true" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200">
           <i class="ri-arrow-right-line mr-1 text-white"></i>
           Kelola
         </a>
