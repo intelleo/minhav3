@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\UserAuthModel;
 use App\Models\MadingModel;
 use App\Models\MadingCommentModel;
+use App\Models\LayananModel;
 
 class Dashboard extends BaseController
 {
@@ -15,6 +16,7 @@ class Dashboard extends BaseController
     $userModel = new UserAuthModel();
     $madingModel = new MadingModel();
     $commentModel = new MadingCommentModel();
+    $layananModel = new LayananModel();
 
     // Get user statistics with error handling
     try {
@@ -38,31 +40,80 @@ class Dashboard extends BaseController
     try {
       $contentStats = [
         'total_mading' => $madingModel->countAllResults(),
+        'active_mading' => $madingModel->where('status', 'aktif')->countAllResults(),
+        'pending_mading' => $madingModel->where('status', 'pending')->countAllResults(),
+        'inactive_mading' => $madingModel->where('status', 'nonaktif')->countAllResults(),
         'total_comments' => $commentModel->countAllResults(),
-        'chatbot_qa' => 0, // TODO: Implement when chatbot model is ready
+        'total_chatbot' => $layananModel->countAllResults(),
+        'akademik_chatbot' => $layananModel->where('kategori', 'Akademik')->countAllResults(),
+        'administrasi_chatbot' => $layananModel->where('kategori', 'Administrasi')->countAllResults(),
+        'umum_chatbot' => $layananModel->where('kategori', 'Umum')->countAllResults(),
       ];
-
-      // Get mading statistics by status
-      $madingStats = [
-        'mading_aktif' => (clone $madingModel)->where('status', 'aktif')->countAllResults(),
-        'mading_pending' => (clone $madingModel)->where('status', 'pending')->countAllResults(),
-        'mading_nonaktif' => (clone $madingModel)->where('status', 'nonaktif')->countAllResults(),
-      ];
-
-      $contentStats = array_merge($contentStats, $madingStats);
-
-      // Debug: Log the mading stats
-      log_message('info', 'Mading Stats: ' . json_encode($madingStats));
     } catch (\Exception $e) {
       log_message('error', 'Dashboard content stats error: ' . $e->getMessage());
       $contentStats = [
         'total_mading' => 0,
+        'active_mading' => 0,
+        'pending_mading' => 0,
+        'inactive_mading' => 0,
         'total_comments' => 0,
-        'chatbot_qa' => 0,
-        'mading_aktif' => 0,
-        'mading_pending' => 0,
-        'mading_nonaktif' => 0,
+        'total_chatbot' => 0,
+        'akademik_chatbot' => 0,
+        'administrasi_chatbot' => 0,
+        'umum_chatbot' => 0,
       ];
+    }
+
+    // Recent Activity
+    try {
+      $recent = [];
+      // Users: terbaru
+      $recentUsers = $userModel->orderBy('created_at', 'DESC')->limit(10)->findAll();
+      foreach ($recentUsers as $u) {
+        $recent[] = [
+          'type' => 'user',
+          'created_at' => $u['created_at'] ?? date('Y-m-d H:i:s'),
+          'title' => 'User baru terdaftar',
+          'detail' => ($u['namalengkap'] ?? '') !== '' ? $u['namalengkap'] : (($u['npm'] ?? '') !== '' ? $u['npm'] : 'Pengguna'),
+          'icon' => 'ri-user-add-line',
+          'color' => 'blue'
+        ];
+      }
+
+      // Mading: terbaru
+      $recentMading = $madingModel->orderBy('created_at', 'DESC')->limit(10)->findAll();
+      foreach ($recentMading as $m) {
+        $recent[] = [
+          'type' => 'mading',
+          'created_at' => $m['created_at'] ?? date('Y-m-d H:i:s'),
+          'title' => 'Mading baru dipublikasikan',
+          'detail' => $m['judul'] ?? 'Mading',
+          'icon' => 'ri-news-line',
+          'color' => 'green'
+        ];
+      }
+
+      // Komentar: terbaru (user/admin)
+      $recentComments = $commentModel->orderBy('created_at', 'DESC')->limit(10)->findAll();
+      foreach ($recentComments as $c) {
+        $recent[] = [
+          'type' => 'comment',
+          'created_at' => $c['created_at'] ?? date('Y-m-d H:i:s'),
+          'title' => 'Komentar baru',
+          'detail' => mb_strimwidth((string)($c['isi_komentar'] ?? ''), 0, 80, '...'),
+          'icon' => 'ri-message-line',
+          'color' => 'yellow'
+        ];
+      }
+
+      // Urutkan semua berdasarkan waktu desc dan ambil 10 teratas
+      usort($recent, function ($a, $b) {
+        return strtotime($b['created_at']) <=> strtotime($a['created_at']);
+      });
+      $recent = array_slice($recent, 0, 10);
+    } catch (\Exception $e) {
+      log_message('error', 'Dashboard recent activity error: ' . $e->getMessage());
+      $recent = [];
     }
 
     $data = [
@@ -72,6 +123,7 @@ class Dashboard extends BaseController
         'username' => session('admin_username'),
       ],
       'stats' => array_merge($userStats, $contentStats),
+      'recent' => $recent,
     ];
 
     // Check if AJAX request

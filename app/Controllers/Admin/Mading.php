@@ -25,13 +25,13 @@ class Mading extends BaseController
       return $this->response->setJSON(['success' => false, 'message' => 'Invalid request']);
     }
 
-    $page = (int) ($this->request->getGet('page') ?? 1);
-    $perPage = (int) ($this->request->getGet('perPage') ?? 6);
-    $offset = max(0, ($page - 1) * $perPage);
+    $page = max(1, (int)$this->request->getGet('page'));
+    $perPage = min(24, max(3, (int)$this->request->getGet('perPage') ?: 6));
+    $offset = ($page - 1) * $perPage;
 
     $madingModel = new \App\Models\MadingModel();
 
-    // Ambil data mading dengan query yang sama seperti user
+    // Ambil data mading dengan query yang sama persis seperti user
     $today = date('Y-m-d');
     $builder = $madingModel->db->table('mading_online')
       ->select('mading_online.*, auth_admin.username')
@@ -40,22 +40,24 @@ class Mading extends BaseController
       ->where('mading_online.tgl_akhir >=', $today)
       ->orderBy('mading_online.created_at', 'DESC');
 
-    $all = $builder->get()->getResultArray();
-    $slice = array_slice($all, $offset, $perPage);
+    $total = $builder->countAllResults(false);
+    $rows = $builder->get($perPage, $offset)->getResultArray();
+    $rows = $madingModel->enrichMadingDataPublic($rows);
 
-    // Enrich data seperti di user
-    $slice = $madingModel->enrichMadingDataPublic($slice);
-
-    // Render item HTML menggunakan partial admin
+    // Render setiap item memakai view helper yang sama dengan detail (badge, border, dll)
     $html = '';
-    foreach ($slice as $mading) {
+    foreach ($rows as $mading) {
       $html .= view('admin/partials/mading_card_item', ['mading' => $mading]);
     }
 
     return $this->response->setJSON([
       'success' => true,
-      'html' => $html,
       'page' => $page,
+      'perPage' => $perPage,
+      'total' => $total,
+      'hasMore' => ($offset + $perPage) < $total,
+      'html' => $html,
+      'csrf' => csrf_hash(),
     ]);
   }
 

@@ -60,10 +60,7 @@
         <span>Profile Saya</span>
         <span id="navNotifDot" class="absolute right-2 top-2 w-2 h-2 bg-red-500 rounded-full hidden"></span>
       </a>
-      <a href="<?= site_url('mading') ?>" class="site <?= current_url() == site_url('mading') ? 'aktif' : '' ?>">
-        <i class="ri-question-fill"></i>
-        <span>Panduan Minha</span>
-      </a>
+
       <a href="<?= site_url('logout') ?>" class="site">
         <i class="ri-logout-circle-r-fill"></i>
         <span>Logout</span>
@@ -102,10 +99,7 @@
           <span>Profile Saya</span>
           <span id="navNotifDotMobile" class="absolute right-2 top-1.5 w-2 h-2 bg-red-500 rounded-full hidden"></span>
         </a>
-        <a href="<?= site_url('mading') ?>" class="site py-2 border-b border-blue-50 px-2 <?= current_url() == site_url('mading') ? 'aktif' : '' ?>">
-          <i class="ri-question-fill"></i>
-          <span>Panduan Minha</span>
-        </a>
+
         <a href="<?= site_url('logout') ?>" class="site py-2 border-b border-blue-50 px-2">
           <i class="ri-logout-circle-r-fill"></i>
           <span>Logout</span>

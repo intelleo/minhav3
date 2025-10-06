@@ -5,16 +5,19 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\UserAuthModel;
 use App\Models\MadingModel;
+use App\Models\LayananModel;
 
 class MasterData extends BaseController
 {
   protected $userModel;
   protected $madingModel;
+  protected $layananModel;
 
   public function __construct()
   {
     $this->userModel = new UserAuthModel();
     $this->madingModel = new MadingModel();
+    $this->layananModel = new LayananModel();
   }
 
   public function index()
@@ -22,19 +25,45 @@ class MasterData extends BaseController
     // Get statistics with error handling
     try {
       $stats = [
+        // User statistics
         'total_users' => $this->userModel->countAllResults(),
         'active_users' => $this->userModel->where('status', 'aktif')->countAllResults(),
         'pending_users' => $this->userModel->where('status', 'pending')->countAllResults(),
         'inactive_users' => $this->userModel->where('status', 'nonaktif')->countAllResults(),
+
+        // Mading statistics
+        'total_mading' => $this->madingModel->countAllResults(),
+        'active_mading' => $this->madingModel->where('status', 'aktif')->countAllResults(),
+        'pending_mading' => $this->madingModel->where('status', 'pending')->countAllResults(),
+        'inactive_mading' => $this->madingModel->where('status', 'nonaktif')->countAllResults(),
+
+        // Chatbot statistics (layanan informasi)
+        'total_chatbot' => $this->layananModel->countAllResults(),
+        'akademik_chatbot' => $this->layananModel->where('kategori', 'Akademik')->countAllResults(),
+        'administrasi_chatbot' => $this->layananModel->where('kategori', 'Administrasi')->countAllResults(),
+        'umum_chatbot' => $this->layananModel->where('kategori', 'Umum')->countAllResults(),
       ];
     } catch (\Exception $e) {
       // If database error, use default values
       log_message('error', 'MasterData index error: ' . $e->getMessage());
       $stats = [
+        // User statistics
         'total_users' => 0,
         'active_users' => 0,
         'pending_users' => 0,
         'inactive_users' => 0,
+
+        // Mading statistics
+        'total_mading' => 0,
+        'active_mading' => 0,
+        'pending_mading' => 0,
+        'inactive_mading' => 0,
+
+        // Chatbot statistics
+        'total_chatbot' => 0,
+        'akademik_chatbot' => 0,
+        'administrasi_chatbot' => 0,
+        'umum_chatbot' => 0,
       ];
     }
 

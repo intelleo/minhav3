@@ -38,7 +38,7 @@
         <?php endforeach; ?>
       </select>
     </div>
-    <button type="button" data-action="add-mading" class="bg-purple-600 text-white p-2 rounded-lg hover:bg-purple-700 transition-colors duration-200 h-[38px] whitespace-nowrap px-4">
+    <button type="button" data-action="add-mading" class="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 h-[38px] whitespace-nowrap px-4">
       <i class="ri-add-line mr-1 text-white"></i> Tambah Mading
     </button>
   </div>
@@ -62,7 +62,7 @@
     </table>
   </div>
 
-  <div class="pagination-container mt-4 flex justify-end gap-2">
+  <div class="pagination-container">
     <?= view('admin/partials/mading_pagination', ['pagination' => $pagination, 'filters' => $filters]) ?>
   </div>
 </div>
@@ -123,7 +123,7 @@
   <div class="flex items-center justify-center min-h-screen p-4">
     <div class="bg-white rounded-lg shadow-xl w-full max-w-[38rem]">
       <div class="flex items-center justify-between p-6 border-b border-gray-100">
-        <h3 class="text-lg font-semibold text-purple-600">Tambah Mading</h3>
+        <h3 class="text-lg font-semibold text-blue-600">Tambah Mading</h3>
         <button type="button" data-close="add" class="text-gray-500"><i class="ri-close-line text-xl"></i></button>
       </div>
       <form id="formAddMading" method="post" action="#" enctype="multipart/form-data" class="p-6 space-y-4">
@@ -168,8 +168,8 @@
         </div>
         <div class="flex justify-end gap-3 pt-2">
           <button type="button" data-close="add" class="px-4 py-2 border border-gray-200 rounded">Batal</button>
-          <button type="submit" class="px-4 py-2 bg-purple-600 text-white rounded">
-            <span class="submit-text">Simpan</span>
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">
+            <span class="submit-text text-white">Simpan</span>
             <span class="loading-text hidden">
               <i class="ri-loader-4-line animate-spin mr-2"></i>
               Menyimpan...
@@ -719,7 +719,7 @@
   <div class="flex items-center justify-center min-h-screen p-4">
     <div class="bg-white rounded-lg shadow-xl w-full max-w-[38rem]">
       <div class="flex items-center justify-between p-6 border-b border-gray-100">
-        <h3 class="text-lg font-semibold text-purple-600">Edit Mading</h3>
+        <h3 class="text-lg font-semibold text-blue-600">Edit Mading</h3>
         <button type="button" data-close="edit" class="text-gray-500"><i class="ri-close-line text-xl"></i></button>
       </div>
       <form id="formEditMading" method="post" action="#" enctype="multipart/form-data" class="p-6 space-y-4">

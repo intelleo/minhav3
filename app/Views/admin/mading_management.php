@@ -111,6 +111,49 @@
       if (list && list.dataset.loadedPage === '0') loadMoreAdminMading();
     })();
 
+    // Fungsi Like/Unlike untuk admin
+    window.toggleLike = async function(madingId) {
+      try {
+        const {
+          data
+        } = await (window.api || window.axios).post('<?= site_url('Mading/like') ?>', new URLSearchParams({
+          mading_id: madingId
+        }));
+        if (!data?.success) {
+          if (window.showAlert) showAlert('error', data?.message || 'Gagal like.');
+          return;
+        }
+
+        // Cari elemen like button berdasarkan madingId
+        const likeButtons = document.querySelectorAll(`[onclick="toggleLike(${madingId})"]`);
+        likeButtons.forEach(btn => {
+          const icon = btn.querySelector('#like-icon');
+          const countSpan = btn.querySelector('#like-count');
+
+          if (data.liked) {
+            icon.classList.replace('ri-heart-line', 'ri-heart-fill');
+            icon.classList.remove('text-gray-600');
+            icon.classList.add('text-red-600');
+            btn.dataset.liked = '1';
+          } else {
+            icon.classList.replace('ri-heart-fill', 'ri-heart-line');
+            icon.classList.remove('text-red-600');
+            icon.classList.add('text-gray-600');
+            btn.dataset.liked = '0';
+          }
+
+          countSpan.textContent = data.total_likes >= 1000 ?
+            (data.total_likes / 1000).toFixed(1).replace(/\.0$/, '') + 'k' :
+            data.total_likes.toString();
+        });
+
+        // CSRF akan diupdate otomatis oleh interceptor jika server mengirimkan data.csrf / data.csrf_hash
+      } catch (err) {
+        console.error('Error:', err);
+        if (window.showAlert) showAlert('error', 'Gagal memproses like. Coba refresh halaman.');
+      }
+    };
+
   })();
 </script>
 

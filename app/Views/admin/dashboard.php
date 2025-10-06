@@ -2,157 +2,255 @@
 
 <?= $this->section('content') ?>
 
-<div class="admin-dashboard">
+<div class="admin-dashboard mt-[-5rem]">
 
 
   <!-- Quick Stats -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6  mt-[-5rem]">
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <div class="p-3 bg-blue-100 rounded-lg">
-            <i class="ri-team-fill text-2xl text-blue-600"></i>
-          </div>
-          <div class="ml-4">
-            <p class="text-sm text-gray-600">Total Users</p>
-            <p class="text-2xl font-bold text-gray-900"><?= number_format($stats['total_users'] ?? 0) ?></p>
-          </div>
-        </div>
-      </div>
-      <!-- Status breakdown -->
-      <div class="mt-4 pt-4 border-t border-gray-100">
-        <div class="space-y-2">
-          <!-- Progress bar untuk status -->
-          <?php
-          $totalUsers = $stats['total_users'] ?? 1; // Avoid division by zero
-          $activePercentage = $totalUsers > 0 ? ($stats['active_users'] ?? 0) / $totalUsers * 100 : 0;
-          $pendingPercentage = $totalUsers > 0 ? ($stats['pending_users'] ?? 0) / $totalUsers * 100 : 0;
-          $inactivePercentage = $totalUsers > 0 ? ($stats['inactive_users'] ?? 0) / $totalUsers * 100 : 0;
-          ?>
-          <div class="w-full bg-gray-200 rounded-full h-2">
-            <div class="flex h-2 rounded-full overflow-hidden">
-              <div class="bg-green-500" style="width: <?= $activePercentage ?>%"></div>
-              <div class="bg-yellow-500" style="width: <?= $pendingPercentage ?>%"></div>
-              <div class="bg-red-500" style="width: <?= $inactivePercentage ?>%"></div>
-            </div>
-          </div>
+  <div class=" bg-white rounded-lg shadow p-6">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Statistics</h3>
 
-          <!-- Status labels -->
-          <div class="flex justify-between items-center text-xs">
-            <div class="flex items-center">
-              <div class="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-              <span class="text-gray-600">Aktif: <?= number_format($stats['active_users'] ?? 0) ?></span>
-            </div>
-            <div class="flex items-center">
-              <div class="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-              <span class="text-gray-600">Pending: <?= number_format($stats['pending_users'] ?? 0) ?></span>
-            </div>
-            <div class="flex items-center">
-              <div class="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-              <span class="text-gray-600">Nonaktif: <?= number_format($stats['inactive_users'] ?? 0) ?></span>
-            </div>
-          </div>
+    <!-- Users Statistics -->
+    <div class="mb-6">
+      <h4 class="text-md font-medium text-gray-700 mb-3 flex items-center">
+        <i class="ri-team-line mr-2 text-blue-600"></i>
+        Users Statistics
+      </h4>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-blue-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-blue-600"><?= $stats['total_users'] ?></div>
+          <div class="text-sm text-gray-600">Total Users</div>
+        </div>
+        <div class="text-center p-4 bg-green-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-green-600"><?= $stats['active_users'] ?></div>
+          <div class="text-sm text-gray-600">Active Users</div>
+        </div>
+        <div class="text-center p-4 bg-yellow-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-yellow-600"><?= $stats['pending_users'] ?></div>
+          <div class="text-sm text-gray-600">Pending Users</div>
+        </div>
+        <div class="text-center p-4 bg-red-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-red-600"><?= $stats['inactive_users'] ?></div>
+          <div class="text-sm text-gray-600">Inactive Users</div>
         </div>
       </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center">
-        <div class="p-3 bg-green-100 rounded-lg">
-          <i class="ri-news-fill text-2xl text-green-600"></i>
+    <!-- Mading Statistics -->
+    <div class="mb-6">
+      <h4 class="text-md font-medium text-gray-700 mb-3 flex items-center">
+        <i class="ri-news-line mr-2 text-purple-600"></i>
+        Mading Statistics
+      </h4>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-purple-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-purple-600"><?= $stats['total_mading'] ?></div>
+          <div class="text-sm text-gray-600">Total Mading</div>
         </div>
-        <div class="ml-4">
-          <p class="text-sm text-gray-600">Total Mading</p>
-          <p class="text-2xl font-bold text-gray-900"><?= number_format($stats['total_mading'] ?? 0) ?></p>
+        <div class="text-center p-4 bg-green-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-green-600"><?= $stats['active_mading'] ?></div>
+          <div class="text-sm text-gray-600">Active Mading</div>
         </div>
-      </div>
-      <!-- Status breakdown -->
-      <div class="mt-4 ">
-        <div class="flex gap-4">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center">
-              <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-              <span class="text-gray-600">Aktif : <span class="font-medium text-gray-900"><?= number_format($stats['mading_aktif'] ?? 0) ?></span></span>
-            </div>
-
-          </div>
-          <div class="flex items-center justify-between">
-            <div class="flex items-center">
-              <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-              <span class="text-gray-600">Nonaktif : <span class="font-medium text-gray-900"><?= number_format($stats['mading_nonaktif'] ?? 0) ?></span></span>
-            </div>
-
-          </div>
+        <div class="text-center p-4 bg-yellow-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-yellow-600"><?= $stats['pending_mading'] ?></div>
+          <div class="text-sm text-gray-600">Pending Mading</div>
+        </div>
+        <div class="text-center p-4 bg-red-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-red-600"><?= $stats['inactive_mading'] ?></div>
+          <div class="text-sm text-gray-600">Inactive Mading</div>
         </div>
       </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center">
-        <div class="p-3 bg-yellow-100 rounded-lg">
-          <i class="ri-message-3-fill text-2xl text-yellow-600"></i>
+    <!-- Chatbot Statistics -->
+    <div>
+      <h4 class="text-md font-medium text-gray-700 mb-3 flex items-center">
+        <i class="ri-robot-line mr-2 text-green-600"></i>
+        Chatbot Statistics
+      </h4>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-green-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-green-600"><?= $stats['total_chatbot'] ?></div>
+          <div class="text-sm text-gray-600">Total Q&A</div>
         </div>
-        <div class="ml-4">
-          <p class="text-sm text-gray-600">Total Comments</p>
-          <p class="text-2xl font-bold text-gray-900"><?= number_format($stats['total_comments'] ?? 0) ?></p>
+        <div class="text-center p-4 bg-blue-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-blue-600"><?= $stats['akademik_chatbot'] ?></div>
+          <div class="text-sm text-gray-600">Akademik</div>
         </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex items-center">
-        <div class="p-3 bg-purple-100 rounded-lg">
-          <i class="ri-robot-fill text-2xl text-purple-600"></i>
+        <div class="text-center p-4 bg-purple-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-purple-600"><?= $stats['administrasi_chatbot'] ?></div>
+          <div class="text-sm text-gray-600">Administrasi</div>
         </div>
-        <div class="ml-4">
-          <p class="text-sm text-gray-600">Chatbot Q&A</p>
-          <p class="text-2xl font-bold text-gray-900"><?= number_format($stats['chatbot_qa'] ?? 0) ?></p>
-          <p class="text-xs text-gray-500 mt-1">Coming Soon</p>
+        <div class="text-center p-4 bg-orange-50 rounded-lg shadow">
+          <div class="text-2xl font-bold text-orange-600"><?= $stats['umum_chatbot'] ?></div>
+          <div class="text-sm text-gray-600">Umum</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Charts Section -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-md font-semibold text-gray-800 mb-4">Users Chart</h3>
+      <canvas id="usersChart" height="140"></canvas>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-md font-semibold text-gray-800 mb-4">Mading Chart</h3>
+      <canvas id="madingChart" height="140"></canvas>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-md font-semibold text-gray-800 mb-4">Chatbot (Kategori)</h3>
+      <canvas id="chatbotChart" height="140"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    (function() {
+      const usersData = {
+        labels: ['Aktif', 'Pending', 'Nonaktif'],
+        datasets: [{
+          label: 'Users',
+          data: [
+            <?= (int)($stats['active_users'] ?? 0) ?>,
+            <?= (int)($stats['pending_users'] ?? 0) ?>,
+            <?= (int)($stats['inactive_users'] ?? 0) ?>
+          ],
+          backgroundColor: ['#16a34a33', '#f59e0b33', '#ef444433'],
+          borderColor: ['#16a34a', '#f59e0b', '#ef4444'],
+          borderWidth: 1
+        }]
+      };
+
+      const madingData = {
+        labels: ['Aktif', 'Pending', 'Nonaktif'],
+        datasets: [{
+          label: 'Mading',
+          data: [
+            <?= (int)($stats['active_mading'] ?? 0) ?>,
+            <?= (int)($stats['pending_mading'] ?? 0) ?>,
+            <?= (int)($stats['inactive_mading'] ?? 0) ?>
+          ],
+          backgroundColor: ['#16a34a33', '#f59e0b33', '#ef444433'],
+          borderColor: ['#16a34a', '#f59e0b', '#ef4444'],
+          borderWidth: 1
+        }]
+      };
+
+      const chatbotData = {
+        labels: ['Akademik', 'Administrasi', 'Umum'],
+        datasets: [{
+          label: 'Chatbot Kategori',
+          data: [
+            <?= (int)($stats['akademik_chatbot'] ?? 0) ?>,
+            <?= (int)($stats['administrasi_chatbot'] ?? 0) ?>,
+            <?= (int)($stats['umum_chatbot'] ?? 0) ?>
+          ],
+          backgroundColor: ['#3b82f633', '#a855f733', '#f9731633'],
+          borderColor: ['#3b82f6', '#a855f7', '#f97316'],
+          borderWidth: 1
+        }]
+      };
+
+      new Chart(document.getElementById('usersChart'), {
+        type: 'bar',
+        data: usersData,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              }
+            }
+          }
+        }
+      });
+
+      new Chart(document.getElementById('madingChart'), {
+        type: 'bar',
+        data: madingData,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              }
+            }
+          }
+        }
+      });
+
+      new Chart(document.getElementById('chatbotChart'), {
+        type: 'doughnut',
+        data: chatbotData,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+    })();
+  </script>
+
   <!-- Quick Actions -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
     <!-- Recent Activity -->
-    <div class="bg-white rounded-lg shadow-md p-6 ">
+    <div class="bg-white rounded-lg shadow p-6 ">
       <h3 class="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h3>
-      <div class="space-y-4">
-        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-          <div class="p-2 bg-blue-100 rounded-lg">
-            <i class="ri-user-add-line text-blue-600"></i>
-          </div>
-          <div class="ml-3">
-            <p class="text-sm font-medium text-gray-800">New user registered</p>
-            <p class="text-xs text-gray-600">2 minutes ago</p>
+      <?php if (empty($recent)): ?>
+        <div class="text-sm text-gray-500">Belum ada aktivitas terbaru.</div>
+      <?php else: ?>
+        <div class="space-y-3">
+          <?php foreach (array_slice($recent, 0, 5) as $item): ?>
+            <?php
+            $iconMap = [
+              'blue' => 'bg-blue-100 text-blue-600',
+              'green' => 'bg-green-100 text-green-600',
+              'yellow' => 'bg-yellow-100 text-yellow-600',
+            ];
+            $cls = $iconMap[$item['color']] ?? 'bg-gray-100 text-gray-600';
+            ?>
+            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+              <div class="p-2 rounded-lg <?= $cls ?>">
+                <i class="<?= esc($item['icon']) ?>"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-800"><?= esc($item['title']) ?></p>
+                <p class="text-xs text-gray-600"><?= esc($item['detail']) ?> • <?= date('d M Y H:i', strtotime($item['created_at'])) ?></p>
+              </div>
+            </div>
+          <?php endforeach; ?>
+          <div class="pt-2">
+            <a href="<?= site_url('Admin/ActivityLogs') ?>" class="inline-flex items-center text-sm text-blue-600 hover:text-blue-800">
+              Lihat semua aktivitas
+              <i class="ri-arrow-right-line ml-1"></i>
+            </a>
           </div>
         </div>
-
-        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-          <div class="p-2 bg-green-100 rounded-lg">
-            <i class="ri-news-line text-green-600"></i>
-          </div>
-          <div class="ml-3">
-            <p class="text-sm font-medium text-gray-800">New mading published</p>
-            <p class="text-xs text-gray-600">15 minutes ago</p>
-          </div>
-        </div>
-
-        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-          <div class="p-2 bg-yellow-100 rounded-lg">
-            <i class="ri-message-line text-yellow-600"></i>
-          </div>
-          <div class="ml-3">
-            <p class="text-sm font-medium text-gray-800">New comment posted</p>
-            <p class="text-xs text-gray-600">1 hour ago</p>
-          </div>
-        </div>
-      </div>
+      <?php endif; ?>
     </div>
 
     <!-- Quick Actions -->
-    <div class="bg-white rounded-lg shadow-md p-6">
+    <div class="bg-white rounded-lg shadow p-6">
       <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
       <div class="grid grid-cols-2 gap-4">
         <a href="<?= site_url('Admin/MasterData/users') ?>" class="flex flex-col items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200">
@@ -179,7 +277,7 @@
   </div>
 
   <!-- System Status -->
-  <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+  <div class="mt-8 bg-white rounded-lg shadow p-6">
     <h3 class="text-lg font-semibold text-gray-800 mb-4">System Status</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">

@@ -1,5 +1,5 @@
 <?php
-// Partial item kartu mading untuk admin menggunakan uimading_helper (border, badge, admin)
+// Partial item kartu mading menggunakan uimading_helper (border, badge, admin)
 // Param: $mading (array required)
 ?>
 <a href="<?= site_url('Admin/Mading/detail/' . $mading['id']) ?>" class="block">
@@ -14,9 +14,7 @@
       </div>
       <div class="flex items-center flex-wrap gap-2 mb-3">
         <?= mading_category_badge($mading['category']) ?>
-        <span class="px-2 py-1 text-xs font-medium rounded-full <?= $mading['status'] === 'aktif' ? 'bg-green-100 text-green-800' : ($mading['status'] === 'pending' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800') ?>">
-          <?= ucfirst($mading['status']) ?>
-        </span>
+
       </div>
       <p class="text-gray-600 text-sm mt-2"><?= mading_excerpt($mading['deskripsi'], 120) ?></p>
 
@@ -34,7 +32,20 @@
     <div class="p-5 bg-gray-50 flex justify-between items-center">
       <div class="flex space-x-4 text-gray-500 text-sm">
         <span class="flex items-center"><i class="ri-eye-line mr-1"></i><?= number_format($mading['views']) ?></span>
-        <span class="flex items-center"><i class="ri-heart-line mr-1"></i><?= number_format($mading['total_likes']) ?></span>
+        <!-- Like Button -->
+        <?php $userLiked = (new \App\Models\MadingLikeModel())
+          ->where('mading_id', $mading['id'])
+          ->where('user_id', session('admin_id'))
+          ->first() !== null; ?>
+        <button
+          type="button"
+          id="like-btn"
+          class="flex items-center gap-1 text-gray-600 hover:text-red-600  cursor-pointer transition-colors duration-200"
+          data-liked="<?= $userLiked ? '1' : '0' ?>"
+          onclick="toggleLike(<?= $mading['id'] ?>)">
+          <i id="like-icon" class="<?= $userLiked ? 'ri-heart-fill text-red-600' : 'ri-heart-line text-gray-600' ?> text-lg"></i>
+          <span id="like-count"><?= number_format($mading['total_likes']) ?></span>
+        </button>
         <span class="flex items-center"><i class="ri-chat-3-line mr-1"></i><?= $mading['total_comments'] >= 1000 ? number_format($mading['total_comments'] / 1000, 1) . 'k' : $mading['total_comments'] ?></span>
       </div>
       <?= mading_admin_badge($mading['username']) ?>

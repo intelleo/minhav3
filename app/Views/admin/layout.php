@@ -58,9 +58,9 @@
         <span>Laporan</span>
       </a>
 
-      <a href="<?= site_url('Admin/Settings') ?>" class="site <?= (strpos(uri_string(), 'Admin/Settings') === 0) ? 'aktif' : '' ?>">
-        <i class="ri-settings-3-fill"></i>
-        <span>Settings</span>
+      <a href="<?= site_url('Admin/ActivityLogs') ?>" class="site <?= (strpos(uri_string(), 'Admin/ActivityLogs') === 0 || strpos(uri_string(), 'Admin/Settings') === 0) ? 'aktif' : '' ?>">
+        <i class="ri-list-unordered"></i>
+        <span>Activity Logs</span>
       </a>
 
       <a href="<?= site_url('admin/logout') ?>" class="site">

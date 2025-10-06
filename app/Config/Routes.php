@@ -58,9 +58,11 @@ $routes->group('Admin', ['filter' => 'adminauth'], function ($routes) {
 
   // Reports routes
   $routes->get('Reports', 'Admin\Reports::index');
+  $routes->post('Reports/replyComment', 'Admin\Reports::replyComment');
 
-  // Settings routes
-  $routes->get('Settings', 'Admin\Settings::index');
+  // Activity Logs routes (replace Settings)
+  $routes->get('Settings', 'Admin\ActivityLogs::index');
+  $routes->get('ActivityLogs', 'Admin\ActivityLogs::index');
 });
 
 
@@ -83,8 +85,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
   $routes->post('/Notifications/seen/(:num)', 'UserController\UCNotifications::seen/$1');
   $routes->post('/Notifications/dismiss/(:num)', 'UserController\UCNotifications::dismiss/$1');
   $routes->get('/Likes', 'UserController\UCLikes::index');
-  // Panduan
-  $routes->get('/mading', 'UserController\UCGuides::index');
+
   $routes->get('/Profile', 'UserController\UCProfile::index');
   // Profile updates
   $routes->post('/Profile/update-photo', 'UserController\UCProfile::updatePhoto');
