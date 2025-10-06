@@ -208,6 +208,18 @@
           }, 200);
         }
 
+        // Re-initialize mading modals if available
+        if (typeof window.initializeAddMadingModal === "function") {
+          setTimeout(() => {
+            window.initializeAddMadingModal();
+          }, 200);
+        }
+        if (typeof window.initializeEditMadingModal === "function") {
+          setTimeout(() => {
+            window.initializeEditMadingModal();
+          }, 200);
+        }
+
         // Re-initialize pagination if available
         if (typeof window.initializePagination === "function") {
           setTimeout(() => {

@@ -466,26 +466,48 @@ class MasterData extends BaseController
 
   public function addMading()
   {
-    // Validasi dasar
-    $rules = [
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request', 'csrf' => csrf_hash()]);
+    }
+
+    $judul = $this->request->getPost('judul');
+    $category = $this->request->getPost('category');
+    $deskripsi = $this->request->getPost('deskripsi');
+    $tgl_mulai = $this->request->getPost('tgl_mulai');
+    $tgl_akhir = $this->request->getPost('tgl_akhir');
+    $status = $this->request->getPost('status');
+
+    $data = [];
+    if ($judul !== null) $data['judul'] = $judul;
+    if ($category !== null) $data['category'] = $category;
+    if ($deskripsi !== null) $data['deskripsi'] = $deskripsi;
+    if ($tgl_mulai !== null) $data['tgl_mulai'] = $tgl_mulai;
+    if ($tgl_akhir !== null) $data['tgl_akhir'] = $tgl_akhir;
+    if ($status !== null) $data['status'] = $status;
+    $data['admin_id'] = (int) (session('admin_id') ?? 0);
+    $data['views'] = 0;
+    $data['created_at'] = date('Y-m-d H:i:s');
+
+    $validation = \Config\Services::validation();
+    $validation->setRules([
       'judul' => 'required|min_length[3]|max_length[150]',
       'category' => 'required|in_list[edukasi,pengumuman,event,berita]',
       'deskripsi' => 'permit_empty|string',
       'tgl_mulai' => 'permit_empty|valid_date',
       'tgl_akhir' => 'permit_empty|valid_date',
       'status' => 'required|in_list[pending,aktif,nonaktif]',
-    ];
+    ]);
 
-    $validation = \Config\Services::validation();
-    $validation->setRules($rules);
-
-    if (!$validation->withRequest($this->request)->run()) {
-      return redirect()->back()->withInput()->with('error', 'Validasi gagal: ' . implode(', ', $validation->getErrors()));
+    if (!$validation->run($data)) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Validasi gagal: ' . implode(', ', $validation->getErrors()),
+        'csrf' => csrf_hash()
+      ]);
     }
 
     // File opsional
     $file = $this->request->getFile('file');
-    $relativePath = null;
     if ($file && $file->isValid() && !$file->hasMoved()) {
       $uploadDir = FCPATH . 'uploads/mading';
       if (!is_dir($uploadDir)) {
@@ -496,64 +518,75 @@ class MasterData extends BaseController
       }
       $newName = $file->getRandomName();
       $file->move($uploadDir, $newName, true);
-      $relativePath = 'uploads/mading/' . $newName;
+      $data['file'] = 'uploads/mading/' . $newName;
     }
-
-    $data = [
-      'judul' => $this->request->getPost('judul'),
-      'category' => $this->request->getPost('category'),
-      'deskripsi' => $this->request->getPost('deskripsi') ?: null,
-      'file' => $relativePath,
-      'tgl_mulai' => $this->request->getPost('tgl_mulai') ?: null,
-      'tgl_akhir' => $this->request->getPost('tgl_akhir') ?: null,
-      'status' => $this->request->getPost('status'),
-      'admin_id' => (int) (session('admin_id') ?? 0),
-      'views' => 0,
-    ];
 
     try {
       $this->madingModel->insert($data);
       $this->madingModel->invalidateCache();
-      return redirect()->to(site_url('Admin/MasterData/mading'))->with('success', 'Mading berhasil ditambahkan');
+      return $this->response->setJSON([
+        'success' => true,
+        'message' => 'Mading berhasil ditambahkan',
+        'csrf' => csrf_hash()
+      ]);
     } catch (\Throwable $e) {
-      return redirect()->back()->withInput()->with('error', 'Gagal menambahkan mading: ' . $e->getMessage());
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Gagal menambahkan mading: ' . $e->getMessage(),
+        'csrf' => csrf_hash()
+      ]);
     }
   }
 
   public function updateMading()
   {
-    $id = (int) $this->request->getPost('id');
-    if (!$id) {
-      return redirect()->back()->with('error', 'ID mading tidak valid');
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request', 'csrf' => csrf_hash()]);
     }
 
-    $rules = [
-      'judul' => 'required|min_length[3]|max_length[150]',
-      'category' => 'required|in_list[edukasi,pengumuman,event,berita]',
-      'deskripsi' => 'permit_empty|string',
-      'tgl_mulai' => 'permit_empty|valid_date',
-      'tgl_akhir' => 'permit_empty|valid_date',
-      'status' => 'required|in_list[pending,aktif,nonaktif]',
-    ];
-    $validation = \Config\Services::validation();
-    $validation->setRules($rules);
-    if (!$validation->withRequest($this->request)->run()) {
-      return redirect()->back()->withInput()->with('error', 'Validasi gagal: ' . implode(', ', $validation->getErrors()));
+    $id = (int) $this->request->getPost('mading_id');
+    if (!$id) {
+      return $this->response->setJSON(['success' => false, 'message' => 'ID mading tidak valid', 'csrf' => csrf_hash()]);
     }
+
+    $judul = $this->request->getPost('judul');
+    $category = $this->request->getPost('category');
+    $deskripsi = $this->request->getPost('deskripsi');
+    $tgl_mulai = $this->request->getPost('tgl_mulai');
+    $tgl_akhir = $this->request->getPost('tgl_akhir');
+    $status = $this->request->getPost('status');
 
     $existing = $this->madingModel->find($id);
     if (!$existing) {
-      return redirect()->to(site_url('Admin/MasterData/mading'))->with('error', 'Mading tidak ditemukan');
+      return $this->response->setJSON(['success' => false, 'message' => 'Mading tidak ditemukan', 'csrf' => csrf_hash()]);
     }
 
-    $data = [
-      'judul' => $this->request->getPost('judul'),
-      'category' => $this->request->getPost('category'),
-      'deskripsi' => $this->request->getPost('deskripsi') ?: null,
-      'tgl_mulai' => $this->request->getPost('tgl_mulai') ?: null,
-      'tgl_akhir' => $this->request->getPost('tgl_akhir') ?: null,
-      'status' => $this->request->getPost('status'),
-    ];
+    $data = [];
+    if ($judul !== null) $data['judul'] = $judul;
+    if ($category !== null) $data['category'] = $category;
+    if ($deskripsi !== null) $data['deskripsi'] = $deskripsi;
+    if ($tgl_mulai !== null) $data['tgl_mulai'] = $tgl_mulai;
+    if ($tgl_akhir !== null) $data['tgl_akhir'] = $tgl_akhir;
+    if ($status !== null) $data['status'] = $status;
+    $data['updated_at'] = date('Y-m-d H:i:s');
+
+    $validation = \Config\Services::validation();
+    $validation->setRules([
+      'judul' => 'permit_empty|min_length[3]|max_length[150]',
+      'category' => 'permit_empty|in_list[edukasi,pengumuman,event,berita]',
+      'deskripsi' => 'permit_empty|string',
+      'tgl_mulai' => 'permit_empty|valid_date',
+      'tgl_akhir' => 'permit_empty|valid_date',
+      'status' => 'permit_empty|in_list[pending,aktif,nonaktif]',
+    ]);
+
+    if (!$validation->run($data)) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Validasi gagal: ' . implode(', ', $validation->getErrors()),
+        'csrf' => csrf_hash()
+      ]);
+    }
 
     // File baru opsional
     $file = $this->request->getFile('file');
@@ -573,24 +606,45 @@ class MasterData extends BaseController
     try {
       $this->madingModel->update($id, $data);
       $this->madingModel->invalidateCache($id);
-      return redirect()->to(site_url('Admin/MasterData/mading'))->with('success', 'Mading berhasil diperbarui');
+      return $this->response->setJSON([
+        'success' => true,
+        'message' => 'Mading berhasil diperbarui',
+        'csrf' => csrf_hash()
+      ]);
     } catch (\Throwable $e) {
-      return redirect()->back()->withInput()->with('error', 'Gagal memperbarui mading: ' . $e->getMessage());
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Gagal memperbarui mading: ' . $e->getMessage(),
+        'csrf' => csrf_hash()
+      ]);
     }
   }
 
   public function deleteMading()
   {
-    $id = (int) $this->request->getPost('id');
-    if (!$id) {
-      return redirect()->back()->with('error', 'ID mading tidak valid');
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request', 'csrf' => csrf_hash()]);
     }
+
+    $id = (int) $this->request->getPost('mading_id');
+    if (!$id) {
+      return $this->response->setJSON(['success' => false, 'message' => 'ID mading tidak valid', 'csrf' => csrf_hash()]);
+    }
+
     try {
       $this->madingModel->delete($id);
       $this->madingModel->invalidateCache($id);
-      return redirect()->to(site_url('Admin/MasterData/mading'))->with('success', 'Mading berhasil dihapus');
+      return $this->response->setJSON([
+        'success' => true,
+        'message' => 'Mading berhasil dihapus',
+        'csrf' => csrf_hash()
+      ]);
     } catch (\Throwable $e) {
-      return redirect()->back()->with('error', 'Gagal menghapus mading: ' . $e->getMessage());
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Gagal menghapus mading: ' . $e->getMessage(),
+        'csrf' => csrf_hash()
+      ]);
     }
   }
 
@@ -1428,5 +1482,42 @@ class MasterData extends BaseController
       'sistem komputer' => 'Sistem Komputer',
       'manajemen informatika' => 'Manajemen Informatika'
     ];
+  }
+
+  /**
+   * Update mading status
+   */
+  public function updateMadingStatus()
+  {
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Invalid request', 'csrf' => csrf_hash()]);
+    }
+
+    $madingId = $this->request->getPost('mading_id');
+    $status = $this->request->getPost('status');
+
+    if (!$madingId || !$status) {
+      return $this->response->setJSON(['success' => false, 'message' => 'Data tidak lengkap', 'csrf' => csrf_hash()]);
+    }
+
+    $madingModel = new \App\Models\MadingModel();
+
+    try {
+      $madingModel->set('status', $status)
+        ->where('id', $madingId)
+        ->update();
+
+      return $this->response->setJSON([
+        'success' => true,
+        'message' => 'Status mading berhasil diubah',
+        'csrf' => csrf_hash()
+      ]);
+    } catch (\Exception $e) {
+      return $this->response->setJSON([
+        'success' => false,
+        'message' => 'Gagal mengubah status: ' . $e->getMessage(),
+        'csrf' => csrf_hash()
+      ]);
+    }
   }
 }

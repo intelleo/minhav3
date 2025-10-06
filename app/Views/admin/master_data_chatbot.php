@@ -329,8 +329,14 @@
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            document.getElementById('chatbotTableBody').innerHTML = data.html;
-            document.getElementById('chatbotPagination').innerHTML = data.pagination;
+            const chatbotTableBody = document.getElementById('chatbotTableBody');
+            const chatbotPagination = document.getElementById('chatbotPagination');
+            if (chatbotTableBody) {
+              chatbotTableBody.innerHTML = data.html;
+            }
+            if (chatbotPagination) {
+              chatbotPagination.innerHTML = data.pagination;
+            }
 
             // Update stats jika ada
             if (data.stats) {
@@ -608,12 +614,18 @@
         .then(data => {
           if (data.success) {
             // Populate form with existing data
-            document.getElementById('judul').value = data.data.judul;
-            document.getElementById('deskripsi').value = data.data.deskripsi;
-            document.getElementById('kategori').value = data.data.kategori;
+            const judulEl = document.getElementById('judul');
+            const deskripsiEl = document.getElementById('deskripsi');
+            const kategoriEl = document.getElementById('kategori');
+            if (judulEl) judulEl.value = data.data.judul;
+            if (deskripsiEl) deskripsiEl.value = data.data.deskripsi;
+            if (kategoriEl) kategoriEl.value = data.data.kategori;
 
             // Change form title and submit button
-            document.querySelector('#addLayananModal h3').textContent = 'Edit Layanan Informasi';
+            const modalTitle = document.querySelector('#addLayananModal h3');
+            if (modalTitle) {
+              modalTitle.textContent = 'Edit Layanan Informasi';
+            }
             const submitBtn = document.querySelector('#addLayananModal button[type="submit"]');
             if (submitBtn) {
               submitBtn.textContent = 'Update Layanan';
@@ -626,7 +638,10 @@
               hiddenInput.type = 'hidden';
               hiddenInput.id = 'layanan_id';
               hiddenInput.name = 'layanan_id';
-              document.getElementById('addLayananForm').appendChild(hiddenInput);
+              const addLayananForm = document.getElementById('addLayananForm');
+              if (addLayananForm) {
+                addLayananForm.appendChild(hiddenInput);
+              }
             }
             hiddenInput.value = layananId;
 
@@ -835,8 +850,14 @@
         document.body.appendChild(viewModal);
 
         // Add event listeners for close buttons
-        document.getElementById('closeViewModal').addEventListener('click', closeViewModal);
-        document.getElementById('closeViewModalBtn').addEventListener('click', closeViewModal);
+        const closeViewModalEl = document.getElementById('closeViewModal');
+        const closeViewModalBtnEl = document.getElementById('closeViewModalBtn');
+        if (closeViewModalEl) {
+          closeViewModalEl.addEventListener('click', closeViewModal);
+        }
+        if (closeViewModalBtnEl) {
+          closeViewModalBtnEl.addEventListener('click', closeViewModal);
+        }
 
         // Close modal when clicking outside
         viewModal.addEventListener('click', function(e) {
@@ -854,9 +875,12 @@
       }
 
       // Populate modal with data
-      document.getElementById('view-judul').textContent = data.judul;
-      document.getElementById('view-deskripsi').textContent = data.deskripsi;
-      document.getElementById('view-created').textContent = new Date(data.created_at).toLocaleDateString('id-ID', {
+      const viewJudul = document.getElementById('view-judul');
+      const viewDeskripsi = document.getElementById('view-deskripsi');
+      const viewCreated = document.getElementById('view-created');
+      if (viewJudul) viewJudul.textContent = data.judul;
+      if (viewDeskripsi) viewDeskripsi.textContent = data.deskripsi;
+      if (viewCreated) viewCreated.textContent = new Date(data.created_at).toLocaleDateString('id-ID', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',

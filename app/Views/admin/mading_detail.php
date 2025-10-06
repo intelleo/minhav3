@@ -512,6 +512,14 @@
     return count;
   }
 
+  // Clear SPA cache untuk halaman mading (jika ada)
+  try {
+    const madingCacheKeys = Object.keys(localStorage).filter(k => k.includes('admin_spa_cache') && k.includes('Mading'));
+    madingCacheKeys.forEach(k => localStorage.removeItem(k));
+  } catch (e) {
+    console.log('Cache clear failed:', e);
+  }
+
   // Like functionality
   (function applyInitialLikeState() {
     const icon = document.getElementById('like-icon');

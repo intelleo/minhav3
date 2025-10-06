@@ -597,8 +597,14 @@ $currentUser = $currentUser ?? session('namalengkap') ?? '';
       }
 
       // Attach handlers
-      document.getElementById('save-edit-btn').addEventListener('click', saveEditFromForm);
-      document.getElementById('cancel-edit-btn').addEventListener('click', cancelEditFromForm);
+      const saveEditBtn = document.getElementById('save-edit-btn');
+      const cancelEditBtn = document.getElementById('cancel-edit-btn');
+      if (saveEditBtn) {
+        saveEditBtn.addEventListener('click', saveEditFromForm);
+      }
+      if (cancelEditBtn) {
+        cancelEditBtn.addEventListener('click', cancelEditFromForm);
+      }
     }
   }
 
@@ -856,8 +862,14 @@ $currentUser = $currentUser ?? session('namalengkap') ?? '';
         if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
         resolve(val);
       };
-      box.querySelector('#confirm-cancel').addEventListener('click', () => cleanup(false));
-      box.querySelector('#confirm-ok').addEventListener('click', () => cleanup(true));
+      const confirmCancel = box.querySelector('#confirm-cancel');
+      const confirmOk = box.querySelector('#confirm-ok');
+      if (confirmCancel) {
+        confirmCancel.addEventListener('click', () => cleanup(false));
+      }
+      if (confirmOk) {
+        confirmOk.addEventListener('click', () => cleanup(true));
+      }
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay) cleanup(false);
       });

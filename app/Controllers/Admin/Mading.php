@@ -31,9 +31,20 @@ class Mading extends BaseController
 
     $madingModel = new \App\Models\MadingModel();
 
-    // Ambil semua mading aktif, urut terbaru (sama seperti user)
-    $all = $madingModel->getAllWithAdmin();
+    // Ambil data mading dengan query yang sama seperti user
+    $today = date('Y-m-d');
+    $builder = $madingModel->db->table('mading_online')
+      ->select('mading_online.*, auth_admin.username')
+      ->join('auth_admin', 'auth_admin.id = mading_online.admin_id', 'left')
+      ->where('mading_online.status', 'aktif')
+      ->where('mading_online.tgl_akhir >=', $today)
+      ->orderBy('mading_online.created_at', 'DESC');
+
+    $all = $builder->get()->getResultArray();
     $slice = array_slice($all, $offset, $perPage);
+
+    // Enrich data seperti di user
+    $slice = $madingModel->enrichMadingDataPublic($slice);
 
     // Render item HTML menggunakan partial admin
     $html = '';
@@ -160,12 +171,21 @@ class Mading extends BaseController
     $madingModel = new \App\Models\MadingModel();
     $commentModel = new \App\Models\MadingCommentModel();
 
-    $mading = $madingModel->getWithAdmin($id);
+    // Ambil data mading dengan query langsung seperti di user
+    $today = date('Y-m-d');
+    $mading = $madingModel->select('mading_online.*, auth_admin.username')
+      ->join('auth_admin', 'auth_admin.id = mading_online.admin_id', 'left')
+      ->where('mading_online.id', $id)
+      ->where('mading_online.status', 'aktif')
+      ->where('mading_online.tgl_akhir >=', $today)
+      ->first();
 
     if (!$mading) {
       return redirect()->to('Admin/Mading')->with('error', 'Mading tidak ditemukan.');
     }
 
+    // Enrich data seperti di user
+    $mading = $madingModel->enrichMadingDataPublic([$mading])[0];
 
     // Tambah view
     $madingModel->set('views', 'views + 1', false)

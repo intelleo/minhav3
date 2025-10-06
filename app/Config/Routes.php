@@ -40,6 +40,7 @@ $routes->group('Admin', ['filter' => 'adminauth'], function ($routes) {
   // Mading management AJAX
   $routes->post('MasterData/addMading', 'Admin\MasterData::addMading');
   $routes->post('MasterData/updateMading', 'Admin\MasterData::updateMading');
+  $routes->post('MasterData/updateMadingStatus', 'Admin\MasterData::updateMadingStatus');
   $routes->post('MasterData/deleteMading', 'Admin\MasterData::deleteMading');
   $routes->get('MasterData/getMading', 'Admin\MasterData::getMading');
 

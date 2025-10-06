@@ -56,6 +56,11 @@
         if (html) {
           sentinel.insertAdjacentHTML('beforebegin', html);
           list.dataset.loadedPage = String(next);
+
+          // Re-attach SPA link handlers untuk link baru
+          if (typeof window.__adminSpaAttachLinks === 'function') {
+            window.__adminSpaAttachLinks(list);
+          }
         } else {
           // Tidak ada data untuk halaman ini
           if (next === 1) {
@@ -89,6 +94,14 @@
     }, {
       rootMargin: '0px 0px 200px 0px'
     });
+
+    // Clear SPA cache untuk halaman mading (jika ada)
+    try {
+      const madingCacheKeys = Object.keys(localStorage).filter(k => k.includes('admin_spa_cache') && k.includes('Mading'));
+      madingCacheKeys.forEach(k => localStorage.removeItem(k));
+    } catch (e) {
+      console.log('Cache clear failed:', e);
+    }
 
     // Jalankan segera agar berfungsi baik di SSR/SPA
     (function initNow() {
