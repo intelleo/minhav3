@@ -20,8 +20,17 @@ class UserAuth extends Migration
             ],
             'jurusan' => [
                 'type'       => 'ENUM',
-                'constraint' => ['teknik informatika', 'sistem informasi', 'sistem komputer', 'manajemen informatika'],
-                'default'    => 'teknik informatika',
+                'constraint' => [
+                    'Komputerisasi Akuntansi',
+                    'Manajemen Informatika',
+                    'Sistem Informasi',
+                    'Teknik Informatika',
+                    'Sistem Komputer',
+                    'Hukum',
+                    'Administrasi Publik',
+                    'Kewirausahaan'
+                ],
+                'default'    => 'Teknik Informatika',
             ],
             'npm' => [
                 'type'       => 'VARCHAR',

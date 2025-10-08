@@ -68,48 +68,45 @@
     </nav>
 
   </aside>
-  <!-- mobile navbar -->
-  <header class="mobile-navbar hidden max-lg:block fixed top-0 left-0 w-full bg-white shadow-md z-[9999] py-3">
+  <header class="mobile-navbar hidden max-lg:block fixed top-0 left-0 w-full bg-white shadow-md z-[9999] py-3 ">
     <div class="logo-btn flex justify-between items-center px-4">
       <div class="logo-mobile flex items-center gap-2 z-20">
-        <?= img_tag('img/icon-chat.webp', 'logo', ['width' => 40, 'height' => 40]) ?>
+        <?= img_tag('img/icon-chat.webp', 'logo', ['width' => 30, 'height' => 30]) ?>
         <p class="text-[#247de3] font-bold">Minha</p>
       </div>
-      <button class="btn-nav"><?= img_tag('img/sidebar.svg', 'sidebar', ['width' => 40, 'height' => 40]) ?></button>
     </div>
-    <nav class="nav-mobile absolute top-0 w-[80%] bg-white shadow-2xl z-10 p-4 h-screen">
-      <ul class="flex flex-col gap-4 mt-14">
-        <a href="<?= site_url('Dashboard') ?>" class="site py-2 border-b border-blue-50 px-2 <?= current_url() == site_url('Dashboard') ? 'aktif' : '' ?>">
-          <i class="ri-home-6-fill "></i>
-          <span>Dashboard</span>
-        </a>
-
-        <a href="<?= site_url('Mading') ?>" class="site py-2 border-b border-blue-50 px-2 <?= (strpos(current_url(), site_url('Mading')) === 0) ? 'aktif' : '' ?>">
-          <i class="ri-news-fill"></i>
-          <span>Mading Online</span>
-        </a>
-        <div class="chatbot">
-          <a href="<?= site_url('Chatbot') ?>" class="site py-2 border-b border-blue-50 px-2 <?= current_url() == site_url('Chatbot') ? 'aktif' : '' ?>">
-            <i class="ri-chat-ai-fill"></i>
-            <span>Chatbot Minha</span>
-          </a>
-        </div>
-        <a href="<?= site_url('Profile') ?>" class="site py-2 border-b border-blue-50 px-2 relative <?= ((strpos(current_url(), site_url('Profile')) === 0) || (strpos(current_url(), site_url('Likes')) === 0) || (strpos(current_url(), site_url('Notifications')) === 0)) ? 'aktif' : '' ?>">
-          <i class="ri-account-circle-fill"></i>
-          <span>Profile Saya</span>
-          <span id="navNotifDotMobile" class="absolute right-2 top-1.5 w-2 h-2 bg-red-500 rounded-full hidden"></span>
-        </a>
-
-        <a href="<?= site_url('logout') ?>" class="site py-2 border-b border-blue-50 px-2">
-          <i class="ri-logout-circle-r-fill"></i>
-          <span>Logout</span>
-        </a>
-      </ul>
-    </nav>
   </header>
+  <!-- Mobile Bottom Navigation (Instagram Style) -->
+  <nav class="mobile-bottom-nav hidden max-lg:flex fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-[9999]">
+    <a href="<?= site_url('Dashboard') ?>" class="nav-item flex-1 flex flex-col items-center justify-center py-2 px-1 <?= (strpos(current_url(), site_url('Dashboard')) === 0) ? 'active' : '' ?>">
+      <i class="ri-home-6-fill text-xl mb-1"></i>
+      <span class="text-xs">Home</span>
+    </a>
+
+    <a href="<?= site_url('Mading') ?>" class="nav-item flex-1 flex flex-col items-center justify-center py-2 px-1 <?= (strpos(current_url(), site_url('Mading')) === 0) ? 'active' : '' ?>">
+      <i class="ri-news-fill text-xl mb-1"></i>
+      <span class="text-xs">Mading</span>
+    </a>
+
+    <a href="<?= site_url('Chatbot') ?>" class="nav-item flex-1 flex flex-col items-center justify-center py-2 px-1 <?= (strpos(current_url(), site_url('Chatbot')) === 0) ? 'active' : '' ?>">
+      <i class="ri-chat-ai-fill text-xl mb-1"></i>
+      <span class="text-xs">Chat</span>
+    </a>
+
+    <a href="<?= site_url('Profile') ?>" class="nav-item flex-1 flex flex-col items-center justify-center py-2 px-1 relative <?= ((strpos(current_url(), site_url('Profile')) === 0) || (strpos(current_url(), site_url('Likes')) === 0) || (strpos(current_url(), site_url('Notifications')) === 0)) ? 'active' : '' ?>">
+      <i class="ri-account-circle-fill text-xl mb-1"></i>
+      <span class="text-xs">Profile</span>
+      <span id="navNotifDotMobile" class="absolute top-1 right-4 w-2 h-2 bg-red-500 rounded-full hidden"></span>
+    </a>
+
+    <a href="<?= site_url('logout') ?>" class="nav-item flex-1 flex flex-col items-center justify-center py-2 px-1" data-no-spa="true">
+      <i class="ri-logout-circle-r-fill text-xl mb-1"></i>
+      <span class="text-xs">Logout</span>
+    </a>
+  </nav>
 
   <!-- Main Content: Scrollable, isi halaman -->
-  <main class="">
+  <main class="max-lg:pb-20">
 
     <!-- Page Content -->
     <div class="content">
@@ -195,22 +192,7 @@
         logoCollapsed.classList.toggle('hidden');
       });
 
-      // mobile navbar
-      const btnNav = document.querySelector('.btn-nav');
-      const navMobile = document.querySelector('.nav-mobile');
-      if (btnNav && navMobile) {
-        btnNav.addEventListener('click', function() {
-          navMobile.classList.toggle('nav-show');
-        });
-
-        // Tutup menu mobile saat item navigasi diklik
-        const navLinks = navMobile.querySelectorAll('a');
-        navLinks.forEach(function(link) {
-          link.addEventListener('click', function() {
-            navMobile.classList.remove('nav-show');
-          });
-        });
-      }
+      // Mobile bottom navigation - no additional JS needed
 
       // Fetch notifikasi count untuk menampilkan dot di navbar & card Profile
       window.__refreshNotifCount = function() {

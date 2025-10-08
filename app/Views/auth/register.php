@@ -34,10 +34,14 @@
         <i class="ri-school-fill"></i>
         <select name="jurusan" required class="cursor-pointer bg-transparent outline-none w-full">
           <option value="" disabled <?= old('jurusan') ? '' : 'selected' ?>>Pilih Jurusan</option>
-          <option value="teknik informatika" <?= old('jurusan') == 'teknik informatika' ? 'selected' : '' ?>>Teknik Informatika</option>
-          <option value="sistem informasi" <?= old('jurusan') == 'sistem informasi' ? 'selected' : '' ?>>Sistem Informasi</option>
-          <option value="sistem komputer" <?= old('jurusan') == 'sistem komputer' ? 'selected' : '' ?>>Sistem Komputer</option>
-          <option value="manajemen informatika" <?= old('jurusan') == 'manajemen informatika' ? 'selected' : '' ?>>Manajemen Informatika</option>
+          <option value="Komputerisasi Akuntansi" <?= old('jurusan') == 'Komputerisasi Akuntansi' ? 'selected' : '' ?>>Komputerisasi Akuntansi</option>
+          <option value="Manajemen Informatika" <?= old('jurusan') == 'Manajemen Informatika' ? 'selected' : '' ?>>Manajemen Informatika</option>
+          <option value="Sistem Informasi" <?= old('jurusan') == 'Sistem Informasi' ? 'selected' : '' ?>>Sistem Informasi</option>
+          <option value="Teknik Informatika" <?= old('jurusan') == 'Teknik Informatika' ? 'selected' : '' ?>>Teknik Informatika</option>
+          <option value="Sistem Komputer" <?= old('jurusan') == 'Sistem Komputer' ? 'selected' : '' ?>>Sistem Komputer</option>
+          <option value="Hukum" <?= old('jurusan') == 'Hukum' ? 'selected' : '' ?>>Hukum</option>
+          <option value="Administrasi Publik" <?= old('jurusan') == 'Administrasi Publik' ? 'selected' : '' ?>>Administrasi Publik</option>
+          <option value="Kewirausahaan" <?= old('jurusan') == 'Kewirausahaan' ? 'selected' : '' ?>>Kewirausahaan</option>
         </select>
       </div>
 

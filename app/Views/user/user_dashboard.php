@@ -6,7 +6,7 @@
 <!-- card dans shortcut -->
 
 <!-- Shortcut Cepat: grid kartu dinamis untuk akses fitur utama -->
-<section class="mt-[-5rem]">
+<section class="mt-[-5rem] ">
   <?php
   $shortcuts = [
     [
@@ -49,7 +49,7 @@
 
 
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+  <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3">
     <?php foreach ($shortcuts as $s): ?>
       <a href="<?= $s['href'] ?>" class="group relative overflow-hidden rounded-lg border border-gray-100 bg-white p-4 shadow hover:shadow-md transition">
         <div class="flex items-center gap-3">

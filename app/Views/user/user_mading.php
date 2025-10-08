@@ -49,7 +49,7 @@
       const sentinel = document.getElementById('mading-sentinel');
       let html = '';
       if (nextPage === 1 && !htmlPart) {
-        html += '<div class="text-center py-10 text-gray-500"><i class="ri-error-warning-line text-6xl block mb-4 text-gray-300"></i><p>Tidak ada postingan mading.</p></div>';
+        html += '<div class="text-center bg-white py-10 text-gray-500"><i class="ri-error-warning-line text-6xl block mb-4 text-gray-300"></i><p>Tidak ada postingan mading.</p></div>';
       } else {
         html += htmlPart;
       }

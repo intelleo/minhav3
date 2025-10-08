@@ -86,7 +86,7 @@ class AuthController extends BaseController
         // Validasi input
         $rules = [
             'namalengkap' => 'required|min_length[3]|max_length[100]',
-            'jurusan'     => 'required|in_list[teknik informatika,sistem informasi,sistem komputer,manajemen informatika]',
+            'jurusan'     => 'required|in_list[Komputerisasi Akuntansi,Manajemen Informatika,Sistem Informasi,Teknik Informatika,Sistem Komputer,Hukum,Administrasi Publik,Kewirausahaan]',
             'npm'         => 'required|numeric|min_length[10]|max_length[12]',
             'password'    => 'required|min_length[6]',
         ];

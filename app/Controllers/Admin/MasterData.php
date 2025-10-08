@@ -747,7 +747,7 @@ class MasterData extends BaseController
     $validation->setRules([
       'namalengkap' => 'permit_empty|min_length[3]|max_length[100]',
       'npm' => 'permit_empty|min_length[8]|max_length[20]',
-      'jurusan' => 'permit_empty|in_list[teknik informatika,sistem informasi,sistem komputer,manajemen informatika]',
+      'jurusan' => 'permit_empty|in_list[Komputerisasi Akuntansi,Manajemen Informatika,Sistem Informasi,Teknik Informatika,Sistem Komputer,Hukum,Administrasi Publik,Kewirausahaan]',
       'status' => 'permit_empty|in_list[pending,aktif,nonaktif]',
       'password' => 'permit_empty|min_length[6]'
     ]);
@@ -887,7 +887,7 @@ class MasterData extends BaseController
     $validation->setRules([
       'namalengkap' => 'required|min_length[3]|max_length[100]',
       'npm' => 'required|min_length[8]|max_length[20]|is_unique[user_auth.npm]',
-      'jurusan' => 'required|in_list[teknik informatika,sistem informasi,sistem komputer,manajemen informatika]',
+      'jurusan' => 'required|in_list[Komputerisasi Akuntansi,Manajemen Informatika,Sistem Informasi,Teknik Informatika,Sistem Komputer,Hukum,Administrasi Publik,Kewirausahaan]',
       'password' => 'required|min_length[6]',
       'status' => 'required|in_list[pending,aktif,nonaktif]'
     ]);
@@ -960,7 +960,7 @@ class MasterData extends BaseController
     $validation->setRules([
       'namalengkap' => 'required|min_length[3]|max_length[100]',
       'npm' => 'required|min_length[8]|max_length[20]|is_unique[user_auth.npm]',
-      'jurusan' => 'required|in_list[teknik informatika,sistem informasi,sistem komputer,manajemen informatika]',
+      'jurusan' => 'required|in_list[Komputerisasi Akuntansi,Manajemen Informatika,Sistem Informasi,Teknik Informatika,Sistem Komputer,Hukum,Administrasi Publik,Kewirausahaan]',
       'password' => 'required|min_length[6]',
       'status' => 'required|in_list[pending,aktif,nonaktif]'
     ]);
@@ -1506,10 +1506,14 @@ class MasterData extends BaseController
   private function getJurusanOptions()
   {
     return [
-      'teknik informatika' => 'Teknik Informatika',
-      'sistem informasi' => 'Sistem Informasi',
-      'sistem komputer' => 'Sistem Komputer',
-      'manajemen informatika' => 'Manajemen Informatika'
+      'Komputerisasi Akuntansi' => 'Komputerisasi Akuntansi',
+      'Manajemen Informatika' => 'Manajemen Informatika',
+      'Sistem Informasi' => 'Sistem Informasi',
+      'Teknik Informatika' => 'Teknik Informatika',
+      'Sistem Komputer' => 'Sistem Komputer',
+      'Hukum' => 'Hukum',
+      'Administrasi Publik' => 'Administrasi Publik',
+      'Kewirausahaan' => 'Kewirausahaan'
     ];
   }
 

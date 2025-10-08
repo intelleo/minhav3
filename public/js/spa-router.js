@@ -90,6 +90,7 @@
 
   // Tandai menu navigasi yang aktif berdasarkan URL
   function updateActiveNav(url) {
+    // Update desktop sidebar navigation
     document.querySelectorAll("a.site").forEach((el) => {
       if (el.classList.contains("aktif")) el.classList.remove("aktif");
       try {
@@ -120,6 +121,35 @@
         for (const [child, parent] of Object.entries(groupMap)) {
           if (target.startsWith(child) && href.startsWith(parent)) {
             el.classList.add("aktif");
+            return;
+          }
+        }
+      } catch (_) {}
+    });
+
+    // Update mobile bottom navigation
+    document.querySelectorAll(".mobile-bottom-nav .nav-item").forEach((el) => {
+      if (el.classList.contains("active")) el.classList.remove("active");
+      try {
+        const href = new URL(el.href, location.origin).pathname;
+        const target = new URL(url, location.origin).pathname;
+
+        // Pemetaan custom untuk mobile navigation
+        const mobileGroupMap = {
+          "/Likes": "/Profile",
+          "/Notifications": "/Profile",
+          "/Mading/detail": "/Mading",
+        };
+
+        // Default behavior: exact or prefix match
+        if (href === target || target.startsWith(href)) {
+          el.classList.add("active");
+          return;
+        }
+        // Terapkan group mapping untuk mobile
+        for (const [child, parent] of Object.entries(mobileGroupMap)) {
+          if (target.startsWith(child) && href.startsWith(parent)) {
+            el.classList.add("active");
             return;
           }
         }

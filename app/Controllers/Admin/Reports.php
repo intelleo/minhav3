@@ -25,6 +25,19 @@ class Reports extends BaseController
 
   public function index()
   {
+    // Initialize variables outside try-catch to prevent undefined variable errors
+    $comments = [];
+    $madingReports = [];
+    $repliesByParent = [];
+    $stats = [
+      'total_comments' => 0,
+      'total_mading' => 0,
+      'total_views' => 0,
+      'total_likes' => 0,
+    ];
+    $totalComments = 0;
+    $totalMading = 0;
+
     try {
       // Pagination params
       $pc = max(1, (int) ($this->request->getGet('pc') ?? 1)); // page comments
@@ -97,14 +110,7 @@ class Reports extends BaseController
       ];
     } catch (\Exception $e) {
       log_message('error', 'Reports index error: ' . $e->getMessage());
-      $comments = [];
-      $madingReports = [];
-      $stats = [
-        'total_comments' => 0,
-        'total_mading' => 0,
-        'total_views' => 0,
-        'total_likes' => 0,
-      ];
+      // Variables already initialized above, no need to reassign
     }
 
     $data = [
@@ -119,18 +125,18 @@ class Reports extends BaseController
       'repliesByParent' => $repliesByParent,
       'pagination' => [
         'comments' => [
-          'current_page' => $pc,
-          'per_page' => $perComments,
-          'total' => $totalComments ?? 0,
-          'total_pages' => isset($totalComments) ? (int) ceil(max(1, $totalComments) / $perComments) : 1,
+          'current_page' => $pc ?? 1,
+          'per_page' => $perComments ?? 10,
+          'total' => $totalComments,
+          'total_pages' => (int) ceil(max(1, $totalComments) / max(1, $perComments ?? 10)),
           'query_key_page' => 'pc',
           'query_key_perpage' => 'ppc',
         ],
         'mading' => [
-          'current_page' => $pm,
-          'per_page' => $perMading,
-          'total' => $totalMading ?? 0,
-          'total_pages' => isset($totalMading) ? (int) ceil(max(1, $totalMading) / $perMading) : 1,
+          'current_page' => $pm ?? 1,
+          'per_page' => $perMading ?? 10,
+          'total' => $totalMading,
+          'total_pages' => (int) ceil(max(1, $totalMading) / max(1, $perMading ?? 10)),
           'query_key_page' => 'pm',
           'query_key_perpage' => 'ppm',
         ],

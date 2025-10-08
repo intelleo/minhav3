@@ -413,7 +413,7 @@
     }
 
     .tabs {
-      flex-direction: column;
+      justify-content: center;
     }
 
     .tab {
