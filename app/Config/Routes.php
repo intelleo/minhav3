@@ -20,7 +20,7 @@ $routes->get('/admin/logout', 'AdminAuthController::logout');
 // Admin dashboard & pages (SPA shell) - protected
 $routes->group('Admin', ['filter' => 'adminauth'], function ($routes) {
   $routes->get('Dashboard', 'Admin\Dashboard::index');
-  $routes->get('', 'Admin\Dashboard::index');
+  // $routes->get('', 'Admin\Dashboard::index');
 
   // Master Data routes
   $routes->get('MasterData', 'Admin\MasterData::index');

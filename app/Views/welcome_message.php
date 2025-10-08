@@ -221,7 +221,7 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <!-- <div class="feature-card">
                     <div class="feature-icon">
                         <img src="<?= base_url('img/work.png') ?>" alt="">
                     </div>
@@ -229,7 +229,7 @@
                     <p>
                         Informasi tentang peluang magang, job fair, dan lowongan kerja
                     </p>
-                </div>
+                </div> -->
 
                 <div class="feature-card">
                     <div class="feature-icon">

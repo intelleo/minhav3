@@ -65,7 +65,9 @@
           // Tidak ada data untuk halaman ini
           if (next === 1) {
             if (!document.getElementById('admin-mading-empty')) {
-              sentinel.insertAdjacentHTML('beforebegin', '<div id="admin-mading-empty" class="text-center py-10 text-gray-500">Tidak ada postingan mading.</div>');
+              sentinel.insertAdjacentHTML('beforebegin', `<div class="text-center bg-white py-10 text-gray-500">
+        <img src="<?= base_url('img/icon-chat.webp') ?>" alt="Empty" class="w-10 h-10 mx-auto mb-4">
+        <p>Tidak ada postingan mading.</p></div>`);
             }
           }
           // Hentikan pengamatan agar tidak memicu muat lagi tanpa data
