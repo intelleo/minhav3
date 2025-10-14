@@ -297,16 +297,6 @@ class UCProfile extends BaseController
             // Log file info untuk debugging
             log_message('info', 'File upload info - Name: ' . $file->getName() . ', Size: ' . $file->getSize() . ', Type: ' . $file->getMimeType());
 
-            // Cek ukuran file secara manual untuk debugging
-            $fileSize = $file->getSize();
-            $maxSize = 10240 * 1024; // 10MB dalam bytes
-            log_message('info', 'File size check - Actual: ' . $fileSize . ' bytes, Max allowed: ' . $maxSize . ' bytes');
-
-            if ($fileSize > $maxSize) {
-                log_message('error', 'File too large: ' . $fileSize . ' bytes exceeds ' . $maxSize . ' bytes');
-                return $this->response->setStatusCode(400)->setJSON(['message' => 'File terlalu besar. Maksimal 10MB.']);
-            }
-
             $newName = $file->getRandomName();
             $uploadPath = FCPATH . 'uploads/profile';
 

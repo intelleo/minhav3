@@ -40,6 +40,6 @@ public/uploads/
 ## Validasi Upload
 
 - Format: jpg, jpeg, png, gif, webp
-- Ukuran maksimal: 2MB
+- Ukuran maksimal: 50MB (dikonfigurasi di .htaccess)
 - Nama file: Random untuk keamanan
 - Path database: `base_url('uploads/profile/filename')`
