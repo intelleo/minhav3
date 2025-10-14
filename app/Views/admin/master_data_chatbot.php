@@ -94,21 +94,21 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <?php
       $kategoriStats = [
-        'Akademik' => $stats['akademik'],
-        'Administrasi' => $stats['administrasi'],
-        'Umum' => $stats['umum']
+        'Umum' => $stats['umum'],
+        'BAAK' => $stats['baak'],
+        'BUAK' => $stats['buak']
       ];
 
       $kategoriColors = [
-        'Akademik' => 'bg-blue-50 border-blue-200',
-        'Administrasi' => 'bg-green-50 border-green-200',
-        'Umum' => 'bg-purple-50 border-purple-200'
+        'Umum' => 'bg-purple-50 border-purple-200',
+        'BAAK' => 'bg-blue-50 border-blue-200',
+        'BUAK' => 'bg-green-50 border-green-200'
       ];
 
       $kategoriIcons = [
-        'Akademik' => 'ri-graduation-cap-line',
-        'Administrasi' => 'ri-file-list-line',
-        'Umum' => 'ri-information-line'
+        'Umum' => 'ri-information-line',
+        'BAAK' => 'ri-graduation-cap-line',
+        'BUAK' => 'ri-file-list-line'
       ];
       ?>
 
@@ -143,11 +143,8 @@
   </div>
 
   <!-- Pagination -->
-  <div id="chatbotPagination">
-    <?= view('admin/partials/chatbot_pagination', [
-      'pagination' => $pagination,
-      'filters' => $filters
-    ]) ?>
+  <div class="pagination-container" id="chatbotPagination">
+    <!-- Pagination akan di-load via AJAX -->
   </div>
 
 </div>
@@ -188,9 +185,9 @@
             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required>
             <option value="">Pilih Kategori</option>
-            <option value="Akademik">Akademik</option>
-            <option value="Administrasi">Administrasi</option>
             <option value="Umum">Umum</option>
+            <option value="BAAK">BAAK</option>
+            <option value="BUAK">BUAK</option>
           </select>
         </div>
       </form>
@@ -205,7 +202,11 @@
           type="submit"
           form="addLayananForm"
           class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-          Tambah Layanan
+          <span class="submit-text">Tambah Layanan</span>
+          <span class="loading-text hidden">
+            <i class="ri-loader-4-line animate-spin mr-2"></i>
+            Menyimpan
+          </span>
         </button>
       </div>
     </div>
@@ -215,6 +216,14 @@
 <script>
   // Chatbot Management JavaScript
   document.addEventListener('DOMContentLoaded', function() {
+    // Pastikan tidak ada state loading tertinggal dari SSR
+    const resultsContainer = document.querySelector('.results-container');
+    const paginationContainer = document.querySelector('.pagination-container');
+    if (resultsContainer) resultsContainer.classList.remove('loading');
+    if (paginationContainer) paginationContainer.classList.remove('loading');
+
+    // Load pagination saat pertama kali halaman dimuat
+    loadChatbotData(1);
     const searchInput = document.getElementById('searchInput');
     const kategoriFilter = document.getElementById('kategoriFilter');
     const searchBtn = document.getElementById('searchBtn');
@@ -320,6 +329,12 @@
         sortDir
       });
 
+      // Show loading state
+      const resultsContainer = document.querySelector('.results-container');
+      const paginationContainer = document.querySelector('.pagination-container');
+      if (resultsContainer) resultsContainer.classList.add('loading');
+      if (paginationContainer) paginationContainer.classList.add('loading');
+
       fetch(`<?= site_url('Admin/MasterData/chatbot') ?>?${params}`, {
           method: 'GET',
           headers: {
@@ -328,6 +343,10 @@
         })
         .then(response => response.json())
         .then(data => {
+          // Hide loading state
+          if (resultsContainer) resultsContainer.classList.remove('loading');
+          if (paginationContainer) paginationContainer.classList.remove('loading');
+
           if (data.success) {
             const chatbotTableBody = document.getElementById('chatbotTableBody');
             const chatbotPagination = document.getElementById('chatbotPagination');
@@ -348,6 +367,9 @@
           }
         })
         .catch(error => {
+          // Hide loading state on error
+          if (resultsContainer) resultsContainer.classList.remove('loading');
+          if (paginationContainer) paginationContainer.classList.remove('loading');
           console.error('Error:', error);
         });
     }
@@ -487,6 +509,16 @@
         console.log('Request URL:', url);
         console.log('Is Edit:', isEdit);
 
+        // Show loading state on button
+        const submitBtn = document.querySelector('#addLayananModal button[type="submit"]');
+        const submitText = submitBtn.querySelector('.submit-text');
+        const loadingText = submitBtn.querySelector('.loading-text');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          if (submitText) submitText.classList.add('hidden');
+          if (loadingText) loadingText.classList.remove('hidden');
+        }
+
         // Submit via Axios (following addUser pattern)
         axios.post(url, params.toString(), {
             headers: {
@@ -513,6 +545,11 @@
               document.querySelector('#addLayananModal h3').textContent = 'Tambah Layanan Informasi';
               const submitBtn = document.querySelector('#addLayananModal button[type="submit"]');
               if (submitBtn) {
+                submitBtn.disabled = false;
+                const submitText = submitBtn.querySelector('.submit-text');
+                const loadingText = submitBtn.querySelector('.loading-text');
+                if (submitText) submitText.classList.remove('hidden');
+                if (loadingText) loadingText.classList.add('hidden');
                 submitBtn.textContent = 'Tambah Layanan';
               }
 
@@ -534,6 +571,16 @@
               const kategori = kategoriFilter.value;
               loadChatbotData(1, search, kategori, currentSort.sortBy, currentSort.sortDir);
             } else {
+              // Hide loading state on error response
+              const submitBtn = document.querySelector('#addLayananModal button[type="submit"]');
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                const submitText = submitBtn.querySelector('.submit-text');
+                const loadingText = submitBtn.querySelector('.loading-text');
+                if (submitText) submitText.classList.remove('hidden');
+                if (loadingText) loadingText.classList.add('hidden');
+              }
+
               if (typeof window.showAlert === 'function') {
                 window.showAlert('error', 'Error: ' + response.data.message);
               } else {
@@ -542,6 +589,16 @@
             }
           })
           .catch(function(error) {
+            // Hide loading state on error
+            const submitBtn = document.querySelector('#addLayananModal button[type="submit"]');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              const submitText = submitBtn.querySelector('.submit-text');
+              const loadingText = submitBtn.querySelector('.loading-text');
+              if (submitText) submitText.classList.remove('hidden');
+              if (loadingText) loadingText.classList.add('hidden');
+            }
+
             console.error('Error:', error);
             if (error.response) {
               console.error('Error response:', error.response.data);
@@ -891,9 +948,9 @@
       // Set kategori with color
       const kategoriElement = document.getElementById('view-kategori');
       const kategoriColors = {
-        'Akademik': 'bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold',
-        'Administrasi': 'bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold',
-        'Umum': 'bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold'
+        'Umum': 'bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold',
+        'BAAK': 'bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold',
+        'BUAK': 'bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold'
       };
       const colorClass = kategoriColors[data.kategori] || 'bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs font-semibold';
       kategoriElement.innerHTML = `<span class="${colorClass}">${data.kategori}</span>`;
@@ -928,5 +985,37 @@
     });
   });
 </script>
+
+<style>
+  .loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+  }
+
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
 
 <?= $this->endSection() ?>

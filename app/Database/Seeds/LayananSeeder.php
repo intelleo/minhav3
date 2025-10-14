@@ -12,25 +12,25 @@ class LayananSeeder extends Seeder
             [
                 'judul'     => 'Panduan KRS Online',
                 'deskripsi' => 'Panduan lengkap melakukan pengisian Kartu Rencana Studi (KRS) melalui portal akademik.',
-                'kategori'  => 'Akademik',
+                'kategori'  => 'BAAK',
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'judul'     => 'Prosedur KHS',
                 'deskripsi' => 'Langkah-langkah melihat dan mencetak Kartu Hasil Studi (KHS) mahasiswa.',
-                'kategori'  => 'Akademik',
+                'kategori'  => 'BAAK',
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'judul'     => 'Jadwal Registrasi Ulang',
                 'deskripsi' => 'Tanggal dan ketentuan registrasi ulang mahasiswa untuk semester baru.',
-                'kategori'  => 'Administrasi',
+                'kategori'  => 'BUAK',
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'judul'     => 'Pengumuman Lomba Desain Poster',
                 'deskripsi' => 'Lomba desain poster untuk seluruh mahasiswa dengan hadiah menarik.',
-                'kategori'  => 'Mading',
+                'kategori'  => 'Umum',
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             [

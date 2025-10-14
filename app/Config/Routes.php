@@ -89,6 +89,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
   $routes->get('/Profile', 'UserController\UCProfile::index');
   // Profile updates
   $routes->post('/Profile/update-photo', 'UserController\UCProfile::updatePhoto');
+  $routes->post('/Profile/update-photo-test', 'UserController\UCProfile::updatePhotoTest');
   $routes->post('/Profile/delete-photo', 'UserController\UCProfile::deletePhoto');
   $routes->post('/Profile/update-bio', 'UserController\UCProfile::updateBio');
   $routes->post('/Profile/update-password', 'UserController\UCProfile::updatePassword');

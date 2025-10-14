@@ -307,9 +307,9 @@ class MasterData extends BaseController
     // Get statistics (exclude empty kategori)
     $stats = [
       'total' => $layananModel->where('kategori IS NOT NULL AND kategori != ""', null, false)->countAllResults(),
-      'akademik' => $layananModel->where('kategori', 'Akademik')->countAllResults(),
-      'administrasi' => $layananModel->where('kategori', 'Administrasi')->countAllResults(),
       'umum' => $layananModel->where('kategori', 'Umum')->countAllResults(),
+      'baak' => $layananModel->where('kategori', 'BAAK')->countAllResults(),
+      'buak' => $layananModel->where('kategori', 'BUAK')->countAllResults(),
     ];
 
     // Get unique kategori for filter (exclude empty/null)
@@ -1036,9 +1036,9 @@ class MasterData extends BaseController
     // Validate required fields
     $validation = \Config\Services::validation();
     $validation->setRules([
-      'judul' => 'required|min_length[3]|max_length[255]',
+      'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Akademik,Administrasi,Umum]'
+      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
     ]);
 
     if (!$validation->run($data)) {
@@ -1125,9 +1125,9 @@ class MasterData extends BaseController
     // Validate required fields
     $validation = \Config\Services::validation();
     $validation->setRules([
-      'judul' => 'required|min_length[3]|max_length[255]',
+      'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Akademik,Administrasi,Umum]'
+      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
     ]);
 
     if (!$validation->run($data)) {
@@ -1381,9 +1381,9 @@ class MasterData extends BaseController
     // Validate required fields
     $validation = \Config\Services::validation();
     $validation->setRules([
-      'judul' => 'required|min_length[3]|max_length[255]',
+      'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Akademik,Administrasi,Umum]'
+      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
     ]);
 
     if (!$validation->run($data)) {
@@ -1454,9 +1454,9 @@ class MasterData extends BaseController
     // Validate required fields
     $validation = \Config\Services::validation();
     $validation->setRules([
-      'judul' => 'required|min_length[3]|max_length[255]',
+      'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Akademik,Administrasi,Umum]'
+      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
     ]);
 
     if (!$validation->run($data)) {

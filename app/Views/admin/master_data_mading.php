@@ -170,9 +170,9 @@
           <button type="button" data-close="add" class="px-4 py-2 border border-gray-200 rounded">Batal</button>
           <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">
             <span class="submit-text text-white">Simpan</span>
-            <span class="loading-text hidden">
-              <i class="ri-loader-4-line animate-spin mr-2"></i>
-              Menyimpan...
+            <span class="loading-text hidden text-white">
+              <i class="ri-loader-4-line animate-spin mr-2 text-white"></i>
+              Menyimpan
             </span>
           </button>
         </div>
@@ -705,10 +705,22 @@
   // Initialize modals on page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
+      // Pastikan tidak ada state loading tertinggal dari SSR
+      const resultsContainer = document.querySelector('.results-container');
+      const paginationContainer = document.querySelector('.pagination-container');
+      if (resultsContainer) resultsContainer.classList.remove('loading');
+      if (paginationContainer) paginationContainer.classList.remove('loading');
+
       window.initializeEditMadingModal();
       window.initializeAddMadingModal();
     });
   } else {
+    // Pastikan tidak ada state loading tertinggal dari SSR
+    const resultsContainer = document.querySelector('.results-container');
+    const paginationContainer = document.querySelector('.pagination-container');
+    if (resultsContainer) resultsContainer.classList.remove('loading');
+    if (paginationContainer) paginationContainer.classList.remove('loading');
+
     window.initializeEditMadingModal();
     window.initializeAddMadingModal();
   }
@@ -770,10 +782,10 @@
         </div>
         <div class="flex justify-end gap-3 pt-2">
           <button type="button" data-close="edit" class="px-4 py-2 border border-gray-200 rounded">Batal</button>
-          <button type="submit" class="px-4 py-2 bg-purple-600 text-white rounded">
-            <span class="submit-text">Update</span>
-            <span class="loading-text hidden">
-              <i class="ri-loader-4-line animate-spin mr-2"></i>
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">
+            <span class="submit-text text-white">Update</span>
+            <span class="loading-text hidden text-white">
+              <i class="ri-loader-4-line animate-spin mr-2 text-white"></i>
               Mengupdate...
             </span>
           </button>
@@ -782,5 +794,37 @@
     </div>
   </div>
 </div>
+
+<style>
+  .loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+  }
+
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
 
 <?= $this->endSection() ?>

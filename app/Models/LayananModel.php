@@ -93,7 +93,7 @@ class LayananModel extends Model
         $this->getCache()->delete("layanan_latest_10_{$today}");
 
         // Hapus cache kategori yang benar untuk chatbot
-        $kategoriChatbot = ['Akademik', 'Administrasi', 'Umum'];
+        $kategoriChatbot = ['Umum', 'BAAK', 'BUAK'];
         foreach ($kategoriChatbot as $kategori) {
             $this->getCache()->delete("layanan_kategori_{$kategori}_{$today}");
         }

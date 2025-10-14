@@ -24,9 +24,9 @@
       <td class="px-6 py-4 whitespace-nowrap">
         <?php
         $kategoriColors = [
-          'Akademik' => 'bg-blue-100 text-blue-800',
-          'Administrasi' => 'bg-green-100 text-green-800',
-          'Umum' => 'bg-purple-100 text-purple-800'
+          'Umum' => 'bg-purple-100 text-purple-800',
+          'BAAK' => 'bg-blue-100 text-blue-800',
+          'BUAK' => 'bg-green-100 text-green-800'
         ];
         $colorClass = $kategoriColors[$item['kategori']] ?? 'bg-gray-100 text-gray-800';
         ?>

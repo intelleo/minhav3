@@ -385,9 +385,9 @@
           </button>
           <button type="button" id="submitAddUser" class="px-6 py-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <span class="submit-text text-white">Tambah User</span>
-            <span class="loading-text hidden">
-              <i class="ri-loader-4-line animate-spin mr-2"></i>
-              Menyimpan...
+            <span class="loading-text hidden text-white">
+              <i class="ri-loader-4-line animate-spin mr-2 text-white"></i>
+              Menyimpan
             </span>
           </button>
         </div>
@@ -447,9 +447,9 @@
           </button>
           <button type="button" id="submitEditUser" class="px-6 py-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <span class="submit-text text-white">Simpan Perubahan</span>
-            <span class="loading-text hidden">
-              <i class="ri-loader-4-line animate-spin mr-2"></i>
-              Menyimpan...
+            <span class="loading-text hidden text-white">
+              <i class="ri-loader-4-line animate-spin mr-2 text-white"></i>
+              Menyimpan
             </span>
           </button>
         </div>

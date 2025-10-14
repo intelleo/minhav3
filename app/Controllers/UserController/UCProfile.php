@@ -33,74 +33,112 @@ class UCProfile extends BaseController
 
     public function updatePhoto()
     {
-        if (!$this->request->is('post')) {
-            return $this->response->setStatusCode(405)->setJSON(['message' => 'Metode tidak diizinkan']);
-        }
+        try {
+            if (!$this->request->is('post')) {
+                return $this->response->setStatusCode(405)->setJSON(['message' => 'Metode tidak diizinkan']);
+            }
 
-        $userId = (int) session('user_id');
-        if (!$userId) {
-            return $this->response->setStatusCode(401)->setJSON(['message' => 'Unauthorized']);
-        }
+            $userId = (int) session('user_id');
+            if (!$userId) {
+                return $this->response->setStatusCode(401)->setJSON(['message' => 'Unauthorized']);
+            }
 
-        $validation = service('validation');
-        $validation->setRules([
-            'profilePhoto' => [
-                'label' => 'Foto Profil',
-                'rules' => 'uploaded[profilePhoto]|is_image[profilePhoto]|max_size[profilePhoto,2048]|mime_in[profilePhoto,image/jpg,image/jpeg,image/png,image/webp]'
-            ]
-        ]);
+            $validation = service('validation');
+            $validation->setRules([
+                'profilePhoto' => [
+                    'label' => 'Foto Profil',
+                    'rules' => 'uploaded[profilePhoto]|is_image[profilePhoto]|max_size[profilePhoto,10240]|mime_in[profilePhoto,image/jpg,image/jpeg,image/png,image/webp]'
+                ]
+            ]);
 
-        if (!$validation->withRequest($this->request)->run()) {
-            return $this->response->setStatusCode(422)->setJSON([
-                'message' => 'Validasi gagal',
-                'errors' => $validation->getErrors(),
+            if (!$validation->withRequest($this->request)->run()) {
+                log_message('error', 'Upload validation failed: ' . json_encode($validation->getErrors()));
+                return $this->response->setStatusCode(422)->setJSON([
+                    'message' => 'Validasi gagal',
+                    'errors' => $validation->getErrors(),
+                ]);
+            }
+
+            $file = $this->request->getFile('profilePhoto');
+            if (!$file || !$file->isValid()) {
+                $error = $file ? $file->getErrorString() : 'File tidak ditemukan';
+                log_message('error', 'File upload tidak valid: ' . $error);
+                return $this->response->setStatusCode(400)->setJSON(['message' => 'File tidak valid: ' . $error]);
+            }
+
+            // Debug info
+            log_message('info', 'File upload info - Name: ' . $file->getName() . ', Size: ' . $file->getSize() . ', Type: ' . $file->getMimeType());
+            log_message('info', 'Server info - PHP Version: ' . PHP_VERSION . ', Memory: ' . ini_get('memory_limit'));
+
+            $newName = $file->getRandomName();
+
+            // Pastikan folder uploads/profile ada
+            $uploadPath = FCPATH . 'uploads/profile';
+            if (!is_dir($uploadPath)) {
+                if (!@mkdir($uploadPath, 0775, true)) {
+                    log_message('error', 'Gagal membuat folder upload: ' . $uploadPath);
+                    return $this->response->setStatusCode(500)->setJSON(['message' => 'Gagal membuat folder upload']);
+                }
+            }
+
+            // Cek permission folder
+            if (!is_writable($uploadPath)) {
+                log_message('error', 'Folder upload tidak writable: ' . $uploadPath);
+                return $this->response->setStatusCode(500)->setJSON(['message' => 'Folder upload tidak dapat ditulis']);
+            }
+
+            // Hapus foto lama jika ada
+            $user = (new UserAuthModel())->find($userId);
+            if ($user && !empty($user['foto_profil'])) {
+                $oldPath = str_replace(base_url(), FCPATH, $user['foto_profil']);
+                if (file_exists($oldPath)) {
+                    @unlink($oldPath);
+                }
+            }
+
+            // Simpan file baru
+            if (!$file->move($uploadPath, $newName)) {
+                return $this->response->setStatusCode(500)->setJSON(['message' => 'Gagal menyimpan file']);
+            }
+
+            // Optimasi dan kompresi gambar (optional - skip jika ada masalah)
+            $fullPath = $uploadPath . '/' . $newName;
+
+            // Skip optimasi untuk sementara untuk menghindari error 500
+            // TODO: Enable optimasi setelah server stabil
+            log_message('info', 'Skip optimasi gambar untuk menghindari error server');
+
+            // Simpan path relatif dalam database untuk portabilitas lingkungan
+            $relativePath = 'uploads/profile/' . $newName;
+
+            // Update database
+            $model = new UserAuthModel();
+            $updateResult = $model->update($userId, ['foto_profil' => $relativePath]);
+
+            if (!$updateResult) {
+                log_message('error', 'Gagal update database - User ID: ' . $userId . ', Path: ' . $relativePath);
+                return $this->response->setStatusCode(500)->setJSON(['message' => 'Gagal menyimpan data ke database']);
+            }
+
+            log_message('info', 'Database updated successfully - User ID: ' . $userId . ', Path: ' . $relativePath);
+
+            // Refresh session foto (tetap relatif)
+            session()->set('foto_profil', $relativePath);
+
+            // Kembalikan URL absolut untuk frontend saat ini
+            return $this->response->setJSON([
+                'message' => 'Foto profil berhasil diperbarui',
+                'foto_profil' => base_url($relativePath),
+            ]);
+        } catch (\Exception $e) {
+            // Log error untuk debugging
+            log_message('error', 'Upload foto profil error: ' . $e->getMessage());
+
+            return $this->response->setStatusCode(500)->setJSON([
+                'message' => 'Terjadi kesalahan server: ' . $e->getMessage(),
+                'debug' => ENVIRONMENT === 'development' ? $e->getTraceAsString() : null
             ]);
         }
-
-        $file = $this->request->getFile('profilePhoto');
-        if (!$file || !$file->isValid()) {
-            return $this->response->setStatusCode(400)->setJSON(['message' => 'File tidak valid']);
-        }
-
-        $newName = $file->getRandomName();
-
-        // Pastikan folder uploads/profile ada
-        $uploadPath = FCPATH . 'uploads/profile';
-        if (!is_dir($uploadPath)) {
-            if (!@mkdir($uploadPath, 0775, true)) {
-                return $this->response->setStatusCode(500)->setJSON(['message' => 'Gagal membuat folder upload']);
-            }
-        }
-
-        // Hapus foto lama jika ada
-        $user = (new UserAuthModel())->find($userId);
-        if ($user && !empty($user['foto_profil'])) {
-            $oldPath = str_replace(base_url(), FCPATH, $user['foto_profil']);
-            if (file_exists($oldPath)) {
-                @unlink($oldPath);
-            }
-        }
-
-        // Simpan file baru
-        if (!$file->move($uploadPath, $newName)) {
-            return $this->response->setStatusCode(500)->setJSON(['message' => 'Gagal menyimpan file']);
-        }
-
-        // Simpan path relatif dalam database untuk portabilitas lingkungan
-        $relativePath = 'uploads/profile/' . $newName;
-
-        // Update database
-        $model = new UserAuthModel();
-        $model->update($userId, ['foto_profil' => $relativePath]);
-
-        // Refresh session foto (tetap relatif)
-        session()->set('foto_profil', $relativePath);
-
-        // Kembalikan URL absolut untuk frontend saat ini
-        return $this->response->setJSON([
-            'message' => 'Foto profil berhasil diperbarui',
-            'foto_profil' => base_url($relativePath),
-        ]);
     }
 
     public function updatePassword()
@@ -219,5 +257,236 @@ class UCProfile extends BaseController
         session()->remove('foto_profil');
 
         return $this->response->setJSON(['message' => 'Foto profil berhasil dihapus']);
+    }
+
+    /**
+     * Method test untuk upload foto profil (tanpa optimasi)
+     */
+    public function updatePhotoTest()
+    {
+        try {
+            if (!$this->request->is('post')) {
+                return $this->response->setStatusCode(405)->setJSON(['message' => 'Metode tidak diizinkan']);
+            }
+
+            $userId = (int) session('user_id');
+            if (!$userId) {
+                return $this->response->setStatusCode(401)->setJSON(['message' => 'Unauthorized']);
+            }
+
+            $validation = service('validation');
+            $validation->setRules([
+                'profilePhoto' => [
+                    'label' => 'Foto Profil',
+                    'rules' => 'uploaded[profilePhoto]|is_image[profilePhoto]|max_size[profilePhoto,10240]|mime_in[profilePhoto,image/jpg,image/jpeg,image/png,image/webp]'
+                ]
+            ]);
+
+            if (!$validation->withRequest($this->request)->run()) {
+                log_message('error', 'Upload validation failed: ' . json_encode($validation->getErrors()));
+                return $this->response->setStatusCode(422)->setJSON([
+                    'message' => 'Validasi gagal',
+                    'errors' => $validation->getErrors(),
+                ]);
+            }
+
+            $file = $this->request->getFile('profilePhoto');
+            if (!$file || !$file->isValid()) {
+                $error = $file ? $file->getErrorString() : 'File tidak ditemukan';
+                log_message('error', 'File upload tidak valid: ' . $error);
+                return $this->response->setStatusCode(400)->setJSON(['message' => 'File tidak valid: ' . $error]);
+            }
+
+            // Log file info untuk debugging
+            log_message('info', 'File upload info - Name: ' . $file->getName() . ', Size: ' . $file->getSize() . ', Type: ' . $file->getMimeType());
+
+            // Cek ukuran file secara manual untuk debugging
+            $fileSize = $file->getSize();
+            $maxSize = 10240 * 1024; // 10MB dalam bytes
+            log_message('info', 'File size check - Actual: ' . $fileSize . ' bytes, Max allowed: ' . $maxSize . ' bytes');
+
+            if ($fileSize > $maxSize) {
+                log_message('error', 'File too large: ' . $fileSize . ' bytes exceeds ' . $maxSize . ' bytes');
+                return $this->response->setStatusCode(400)->setJSON(['message' => 'File terlalu besar. Maksimal 10MB.']);
+            }
+
+            $newName = $file->getRandomName();
+            $uploadPath = FCPATH . 'uploads/profile';
+
+            if (!is_dir($uploadPath)) {
+                @mkdir($uploadPath, 0775, true);
+            }
+
+            if (!$file->move($uploadPath, $newName)) {
+                return $this->response->setStatusCode(500)->setJSON(['message' => 'Gagal menyimpan file']);
+            }
+
+            $relativePath = 'uploads/profile/' . $newName;
+            $model = new UserAuthModel();
+            $model->update($userId, ['foto_profil' => $relativePath]);
+            session()->set('foto_profil', $relativePath);
+
+            return $this->response->setJSON([
+                'message' => 'Foto profil berhasil diperbarui (test mode)',
+                'foto_profil' => base_url($relativePath),
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Upload photo error: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine());
+            return $this->response->setStatusCode(500)->setJSON([
+                'message' => 'Error: ' . $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
+            ]);
+        }
+    }
+
+    /**
+     * Optimasi dan kompresi gambar untuk mengurangi ukuran file
+     */
+    private function optimizeImage($imagePath)
+    {
+        try {
+            if (!file_exists($imagePath)) {
+                log_message('error', 'File gambar tidak ditemukan: ' . $imagePath);
+                return false;
+            }
+
+            $imageInfo = getimagesize($imagePath);
+            if (!$imageInfo) {
+                log_message('error', 'Tidak dapat membaca informasi gambar: ' . $imagePath);
+                return false;
+            }
+
+            $mimeType = $imageInfo['mime'];
+            $width = $imageInfo[0];
+            $height = $imageInfo[1];
+
+            // Resize jika gambar terlalu besar (max 800x800 untuk profil)
+            $maxSize = 800;
+            if ($width > $maxSize || $height > $maxSize) {
+                $this->resizeImage($imagePath, $maxSize, $maxSize, $mimeType);
+            }
+
+            // Kompresi berdasarkan tipe file
+            switch ($mimeType) {
+                case 'image/jpeg':
+                    $this->compressJpeg($imagePath);
+                    break;
+                case 'image/png':
+                    $this->compressPng($imagePath);
+                    break;
+                case 'image/webp':
+                    $this->compressWebp($imagePath);
+                    break;
+            }
+
+            return true;
+        } catch (\Exception $e) {
+            log_message('error', 'Error optimasi gambar: ' . $e->getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Resize gambar dengan mempertahankan aspect ratio
+     */
+    private function resizeImage($imagePath, $maxWidth, $maxHeight, $mimeType)
+    {
+        $imageInfo = getimagesize($imagePath);
+        $width = $imageInfo[0];
+        $height = $imageInfo[1];
+
+        // Hitung dimensi baru dengan mempertahankan aspect ratio
+        $ratio = min($maxWidth / $width, $maxHeight / $height);
+        $newWidth = (int)($width * $ratio);
+        $newHeight = (int)($height * $ratio);
+
+        // Load gambar berdasarkan tipe
+        switch ($mimeType) {
+            case 'image/jpeg':
+                $source = imagecreatefromjpeg($imagePath);
+                break;
+            case 'image/png':
+                $source = imagecreatefrompng($imagePath);
+                break;
+            case 'image/webp':
+                $source = imagecreatefromwebp($imagePath);
+                break;
+            default:
+                return false;
+        }
+
+        if (!$source) {
+            return false;
+        }
+
+        // Buat gambar baru dengan dimensi yang diresize
+        $resized = imagecreatetruecolor($newWidth, $newHeight);
+
+        // Preserve transparency untuk PNG
+        if ($mimeType === 'image/png') {
+            imagealphablending($resized, false);
+            imagesavealpha($resized, true);
+            $transparent = imagecolorallocatealpha($resized, 255, 255, 255, 127);
+            imagefilledrectangle($resized, 0, 0, $newWidth, $newHeight, $transparent);
+        }
+
+        // Resize gambar
+        imagecopyresampled($resized, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+
+        // Simpan gambar yang sudah diresize
+        switch ($mimeType) {
+            case 'image/jpeg':
+                imagejpeg($resized, $imagePath, 85); // Quality 85%
+                break;
+            case 'image/png':
+                imagepng($resized, $imagePath, 8); // Compression level 8
+                break;
+            case 'image/webp':
+                imagewebp($resized, $imagePath, 85); // Quality 85%
+                break;
+        }
+
+        // Clean up memory
+        imagedestroy($source);
+        imagedestroy($resized);
+
+        return true;
+    }
+
+    /**
+     * Kompresi JPEG dengan quality yang optimal
+     */
+    private function compressJpeg($imagePath)
+    {
+        $image = imagecreatefromjpeg($imagePath);
+        if ($image) {
+            imagejpeg($image, $imagePath, 85); // Quality 85% untuk balance antara kualitas dan ukuran
+            imagedestroy($image);
+        }
+    }
+
+    /**
+     * Kompresi PNG dengan compression level optimal
+     */
+    private function compressPng($imagePath)
+    {
+        $image = imagecreatefrompng($imagePath);
+        if ($image) {
+            imagepng($image, $imagePath, 8); // Compression level 8 (0-9, 9 = max compression)
+            imagedestroy($image);
+        }
+    }
+
+    /**
+     * Kompresi WebP dengan quality optimal
+     */
+    private function compressWebp($imagePath)
+    {
+        $image = imagecreatefromwebp($imagePath);
+        if ($image) {
+            imagewebp($image, $imagePath, 85); // Quality 85%
+            imagedestroy($image);
+        }
     }
 }

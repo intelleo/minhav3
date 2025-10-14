@@ -720,6 +720,26 @@
       profilePhotoInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
+          // Validasi ukuran file (10MB = 10 * 1024 * 1024 bytes)
+          const maxSize = 10 * 1024 * 1024; // 10MB
+          if (file.size > maxSize) {
+            window.showAlert('error', 'File terlalu besar. Maksimal 10MB.');
+            e.target.value = ''; // Reset input
+            togglePhotoButtons(false);
+            imagePreview.innerHTML = '';
+            return;
+          }
+
+          // Validasi tipe file
+          const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+          if (!allowedTypes.includes(file.type)) {
+            window.showAlert('error', 'Tipe file tidak didukung. Gunakan JPG, PNG, atau WebP.');
+            e.target.value = ''; // Reset input
+            togglePhotoButtons(false);
+            imagePreview.innerHTML = '';
+            return;
+          }
+
           const reader = new FileReader();
 
           reader.onload = function(event) {
@@ -753,6 +773,10 @@
 
         const formData = new FormData();
         formData.append('bio', bio);
+
+        // Tambahkan CSRF token
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        formData.append('<?= csrf_token() ?>', csrfToken);
 
         (window.api || axios).post('<?= site_url('/Profile/update-bio') ?>', formData)
           .then(res => {
@@ -819,7 +843,11 @@
         const formData = new FormData();
         formData.append('profilePhoto', file);
 
-        (window.api || axios).post('<?= site_url('/Profile/update-photo') ?>', formData, {
+        // Tambahkan CSRF token
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        formData.append('<?= csrf_token() ?>', csrfToken);
+
+        (window.api || axios).post('<?= site_url('/Profile/update-photo-test') ?>', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -836,7 +864,9 @@
             togglePhotoButtons(false);
           })
           .catch(err => {
-            const msg = err?.response?.data?.message || 'Gagal memperbarui foto profil';
+            console.error('Upload error:', err);
+            const msg = err?.response?.data?.message || err?.message || 'Gagal memperbarui foto profil';
+            console.log('Error details:', err?.response?.data);
             window.showAlert('error', msg);
           });
       });
@@ -866,6 +896,10 @@
         form.append('currentPassword', currentPassword);
         form.append('newPassword', newPassword);
         form.append('confirmPassword', confirmPassword);
+
+        // Tambahkan CSRF token
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        form.append('<?= csrf_token() ?>', csrfToken);
 
         (window.api || axios).post('<?= site_url('/Profile/update-password') ?>', form)
           .then(() => {
@@ -903,7 +937,11 @@
           'Apakah Anda yakin ingin menghapus foto profil? Tindakan ini tidak dapat dibatalkan.',
           function() {
             // Konfirmasi - hapus foto
-            (window.api || axios).post('<?= site_url('/Profile/delete-photo') ?>')
+            const formData = new FormData();
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            formData.append('<?= csrf_token() ?>', csrfToken);
+
+            (window.api || axios).post('<?= site_url('/Profile/delete-photo') ?>', formData)
               .then(() => {
                 // Sembunyikan gambar dan tampilkan initials
                 if (profileAvatarImg) profileAvatarImg.style.display = 'none';
