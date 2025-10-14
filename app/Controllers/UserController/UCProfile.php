@@ -125,11 +125,8 @@ class UCProfile extends BaseController
             // Refresh session foto (tetap relatif)
             session()->set('foto_profil', $relativePath);
 
-            // Kembalikan URL absolut untuk frontend saat ini
-            return $this->response->setJSON([
-                'message' => 'Foto profil berhasil diperbarui',
-                'foto_profil' => base_url($relativePath),
-            ]);
+            // Redirect kembali agar halaman reload dan UI segar
+            return redirect()->back()->with('success', 'Foto profil berhasil diperbarui');
         } catch (\Exception $e) {
             // Log error untuk debugging
             log_message('error', 'Upload foto profil error: ' . $e->getMessage());

@@ -533,11 +533,12 @@
           <i class="ri-camera-line"></i>
           <h3>Ubah Foto Profil</h3>
         </div>
-        <form id="photoForm">
+        <form id="photoForm" method="post" action="<?= site_url('/Profile/update-photo') ?>" enctype="multipart/form-data">
+          <?= csrf_field() ?>
           <div class="form-group">
             <label for="profilePhoto">Pilih Foto Baru</label>
             <div class="file-input-wrapper">
-              <input type="file" id="profilePhoto" accept="image/*">
+              <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
               <label for="profilePhoto" class="file-input-label">
                 <i class="ri-upload-cloud-line"></i>
                 <span>Klik untuk mengunggah foto</span>
@@ -819,41 +820,7 @@
       }
     }
 
-    // Event listener untuk form foto
-    if (photoForm) {
-      photoForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const file = profilePhotoInput && profilePhotoInput.files ? profilePhotoInput.files[0] : null;
-        if (!file) {
-          window.showAlert('error', 'Silakan pilih foto terlebih dahulu');
-          return;
-        }
-
-        const formData = new FormData();
-        formData.append('profilePhoto', file);
-
-        // Tambahkan CSRF token
-        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        formData.append('<?= csrf_token() ?>', csrfToken);
-
-        (window.api || axios).post('<?= site_url('/Profile/update-photo') ?>', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          })
-          .then(res => {
-            // Reload halaman setelah sukses agar tampilan segar dan konsisten
-            window.location.reload();
-          })
-          .catch(err => {
-            console.error('Upload error:', err);
-            const msg = err?.response?.data?.message || err?.message || 'Gagal memperbarui foto profil';
-            console.log('Error details:', err?.response?.data);
-            window.showAlert('error', msg);
-          });
-      });
-    }
+    // Pengiriman form foto sekarang menggunakan submit default browser (non-AJAX)
 
     // Event listener untuk form password
     if (passwordForm) {
