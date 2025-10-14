@@ -274,15 +274,15 @@ $currentUser = $currentUser ?? session('namalengkap') ?? '';
 
     // Report - hanya untuk komentar orang lain
     if (!isOwnComment && commentAuthor) {
-      menuItemsHTML += `
-      <button type="button" 
-              class="context-menu-item w-full px-4 py-2 text-left text-sm flex items-center gap-3 text-orange-600 hover:bg-orange-50 transition-colors duration-150"
-              data-action="report"
-              onclick="handleContextMenuAction('report', '', this)">
-        <i class="ri-flag-line text-base"></i>
-        <span>Laporkan</span>
-      </button>
-    `;
+      //   menuItemsHTML += `
+      //   <button type="button" 
+      //           class="context-menu-item w-full px-4 py-2 text-left text-sm flex items-center gap-3 text-orange-600 hover:bg-orange-50 transition-colors duration-150"
+      //           data-action="report"
+      //           onclick="handleContextMenuAction('report', '', this)">
+      //     <i class="ri-flag-line text-base"></i>
+      //     <span>Laporkan</span>
+      //   </button>
+      // `;
     }
 
     // Copy - untuk semua komentar
@@ -758,6 +758,10 @@ $currentUser = $currentUser ?? session('namalengkap') ?? '';
           }
         }
         showNotification('Komentar berhasil dihapus', 'success');
+        // Reload halaman setelah penghapusan berhasil untuk memastikan komentar tampil dengan benar
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000); // Delay 1 detik untuk menampilkan notifikasi sukses
       } else {
         showNotification(result.message, 'error');
       }

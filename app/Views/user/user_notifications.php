@@ -425,19 +425,29 @@
           if (http && id) {
             http.post('<?= site_url('Notifications/seen') ?>' + '/' + id).finally(function() {
               if (window.__refreshNotifCount) window.__refreshNotifCount();
-              // Navigasi menggunakan SPA router
+              // Untuk mading detail, gunakan full page load untuk memastikan komentar tampil dengan benar
+              if (href.includes('/Mading/detail/')) {
+                window.location.href = href;
+              } else {
+                // Navigasi menggunakan SPA router untuk halaman lain
+                if (window.__spaNavigate) {
+                  window.__spaNavigate(href, true);
+                } else {
+                  window.location.href = href;
+                }
+              }
+            });
+          } else {
+            // Untuk mading detail, gunakan full page load untuk memastikan komentar tampil dengan benar
+            if (href.includes('/Mading/detail/')) {
+              window.location.href = href;
+            } else {
+              // Navigasi menggunakan SPA router untuk halaman lain
               if (window.__spaNavigate) {
                 window.__spaNavigate(href, true);
               } else {
                 window.location.href = href;
               }
-            });
-          } else {
-            // Navigasi menggunakan SPA router
-            if (window.__spaNavigate) {
-              window.__spaNavigate(href, true);
-            } else {
-              window.location.href = href;
             }
           }
         });

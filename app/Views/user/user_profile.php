@@ -720,16 +720,6 @@
       profilePhotoInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
-          // Validasi ukuran file (10MB = 10 * 1024 * 1024 bytes)
-          const maxSize = 10 * 1024 * 1024; // 10MB
-          if (file.size > maxSize) {
-            window.showAlert('error', 'File terlalu besar. Maksimal 10MB.');
-            e.target.value = ''; // Reset input
-            togglePhotoButtons(false);
-            imagePreview.innerHTML = '';
-            return;
-          }
-
           // Validasi tipe file
           const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
           if (!allowedTypes.includes(file.type)) {
@@ -847,21 +837,14 @@
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         formData.append('<?= csrf_token() ?>', csrfToken);
 
-        (window.api || axios).post('<?= site_url('/Profile/update-photo-test') ?>', formData, {
+        (window.api || axios).post('<?= site_url('/Profile/update-photo') ?>', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
           })
           .then(res => {
-            const url = res?.data?.foto_profil;
-            if (url && profileAvatarImg) profileAvatarImg.src = url;
-            const initials = document.getElementById('profileAvatarInitials');
-            if (initials) initials.classList.add('hidden');
-            window.showAlert('success', res?.data?.message || 'Foto profil berhasil diperbarui!');
-            photoForm.reset();
-            if (imagePreview) imagePreview.innerHTML = '';
-            // Sembunyikan tombol setelah upload berhasil
-            togglePhotoButtons(false);
+            // Reload halaman setelah sukses agar tampilan segar dan konsisten
+            window.location.reload();
           })
           .catch(err => {
             console.error('Upload error:', err);

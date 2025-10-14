@@ -70,16 +70,13 @@
         <?php $adminLiked = (new \App\Models\MadingLikeModel())
           ->where('mading_id', $mading['id'])
           ->where('user_id', session('admin_id'))
+          ->where('user_type', 'admin')
           ->first() !== null; ?>
-        <button
-          type="button"
-          id="like-btn"
-          class="flex items-center gap-1 text-gray-600 hover:text-red-600 cursor-pointer transition-colors duration-200"
-          data-liked="<?= $adminLiked ? '1' : '0' ?>"
-          onclick="toggleLike(<?= $mading['id'] ?>)">
-          <i id="like-icon" class="<?= $adminLiked ? 'ri-heart-fill text-red-600' : 'ri-heart-line text-gray-600' ?> text-lg"></i>
+        <!-- like -->
+        <div>
+          <i class="ri-heart-fill text-red-600"></i>
           <span id="like-count"><?= number_format($mading['total_likes']) ?></span>
-        </button>
+        </div>
 
         <!-- Comments -->
         <span class="flex items-center">

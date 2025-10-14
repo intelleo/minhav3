@@ -47,7 +47,7 @@ class UCProfile extends BaseController
             $validation->setRules([
                 'profilePhoto' => [
                     'label' => 'Foto Profil',
-                    'rules' => 'uploaded[profilePhoto]|is_image[profilePhoto]|max_size[profilePhoto,10240]|mime_in[profilePhoto,image/jpg,image/jpeg,image/png,image/webp]'
+                    'rules' => 'uploaded[profilePhoto]|is_image[profilePhoto]|mime_in[profilePhoto,image/jpg,image/jpeg,image/png,image/webp]'
                 ]
             ]);
 
@@ -278,7 +278,7 @@ class UCProfile extends BaseController
             $validation->setRules([
                 'profilePhoto' => [
                     'label' => 'Foto Profil',
-                    'rules' => 'uploaded[profilePhoto]|is_image[profilePhoto]|max_size[profilePhoto,10240]|mime_in[profilePhoto,image/jpg,image/jpeg,image/png,image/webp]'
+                    'rules' => 'uploaded[profilePhoto]|is_image[profilePhoto]|mime_in[profilePhoto,image/jpg,image/jpeg,image/png,image/webp]'
                 ]
             ]);
 

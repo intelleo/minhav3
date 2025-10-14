@@ -158,20 +158,31 @@ class UCMading extends BaseController
         $madingModel = new MadingModel();
         $commentModel = new MadingCommentModel();
 
-        $mading = $madingModel->getWithAdmin($id);
+        // Tambah view terlebih dahulu sebelum mengambil data
+        $madingModel->set('views', 'views + 1', false) // false = jangan escape
+            ->where('id', $id)
+            ->update();
+
+        // Invalidate cache untuk memastikan data ter-update
+        $madingModel->invalidateCache($id);
+
+        // Ambil data mading langsung dari database (tidak dari cache)
+        $today = date('Y-m-d');
+        $mading = $madingModel->select('mading_online.*, auth_admin.username')
+            ->join('auth_admin', 'auth_admin.id = mading_online.admin_id', 'left')
+            ->where('mading_online.id', $id)
+            ->where('mading_online.status', 'aktif')
+            ->where('mading_online.tgl_akhir >=', $today)
+            ->first();
 
         if (!$mading) {
             return redirect()->to('Mading')->with('error', 'Mading tidak ditemukan.');
         }
 
-        // Tambah view
-        $madingModel->set('views', 'views + 1', false) // false = jangan escape
-            ->where('id', $id)
-            ->update();
-
+        // Enrich data seperti di admin
+        $mading = $madingModel->enrichMadingDataPublic([$mading])[0];
 
         // Cek apakah mading masih aktif & belum kadaluarsa
-        $today = date('Y-m-d');
         if ($mading['status'] !== 'aktif' || $mading['tgl_akhir'] < $today) {
             return redirect()->to('Mading')->with('info', 'Mading ini sudah tidak aktif.');
         }
@@ -432,6 +443,7 @@ class UCMading extends BaseController
         // Cek apakah user sudah like
         $isLikedRecord = $likeModel->where('mading_id', $madingId)
             ->where('user_id', $userId)
+            ->where('user_type', 'user')
             ->first();
 
         if ($isLikedRecord) {
@@ -440,13 +452,15 @@ class UCMading extends BaseController
             $db->table('mading_likes')
                 ->where('mading_id', $madingId)
                 ->where('user_id', $userId)
+                ->where('user_type', 'user')
                 ->delete();
             $liked = false;
         } else {
             // Like: tambah like
             $likeModel->insert([
                 'mading_id' => $madingId,
-                'user_id'   => $userId
+                'user_id'   => $userId,
+                'user_type' => 'user'
             ]);
             $liked = true;
         }

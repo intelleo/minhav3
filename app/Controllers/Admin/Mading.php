@@ -382,6 +382,7 @@ class Mading extends BaseController
     // Cek apakah admin sudah like
     $isLikedRecord = $likeModel->where('mading_id', $madingId)
       ->where('user_id', $adminId)
+      ->where('user_type', 'admin')
       ->first();
 
     if ($isLikedRecord) {
@@ -390,13 +391,15 @@ class Mading extends BaseController
       $db->table('mading_likes')
         ->where('mading_id', $madingId)
         ->where('user_id', $adminId)
+        ->where('user_type', 'admin')
         ->delete();
       $liked = false;
     } else {
       // Like
       $likeModel->insert([
         'mading_id' => $madingId,
-        'user_id'   => $adminId
+        'user_id'   => $adminId,
+        'user_type' => 'admin'
       ]);
       $liked = true;
     }

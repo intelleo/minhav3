@@ -15,15 +15,14 @@ class CreateLayananInformasi extends Migration
                 'auto_increment' => true,
             ],
             'judul' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255,
+                'type' => 'TEXT',
             ],
             'deskripsi' => [
                 'type' => 'TEXT',
             ],
             'kategori' => [
                 'type'       => 'ENUM',
-                'constraint' => ['Akademik', 'Administrasi', 'Umum'],
+                'constraint' => ['BAAK', 'BAUK', 'Umum'],
             ],
             'created_at' => [
                 'type' => 'TIMESTAMP',

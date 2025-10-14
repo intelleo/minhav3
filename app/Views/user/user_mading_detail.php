@@ -75,6 +75,7 @@
         <?php $userLiked = (new \App\Models\MadingLikeModel())
           ->where('mading_id', $mading['id'])
           ->where('user_id', session('user_id'))
+          ->where('user_type', 'user')
           ->first() !== null; ?>
         <button
           type="button"
@@ -110,11 +111,12 @@
       <input type="hidden" name="parent_id" id="parent_id" value="">
 
       <div class="flex">
-        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3 flex-shrink-0">
+        <!-- non aktfikan avatar komentar -->
+        <!-- <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3 flex-shrink-0">
           <span class="text-indigo-600 font-semibold">
             <?= strtoupper(substr(session('namalengkap'), 0, 1)) ?>
           </span>
-        </div>
+        </div> -->
         <div class="flex-1">
           <textarea
             name="isi_komentar"

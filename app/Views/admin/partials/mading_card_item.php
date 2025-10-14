@@ -36,6 +36,7 @@
         <?php $userLiked = (new \App\Models\MadingLikeModel())
           ->where('mading_id', $mading['id'])
           ->where('user_id', session('admin_id'))
+          ->where('user_type', 'admin')
           ->first() !== null; ?>
         <button
           type="button"

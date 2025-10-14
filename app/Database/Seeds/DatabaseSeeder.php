@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
   {
     // Jalankan semua seeder utama
     $this->call('AuthAdminSeeder');
-    $this->call('UserAuthSeeder');
+    // $this->call('UserAuthSeeder');
     $this->call('MadingSeeder');
     $this->call('LayananSeeder');
   }
