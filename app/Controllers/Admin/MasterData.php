@@ -876,7 +876,7 @@ class MasterData extends BaseController
       'namalengkap' => $this->request->getPost('nama_lengkap'),
       'npm' => $this->request->getPost('npm'),
       'jurusan' => $this->request->getPost('jurusan'),
-      'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+      'password' => $this->request->getPost('password'), // Biarkan model yang handle hashing
       'status' => $this->request->getPost('status'),
       'created_at' => date('Y-m-d H:i:s'),
       'updated_at' => date('Y-m-d H:i:s')
@@ -949,7 +949,7 @@ class MasterData extends BaseController
       'namalengkap' => $this->request->getPost('nama_lengkap'),
       'npm' => $this->request->getPost('npm'),
       'jurusan' => $this->request->getPost('jurusan'),
-      'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+      'password' => $this->request->getPost('password'), // Biarkan model yang handle hashing
       'status' => $this->request->getPost('status'),
       'created_at' => date('Y-m-d H:i:s'),
       'updated_at' => date('Y-m-d H:i:s')
