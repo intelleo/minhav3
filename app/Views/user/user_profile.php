@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<?= $this->include('partials/button_spinner') ?>
+
 <style>
   .profile-container {
     margin-top: -11rem;
@@ -540,19 +542,19 @@
             <div class="file-input-wrapper">
               <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
               <label for="profilePhoto" class="file-input-label">
-                <i class="ri-upload-cloud-line"></i>
+                <i class="ri-upload-cloud-line text-blue-500"></i>
                 <span>Klik untuk mengunggah foto</span>
               </label>
             </div>
             <div class="preview-image" id="imagePreview"></div>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary" id="savePhotoBtn" style="display: none;">
-              <i class="ri-save-line"></i>
+            <button type="submit" class="btn btn-primary" id="savePhotoBtn" style="display: none;" data-spinner="button">
+              <i class="ri-save-line text-white"></i>
               Simpan Perubahan
             </button>
             <button type="button" class="btn btn-secondary" id="cancelPhoto" style="display: none;">
-              <i class="ri-close-line"></i>
+              <i class="ri-close-line text-white"></i>
               Batal
             </button>
             <?php if (!empty($user['foto_profil'])): ?>
@@ -614,9 +616,9 @@
             <input type="password" id="confirmPassword" placeholder="Konfirmasi password baru" required>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary">
-              <i class="ri-save-line text-base text-white"></i>
-              Simpan Perubahan
+            <button type="submit" class="btn btn-primary"></button>
+            <i class="ri-save-line text-base text-white"></i>
+            Simpan Perubahan
             </button>
             <button type="button" class="btn btn-secondary" id="cancelPassword">
               <i class="ri-close-line text-base"></i>

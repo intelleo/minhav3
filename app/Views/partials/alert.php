@@ -8,7 +8,7 @@ $alertTypes = [
 ?>
 
 <!-- Container Alert -->
-<div id="alert-container" class="fixed bottom-4 right-4 space-y-2 z-[9999] max-w-[15rem]">
+<div id="alert-container" class="fixed top-4 right-4 space-y-2 z-[9999] max-w-[15rem]">
   <?php foreach ($alertTypes as $type => $style): ?>
     <?php if (session()->has($type)): ?>
       <div
