@@ -96,19 +96,19 @@
       $kategoriStats = [
         'Umum' => $stats['umum'],
         'BAAK' => $stats['baak'],
-        'BUAK' => $stats['buak']
+        'BAUK' => $stats['bauk']
       ];
 
       $kategoriColors = [
         'Umum' => 'bg-purple-50 border-purple-200',
         'BAAK' => 'bg-blue-50 border-blue-200',
-        'BUAK' => 'bg-green-50 border-green-200'
+        'BAUK' => 'bg-green-50 border-green-200'
       ];
 
       $kategoriIcons = [
         'Umum' => 'ri-information-line',
         'BAAK' => 'ri-graduation-cap-line',
-        'BUAK' => 'ri-file-list-line'
+        'BAUK' => 'ri-file-list-line'
       ];
       ?>
 
@@ -187,7 +187,7 @@
             <option value="">Pilih Kategori</option>
             <option value="Umum">Umum</option>
             <option value="BAAK">BAAK</option>
-            <option value="BUAK">BUAK</option>
+            <option value="BAUK">BAUK</option>
           </select>
         </div>
       </form>
@@ -950,7 +950,7 @@
       const kategoriColors = {
         'Umum': 'bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold',
         'BAAK': 'bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold',
-        'BUAK': 'bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold'
+        'BAUK': 'bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold'
       };
       const colorClass = kategoriColors[data.kategori] || 'bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs font-semibold';
       kategoriElement.innerHTML = `<span class="${colorClass}">${data.kategori}</span>`;

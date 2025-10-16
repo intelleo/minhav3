@@ -36,7 +36,7 @@ class Dashboard extends BaseController
       ];
     }
 
-    // Get content statistics with error handling
+    // Get content statistics dengan error handling
     try {
       $contentStats = [
         'total_mading' => $madingModel->countAllResults(),
@@ -45,8 +45,9 @@ class Dashboard extends BaseController
         'inactive_mading' => $madingModel->where('status', 'nonaktif')->countAllResults(),
         'total_comments' => $commentModel->countAllResults(),
         'total_chatbot' => $layananModel->countAllResults(),
-        'akademik_chatbot' => $layananModel->where('kategori', 'Akademik')->countAllResults(),
-        'administrasi_chatbot' => $layananModel->where('kategori', 'Administrasi')->countAllResults(),
+        // Kategori disesuaikan: BAAK dan BAUK
+        'baak_chatbot' => $layananModel->where('kategori', 'BAAK')->countAllResults(),
+        'bauk_chatbot' => $layananModel->where('kategori', 'BAUK')->countAllResults(),
         'umum_chatbot' => $layananModel->where('kategori', 'Umum')->countAllResults(),
       ];
     } catch (\Exception $e) {
@@ -58,8 +59,8 @@ class Dashboard extends BaseController
         'inactive_mading' => 0,
         'total_comments' => 0,
         'total_chatbot' => 0,
-        'akademik_chatbot' => 0,
-        'administrasi_chatbot' => 0,
+        'baak_chatbot' => 0,
+        'bauk_chatbot' => 0,
         'umum_chatbot' => 0,
       ];
     }

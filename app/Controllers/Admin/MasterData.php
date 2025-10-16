@@ -37,10 +37,10 @@ class MasterData extends BaseController
         'pending_mading' => $this->madingModel->where('status', 'pending')->countAllResults(),
         'inactive_mading' => $this->madingModel->where('status', 'nonaktif')->countAllResults(),
 
-        // Chatbot statistics (layanan informasi)
+        // Chatbot statistics (layanan informasi) - gunakan BAAK & BAUK
         'total_chatbot' => $this->layananModel->countAllResults(),
-        'akademik_chatbot' => $this->layananModel->where('kategori', 'Akademik')->countAllResults(),
-        'administrasi_chatbot' => $this->layananModel->where('kategori', 'Administrasi')->countAllResults(),
+        'baak_chatbot' => $this->layananModel->where('kategori', 'BAAK')->countAllResults(),
+        'bauk_chatbot' => $this->layananModel->where('kategori', 'BAUK')->countAllResults(),
         'umum_chatbot' => $this->layananModel->where('kategori', 'Umum')->countAllResults(),
       ];
     } catch (\Exception $e) {
@@ -61,8 +61,8 @@ class MasterData extends BaseController
 
         // Chatbot statistics
         'total_chatbot' => 0,
-        'akademik_chatbot' => 0,
-        'administrasi_chatbot' => 0,
+        'baak_chatbot' => 0,
+        'bauk_chatbot' => 0,
         'umum_chatbot' => 0,
       ];
     }
@@ -309,7 +309,7 @@ class MasterData extends BaseController
       'total' => $layananModel->where('kategori IS NOT NULL AND kategori != ""', null, false)->countAllResults(),
       'umum' => $layananModel->where('kategori', 'Umum')->countAllResults(),
       'baak' => $layananModel->where('kategori', 'BAAK')->countAllResults(),
-      'buak' => $layananModel->where('kategori', 'BUAK')->countAllResults(),
+      'bauk' => $layananModel->where('kategori', 'BAUK')->countAllResults(),
     ];
 
     // Get unique kategori for filter (exclude empty/null)
@@ -1038,7 +1038,7 @@ class MasterData extends BaseController
     $validation->setRules([
       'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
+      'kategori' => 'required|in_list[Umum,BAAK,BAUK]'
     ]);
 
     if (!$validation->run($data)) {
@@ -1127,7 +1127,7 @@ class MasterData extends BaseController
     $validation->setRules([
       'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
+      'kategori' => 'required|in_list[Umum,BAAK,BAUK]'
     ]);
 
     if (!$validation->run($data)) {
@@ -1383,7 +1383,7 @@ class MasterData extends BaseController
     $validation->setRules([
       'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
+      'kategori' => 'required|in_list[Umum,BAAK,BAUK]'
     ]);
 
     if (!$validation->run($data)) {
@@ -1456,7 +1456,7 @@ class MasterData extends BaseController
     $validation->setRules([
       'judul' => 'required|min_length[3]',
       'deskripsi' => 'required|min_length[10]',
-      'kategori' => 'required|in_list[Umum,BAAK,BUAK]'
+      'kategori' => 'required|in_list[Umum,BAAK,BAUK]'
     ]);
 
     if (!$validation->run($data)) {

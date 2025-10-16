@@ -9,7 +9,7 @@
 <script type="module">
   import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
   Chatbot.initFull({
-    chatflowid: "cc44b4b1-c3a5-4e77-bbd1-d1707bb77686",
+    chatflowid: "131bf514-1e11-40a8-9325-6aa4b82b897b",
     apiHost: "https://chatbot.minha.my.id",
     chatflowConfig: {
       /* Konfigurasi Chatflow */

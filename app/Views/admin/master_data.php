@@ -142,12 +142,12 @@
           <div class="text-sm text-gray-600">Total Q&A</div>
         </div>
         <div class="text-center p-4 bg-blue-50 rounded-lg">
-          <div class="text-2xl font-bold text-blue-600"><?= $stats['akademik_chatbot'] ?></div>
-          <div class="text-sm text-gray-600">Akademik</div>
+          <div class="text-2xl font-bold text-blue-600"><?= $stats['baak_chatbot'] ?? 0 ?></div>
+          <div class="text-sm text-gray-600">BAAK</div>
         </div>
         <div class="text-center p-4 bg-purple-50 rounded-lg">
-          <div class="text-2xl font-bold text-purple-600"><?= $stats['administrasi_chatbot'] ?></div>
-          <div class="text-sm text-gray-600">Administrasi</div>
+          <div class="text-2xl font-bold text-purple-600"><?= $stats['bauk_chatbot'] ?? 0 ?></div>
+          <div class="text-sm text-gray-600">BAUK</div>
         </div>
         <div class="text-center p-4 bg-orange-50 rounded-lg">
           <div class="text-2xl font-bold text-orange-600"><?= $stats['umum_chatbot'] ?></div>
